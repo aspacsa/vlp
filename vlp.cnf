@@ -1,0 +1,4 @@
+server	192.168.0.10
+user	admin
+pass	admin
+db	vlpdb
