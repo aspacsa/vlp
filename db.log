@@ -247,3 +247,215 @@ Entry: {
 Entry: {
  SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
 }
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '77787' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '888' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('777'), TRIM('lolo'), 1, 1, TRIM('car2011-12-30'), TRIM('2011-12-30') ) 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ UPDATE summons SET CaseNumber = TRIM('777'),     Name = TRIM('Pedro Manteca Ortiz                                Úø'),     Status = 1,     Reason = 2,     CityCode = TRIM('car2011-12-22'),     SummonDate = TRIM('2011-12-22') WHERE id = 1 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('777'), TRIM('Luis Gandara Gutierrez                             ùø'), 1, 3, TRIM('can2010-09-09'), TRIM('2010-09-09') ) 
+}

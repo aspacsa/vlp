@@ -37,6 +37,7 @@ size_t query_create_new_case(CASE*);
 size_t query_update_case(CASE*);
 size_t query_delete_case(const char *case_num);
 size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count); 
+size_t query_update_summon(SUMMON*);
 size_t db_error_number(void);
 const char* db_error_message(void);
 size_t query_select_count_from_case_for(const char *case_num, size_t *count);
@@ -45,34 +46,34 @@ const char* db_get_error_msg(void);
 extern dev_mode;
 
 int init_db(void) {
-  conn = mysql_init(NULL);
+  conn = mysql_init( NULL );
   return 0;
 }
 
 int connect_to_db(void) {
   int result = 0;
     
-  if (!mysql_real_connect(conn, param.server, param.user, param.pass, param.db, 0, NULL, 0)) {
-    fprintf(stderr, "\n %s\n", mysql_error(conn));
+  if ( !mysql_real_connect( conn, param.server, param.user, param.pass, param.db, 0, NULL, 0 ) ) {
+    fprintf( stderr, "\n %s\n", mysql_error( conn ) );
     result = 1;
   }
   return result;
 }
 
 void close_db(void) {
-  mysql_close(conn);
+  mysql_close( conn );
 }
 
 const char* get_db_cnf(void) {
-  strcpy(params_list, "\n\nServer: [");
-  strcat(params_list, param.server);
-  strcat(params_list, "]\n");
-  strcat(params_list, "User:   [");
-  strcat(params_list, param.user);
-  strcat(params_list, "]\n");
-  strcat(params_list, "DB:     [");
-  strcat(params_list, param.db);
-  strcat(params_list, "]\n");
+  strcpy( params_list, "\n\nServer: [" );
+  strcat( params_list, param.server );
+  strcat( params_list, "]\n" );
+  strcat( params_list, "User:   [" );
+  strcat( params_list, param.user );
+  strcat( params_list, "]\n" );
+  strcat( params_list, "DB:     [" );
+  strcat( params_list, param.db );
+  strcat( params_list, "]\n" );
   return params_list;
 }
 
@@ -82,48 +83,48 @@ int read_db_cnf() {
   char *delimiter = "\t";
   char *token = NULL;
  
-  fp = fopen(VLP_CNF_FILE, "r");
-  if (fp == NULL)
+  fp = fopen( VLP_CNF_FILE, "r" );
+  if ( fp == NULL )
     return 1;
-  while(fgets(line, MAX_PARAM_LINE, fp) != NULL) {
-    prepare_line(line);
-    token = strtok(line, delimiter);
-    if (strcmp(token, SERVER_PARAM) == 0) {
-      strncpy(param.server, strtok(NULL, delimiter), MAX_PARAM);
-     } else if (strcmp(token, USER_PARAM) == 0) {
-      strncpy(param.user, strtok(NULL, delimiter), MAX_PARAM);
-    } else if (strcmp(token, PASS_PARAM) == 0) {
-      strncpy(param.pass, strtok(NULL, delimiter), MAX_PARAM);
-    } else if (strcmp(token, DB_PARAM) == 0) {
-      strncpy(param.db, strtok(NULL, delimiter), MAX_PARAM);
+  while ( fgets( line, MAX_PARAM_LINE, fp ) != NULL ) {
+    prepare_line( line );
+    token = strtok( line, delimiter );
+    if ( strcmp(token, SERVER_PARAM ) == 0) {
+      strncpy( param.server, strtok(NULL, delimiter ), MAX_PARAM );
+     } else if ( strcmp(token, USER_PARAM ) == 0 ) {
+      strncpy( param.user, strtok( NULL, delimiter ), MAX_PARAM );
+    } else if ( strcmp( token, PASS_PARAM ) == 0 ) {
+      strncpy( param.pass, strtok( NULL, delimiter ), MAX_PARAM );
+    } else if ( strcmp( token, DB_PARAM ) == 0 ) {
+      strncpy( param.db, strtok( NULL, delimiter ), MAX_PARAM );
     }
   }
-  fclose(fp);
+  fclose( fp );
   return 0;
 }
 
 int write_db_log(char *line ) {
   FILE *fp;
   
-  fp = fopen(DB_LOG_FILE, "a");
-  if (fp == NULL)
+  fp = fopen( DB_LOG_FILE, "a" );
+  if ( fp == NULL )
     return 1;
-  fprintf(fp, "\n\nEntry: {\n %s \n}", line);
+  fprintf( fp, "\n\nEntry: {\n %s \n}", line );
 
-  fclose(fp);
+  fclose( fp );
   return 0;
 }
 
 int set_db_cnf(const char *server, const char *user, const char *pass, const char *db) {
-  strncpy(param.server, server, MAX_PARAM);
-  strncpy(param.user, user, MAX_PARAM);
-  strncpy(param.pass, pass, MAX_PARAM);
-  strncpy(param.db, db, MAX_PARAM);
+  strncpy( param.server, server, MAX_PARAM );
+  strncpy( param.user, user, MAX_PARAM );
+  strncpy( param.pass, pass, MAX_PARAM );
+  strncpy( param.db, db, MAX_PARAM );
   return 0;
 }
 
 void prepare_line(char *line) {
-  strcpy(line, strtok(line, "\n"));
+  strcpy( line, strtok( line, "\n" ) );
 }
 
 size_t query_create_new_case(CASE *ptr) {
@@ -137,10 +138,10 @@ size_t query_create_new_case(CASE *ptr) {
                                   "          %d, TRIM('%s') )", 
                                   ptr->number, ptr->civil, ptr->physical_add,
                                   ptr->postal_add, ptr->status, ptr->delivery_date );
-  if (dev_mode)
-    write_db_log(query);
+  if ( dev_mode )
+    write_db_log( query );
   db_error_number();
-  return mysql_query(conn, query);
+  return mysql_query( conn, query );
 }
 
 size_t query_update_case(CASE *ptr) {
@@ -154,10 +155,10 @@ size_t query_update_case(CASE *ptr) {
                   " WHERE CaseNumber = '%s'", ptr->civil, ptr->physical_add,
                                               ptr->postal_add, ptr->status,
                                               ptr->delivery_date, ptr->number);
-  if (dev_mode) 
-    write_db_log(query);
+  if ( dev_mode ) 
+    write_db_log( query );
   db_error_number();
-  return mysql_query(conn, query);
+  return mysql_query( conn, query );
 }
 
 size_t query_delete_case(const char *case_num) {
@@ -165,34 +166,34 @@ size_t query_delete_case(const char *case_num) {
 
   sprintf( query, "DELETE FROM case_headers"
                   " WHERE CaseNumber = '%s'", case_num );
-  if (dev_mode)
-    write_db_log(query);
+  if ( dev_mode )
+    write_db_log( query );
   db_error_number();
-  return mysql_query(conn, query);
+  return mysql_query( conn, query );
 }
 
 size_t query_select_all_from_case_for(const char *case_num, CASE *ptr) {
   char query[BUFSIZ];
 
-  sprintf(query, "SELECT CaseNumber, CivilNumber,"
+  sprintf( query, "SELECT CaseNumber, CivilNumber,"
                  "       PhysicalAdd, PostalAdd,"
                  "       Status, DeliveryDate"
                  " FROM case_headers"
-                 " WHERE CaseNumber = '%s'", case_num);
+                 " WHERE CaseNumber = '%s'", case_num );
   db_error_number();
-  size_t error = mysql_query(conn, query);
-  if (error) {
+  size_t error = mysql_query( conn, query );
+  if ( error ) {
     return error;
   } else {
-    res = mysql_use_result(conn);
-    row = mysql_fetch_row(res);
-    strncpy(ptr->number, row[0], MAX_CANUM);
-    strncpy(ptr->civil, row[1], MAX_CINUM);
-    strncpy(ptr->physical_add, row[2], MAX_PHYADD);
-    strncpy(ptr->postal_add, row[3], MAX_POSADD);
+    res = mysql_use_result( conn );
+    row = mysql_fetch_row( res );
+    strncpy( ptr->number, row[0], MAX_CANUM );
+    strncpy( ptr->civil, row[1], MAX_CINUM );
+    strncpy( ptr->physical_add, row[2], MAX_PHYADD );
+    strncpy( ptr->postal_add, row[3], MAX_POSADD );
     ptr->status = (char)*row[4];
-    strncpy(ptr->delivery_date, row[5], MAX_DELDATE);
-    mysql_free_result(res);
+    strncpy( ptr->delivery_date, row[5], MAX_DELDATE );
+    mysql_free_result( res );
   }
   return 0;
 }
@@ -202,12 +203,12 @@ size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[
   size_t result = 0;
   *count = 0;
 
-  sprintf(query, "SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate"
+  sprintf( query, "SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate"
                  " FROM summons WHERE CaseNumber = '%s'", case_num );
-  if (dev_mode)
-    write_db_log(query);
+  if ( dev_mode )
+    write_db_log( query );
   db_error_number();
-  size_t error = mysql_query(conn, query);
+  size_t error = mysql_query( conn, query );
   if ( error ) {
     return error;
   } else {
@@ -228,28 +229,57 @@ size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[
       }
       summ_set[*count++] = summPtr;
     }
-    mysql_free_result(res);
+    mysql_free_result( res );
   }
   return result;
+}
+
+size_t query_update_summon(SUMMON *record) {
+  char query[BUFSIZ];
+
+  if ( record->id > 0 ) {
+    sprintf( query, "UPDATE summons" 
+                    " SET CaseNumber = TRIM('%s'),"
+                    "     Name = TRIM('%s'),"
+                    "     Status = %d,"
+                    "     Reason = %d,"
+                    "     CityCode = TRIM('%s'),"
+                    "     SummonDate = TRIM('%s')"
+                    " WHERE id = %d", record->case_num, record->name,
+                                      record->status, record->reason,
+                                      record->city_code, record->summon_date,
+                                      record->id
+           );
+  } else {
+    sprintf( query, "INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate)"
+                    " VALUES ( TRIM('%s'), TRIM('%s'), %d, %d, TRIM('%s'), TRIM('%s') )", 
+                             record->case_num, record->name, record->status, 
+                             record->reason, record->city_code, record->summon_date
+           );
+  }
+  if ( dev_mode )
+    write_db_log( query );
+  db_error_number();
+  return mysql_query( conn, query );
 }
 
 size_t query_select_count_from_case_for(const char *case_num, size_t *count) {
   char query[BUFSIZ];
 
-  sprintf(query, "SELECT COUNT(CaseNumber) FROM case_headers"
-                 " WHERE CaseNumber = '%s'", case_num);
-  if (dev_mode)
-    write_db_log(query);
+  sprintf( query, "SELECT COUNT(CaseNumber) FROM case_headers"
+                 " WHERE CaseNumber = '%s'", case_num );
+  if ( dev_mode )
+    write_db_log( query );
   db_error_number();
-  size_t error = mysql_query(conn, query);
-  if (error) {
+  size_t error = mysql_query( conn, query );
+  if ( error ) {
     return error;
   } else {
-    res = mysql_use_result(conn);
-    row = mysql_fetch_row(res);
-    size_t c = atoi(row[0]);
+    res = mysql_use_result( conn );
+    row = mysql_fetch_row( res );
+    size_t c = atoi( row[0] );
     *count = c;
-    mysql_free_result(res);
+    mysql_free_result( res );
   }
   return 0;
 }

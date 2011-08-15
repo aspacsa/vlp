@@ -31,6 +31,7 @@ extern size_t query_delete_case(const char *case_num);
 extern size_t query_select_count_from_case_for(const char *case_num, size_t *count);
 extern size_t query_select_all_from_case_for(const char *case_num, CASE *ptr);
 extern size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count); 
+extern size_t query_update_summon(SUMMON *record);
 extern const char* db_get_error_msg(void);
 extern int write_db_log(char *line);
 
@@ -40,6 +41,7 @@ void view_db_conf(const char *curr_path);
 void set_new_db_conn(const char *curr_path);
 void clear_fields(FIELD *fields[], size_t start, size_t end);
 void set_visible_fields(FIELD *fields[], size_t start, size_t end);
+void set_invisible_fields(FIELD *fields[], size_t start, size_t end);
 void clear_line(size_t row, size_t col);
 void print_line(char line[], size_t row, size_t col);
  
@@ -49,6 +51,8 @@ void actions_menu(const char *curr_path);
 void reports_menu(const char *curr_path);
 void setup_menu(const char *curr_path);
 void dbutils_menu(const char *curr_path);
+
+void summons_dataentry_scr(const char *curr_path, const char *case_num);
 
 char* menu_path(const char* curr_path, const char* sub_menu) {
   sprintf(new_menu_path, "%s > %s", curr_path, sub_menu);
@@ -251,7 +255,7 @@ void cases_menu(const char *curr_path) {
            strncpy( record.postal_add, field_buffer(field[3], 0), MAX_POSADD );
            record.status = atoi( compress_str(field_buffer(field[4], 0)) );
            strncpy( record.delivery_date, compress_str(field_buffer(field[5], 0)), MAX_DELDATE );
-            if (count) {
+           if (count) {
              // update existing record
              if ( query_update_case(&record) == 0 ) {
                mvprintw(20, 10, "[!] Case has been updated.");
@@ -324,15 +328,8 @@ void cases_menu(const char *curr_path) {
 
 void summons_menu(const char *curr_path) {
   const char *screen_title = "Summons";
-  const size_t n_fields = 7;
-  const size_t starty = 4;
-  const size_t startx = 25;
-  FIELD *field[n_fields];
+  FIELD *field[2];
   FORM *my_form;
-  int width[] = { MAX_CANUM, MAX_SUMM_NAME, 
-                   MAX_SUMM_STATUS, MAX_SUMM_REASON,  
-                   MAX_SUMM_CITY, MAX_SUMM_DATE
-                };
  
   initscr();
   curs_set(1);
@@ -341,60 +338,45 @@ void summons_menu(const char *curr_path) {
   noecho();
   keypad(stdscr, TRUE);
 
-  for (size_t i = 0; i < n_fields - 1; ++i) {
-    field[i] = new_field(1, width[i], starty + i * 2, startx, 0, 0);
-  }
-  field[n_fields - 1] = NULL;
+  field[0] = new_field( 1, MAX_CANUM, 4, 25, 0, 0 );
+  field[1] = NULL;
   
   set_field_back(field[0], A_UNDERLINE);
   field_opts_off(field[0], O_AUTOSKIP);
   field_opts_on(field[0], O_BLANK);
-  set_field_back(field[1], A_UNDERLINE);
-  field_opts_off(field[1], O_AUTOSKIP);
-  field_opts_off(field[1], O_VISIBLE);
-  set_field_back(field[2], A_UNDERLINE);
-  field_opts_off(field[2], O_AUTOSKIP);
-  field_opts_off(field[2], O_VISIBLE);
-  set_field_back(field[3], A_UNDERLINE);
-  field_opts_off(field[3], O_AUTOSKIP);
-  field_opts_off(field[3], O_VISIBLE);
-  set_field_back(field[4], A_UNDERLINE);
-  field_opts_off(field[4], O_AUTOSKIP);
-  field_opts_off(field[4], O_VISIBLE);
-  set_field_back(field[5], A_UNDERLINE);
-  field_opts_off(field[5], O_AUTOSKIP);
-  field_opts_off(field[5], O_VISIBLE);
 
   my_form = new_form(field);
   post_form(my_form);
   refresh();
 
-  mvprintw(0, 0, menu_path(curr_path, screen_title));
-  mvprintw(4, 10,   "Case Num:      ");
-  mvprintw(6, 10,  "Enter case number then press (Enter) to start. | (F4) = Exit");
-  move(4, 25);
-  refresh();
-
   int ch;
   do {
+    mvprintw( 0, 0, menu_path( curr_path, screen_title ) );
+    mvprintw( 2, 10,  "Enter case number then press (Enter) to start. | (F4) = Exit" );
+    mvprintw( 4, 10,   "Case Num:      " );
+    refresh();
+    move( 4, 25 );
+    set_current_field( my_form, field[0] );
+  
     ch = getch();
 
-    switch(ch) {
-      case ENTER:
-        if ( current_field(my_form) == field[0] ) {
+    switch ( ch ) {
+      case ENTER: 
+        {
           size_t count = 0;
           char case_num[MAX_CANUM];
 
           form_driver(my_form, REQ_NEXT_FIELD);
-          form_driver(my_form, REQ_END_LINE);
-
           strcpy(case_num, compress_str(field_buffer(field[0], 0) ));
           if ( query_select_count_from_case_for(case_num, &count) ) {
             clear_line(20, 10);
             mvprintw( 20, 10, db_get_error_msg() );
-            move(4, 25);
+            move( 4, 25 );
           } else {
-            if (count) {
+            if ( count ) {
+              summons_dataentry_scr( menu_path( curr_path, screen_title ), case_num );
+              break;
+
               SUMMON *summ_set[MAX_SUMM_SET];
               int scount;
               if (query_select_all_from_summons_for(case_num, summ_set, &scount)) {
@@ -413,19 +395,114 @@ void summons_menu(const char *curr_path) {
         }
         break;
       default:
-        form_driver(my_form, ch);
+        form_driver( my_form, ch );
+        break;
+    }
+  } while ( ch != KEY_F(4) );
+
+  unpost_form( my_form );
+  free_form( my_form );
+  free_field( field[0] );
+  endwin();
+  return;
+}
+
+void summons_dataentry_scr(const char *curr_path, const char *case_num) {
+  const size_t n_fields = 6;
+  const size_t starty = 6;
+  const size_t startx = 25;
+  FIELD *field[n_fields];
+  FORM *my_form;
+  SUMMON record;
+  int width[] = {  MAX_SUMM_NAME, MAX_SUMM_STATUS, MAX_SUMM_REASON,  
+                   MAX_SUMM_CITY, MAX_SUMM_DATE
+                };
+ 
+  for ( size_t i = 0; i < n_fields - 1; ++i )
+    field[i] = new_field(1, width[i], starty + i * 2, startx, 0, 0);
+  field[n_fields - 1] = NULL;
+  
+  set_field_back(field[0], A_UNDERLINE);
+  field_opts_off(field[0], O_AUTOSKIP);
+  set_field_back(field[1], A_UNDERLINE);
+  field_opts_off(field[1], O_AUTOSKIP);
+  set_field_back(field[2], A_UNDERLINE);
+  field_opts_off(field[2], O_AUTOSKIP);
+  set_field_back(field[3], A_UNDERLINE);
+  field_opts_off(field[3], O_AUTOSKIP);
+  set_field_back(field[4], A_UNDERLINE);
+  field_opts_off(field[4], O_AUTOSKIP);
+
+  my_form = new_form(field);
+  post_form(my_form);
+  refresh();
+ 
+  mvprintw( 0, 0,   curr_path );
+  mvprintw( 4, 10,  "Case Number:   %s", case_num );
+  mvprintw( 6, 10,  "Person:        " );
+  mvprintw( 8, 10,  "Status:        " );
+  mvprintw( 10, 10, "Reason:        " );
+  mvprintw( 12, 10, "City:          " );
+  mvprintw( 14, 10, "Date Summoned: " );
+  mvprintw( 16, 10, "(F2) = Update | (F3) = Delete | (F5) = List | (ESC) = Previous Screen" );
+  set_visible_fields( field, 1, 5 );
+  move( 6, 25 );
+  set_current_field( my_form, field[0] );
+ 
+  record.id = 0;
+  int ch;
+  do {
+    ch = getch();
+   
+    switch ( ch ) {
+      case KEY_UP:
+        form_driver(my_form, REQ_PREV_FIELD);
+        form_driver(my_form, REQ_END_LINE);
+        break;
+      case KEY_LEFT:
+        form_driver(my_form, REQ_LEFT_CHAR);
+        break;
+      case KEY_RIGHT:
+        form_driver(my_form, REQ_RIGHT_CHAR);
+        break;
+      case KEY_BACKSPACE:
+        form_driver(my_form, REQ_PREV_CHAR);
+        form_driver(my_form, REQ_DEL_CHAR);
+        break;
+      case ENTER:
+        form_driver( my_form, REQ_NEXT_FIELD );
+        form_driver( my_form, REQ_END_LINE );
+        break;
+      case KEY_F(2):
+        strncpy( record.case_num, case_num, MAX_CANUM );
+        strncpy( record.name, field_buffer(field[0], 0), MAX_SUMM_NAME );
+        record.status = atoi( compress_str( field_buffer(field[1], 0) ) );
+        record.reason = atoi( compress_str( field_buffer(field[2], 0) ) );
+        strncpy( record.city_code, compress_str( field_buffer(field[3], 0) ), MAX_SUMM_CITY );
+        strncpy( record.summon_date, compress_str( field_buffer(field[4], 0) ), MAX_SUMM_DATE );
+
+        if ( query_update_summon( &record ) ) {
+          mvprintw( 18, 10, db_get_error_msg() );
+          move( 6, 25 );
+          set_current_field( my_form, field[0] );
+        } else {
+          clear_fields( field, 0, 4 );
+          mvprintw( 18, 10, "[!] Summon has been updated." );
+          move( 6, 25 );
+          set_current_field( my_form, field[0] );
+        }
+        break;
+      default:
+        form_driver( my_form, ch );
         break;
     }
 
-  } while( ch != KEY_F(4) );
+  } while ( ch != ESC );
 
-  unpost_form(my_form);
-  free_form(my_form);
-  for (size_t i = 0; i < n_fields -1; ++i) {
-    free_field(field[i]);
-  }
-  endwin();
-
+  unpost_form( my_form );
+  free_form( my_form );
+  for ( size_t i = 0; i < n_fields -1; ++i )
+    free_field( field[i] );
   return;
 }
 
@@ -657,26 +734,33 @@ void print_menu(WINDOW *menu_win, char *menu_choices[], int n_choices, int highl
 }
 
 void clear_fields(FIELD *fields[], size_t start, size_t end) {
-  for (size_t i = start; i <= end; i++)
-    set_field_buffer(fields[i], 0, "");
+  for ( size_t i = start; i <= end; i++ )
+    set_field_buffer( fields[i], 0, "" );
   return;
 }
 
 void set_visible_fields(FIELD *fields[], size_t start, size_t end) {
-  for (size_t i = start; i <= end; ++i)
-    field_opts_on(fields[i], O_VISIBLE);
+  for ( size_t i = start; i <= end; ++i )
+    field_opts_on( fields[i], O_VISIBLE );
+  return;
+}
+
+void set_invisible_fields(FIELD *fields[], size_t start, size_t end) {
+  for ( size_t i = start; i <= end; ++i )
+    field_opts_off( fields[i], O_VISIBLE );
   return;
 }
 
 void clear_line(size_t row, size_t col) {
-  memset(scr_line, ' ', 80);
+  memset( scr_line, ' ', 80 );
   scr_line[81] = '\0';
-  mvprintw(row, col, scr_line);
+  mvprintw( row, col, scr_line );
+  refresh();
   return;
 }
 
 void print_line(char line[], size_t row, size_t col) {
-  strncpy(scr_line, line, MAX_SCR_LINE);
-  mvprintw(row, col, scr_line);
+  strncpy( scr_line, line, MAX_SCR_LINE );
+  mvprintw( row, col, scr_line );
   return;
 }
