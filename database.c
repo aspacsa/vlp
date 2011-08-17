@@ -30,20 +30,27 @@ DBPARAMS param;
 char params_list[PARAMS_SIZE];
 char error_message[100];
 
+SUMMON *summ_set[MAX_SUMM_SET];
+SUMMON **summ_ptr = summ_set;   // = &summ_set[0]
+
+
 int read_db_cnf();
 int write_db_log(char *line);
 void prepare_line(char*);
 size_t query_create_new_case(CASE*);
 size_t query_update_case(CASE*);
 size_t query_delete_case(const char *case_num);
-size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count); 
+size_t query_select_all_from_summons_for(const char *case_num);
+SUMMON* get_summon_from_result(void);
+void free_summon_result(void);
+//size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count); 
 size_t query_update_summon(SUMMON*);
 size_t db_error_number(void);
 const char* db_error_message(void);
 size_t query_select_count_from_case_for(const char *case_num, size_t *count);
 const char* db_get_error_msg(void);
 
-extern dev_mode;
+extern size_t dev_mode;
 
 int init_db(void) {
   conn = mysql_init( NULL );
@@ -198,10 +205,13 @@ size_t query_select_all_from_case_for(const char *case_num, CASE *ptr) {
   return 0;
 }
 
-size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count) {
+//size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count) {
+size_t query_select_all_from_summons_for(const char *case_num) {
   char query[BUFSIZ];
   size_t result = 0;
-  *count = 0;
+  size_t count = 0;
+  summ_ptr = summ_set;;
+  //*count = 0;
 
   sprintf( query, "SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate"
                  " FROM summons WHERE CaseNumber = '%s'", case_num );
@@ -213,7 +223,8 @@ size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[
     return error;
   } else {
     res = mysql_use_result(conn);
-    while( ( ( row = mysql_fetch_row(res) ) != NULL ) && ( *count <= MAX_SUMM_SET ) ) {
+    //while( ( ( row = mysql_fetch_row(res) ) != NULL ) && ( *count <= MAX_SUMM_SET ) ) {
+    while( ( ( row = mysql_fetch_row(res) ) != NULL ) && ( count <= MAX_SUMM_SET ) ) {
       SUMMON *summPtr = malloc( sizeof(SUMMON) );
       if ( summPtr == NULL ) {
         result = 1;
@@ -227,11 +238,23 @@ size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[
         strncpy( summPtr->city_code, row[5], MAX_SUMM_CITY );
         strncpy( summPtr->summon_date, row[6], MAX_SUMM_DATE );
       }
-      summ_set[*count++] = summPtr;
+      summ_set[count++] = summPtr;
+      //summ_set[*count++] = summPtr;
     }
     mysql_free_result( res );
   }
   return result;
+}
+
+SUMMON* get_summon_from_result(void) {
+  return *summ_ptr++; 
+}
+
+void free_summon_result(void) {
+  summ_ptr = summ_set;
+  for ( int i = 0; i <= MAX_SUMM_SET; ++i )
+    free( *summ_ptr++ );
+  return;
 }
 
 size_t query_update_summon(SUMMON *record) {

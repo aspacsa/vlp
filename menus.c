@@ -30,7 +30,10 @@ extern size_t query_update_case(CASE*);
 extern size_t query_delete_case(const char *case_num);
 extern size_t query_select_count_from_case_for(const char *case_num, size_t *count);
 extern size_t query_select_all_from_case_for(const char *case_num, CASE *ptr);
-extern size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count); 
+extern size_t query_select_all_from_summons_for(const char *case_num);
+extern SUMMON* get_summon_from_result(void);
+extern void free_summon_result(void);
+//extern size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count); 
 extern size_t query_update_summon(SUMMON *record);
 extern const char* db_get_error_msg(void);
 extern int write_db_log(char *line);
@@ -53,6 +56,7 @@ void setup_menu(const char *curr_path);
 void dbutils_menu(const char *curr_path);
 
 void summons_dataentry_scr(const char *curr_path, const char *case_num);
+int summons_list_scr(SUMMON **summons, size_t count, size_t *selection);
 
 char* menu_path(const char* curr_path, const char* sub_menu) {
   sprintf(new_menu_path, "%s > %s", curr_path, sub_menu);
@@ -89,7 +93,7 @@ void main_menu(const char *curr_path) {
     mvprintw(16, 10, "7. Exit");
     mvprintw(18, 10, "Select an option from the above menu, use only the numbers for selection.");
     refresh();
-    choice = toupper(getch());
+    choice = getch();
     switch(choice) {
       case '1':
         choice = 0;
@@ -376,20 +380,6 @@ void summons_menu(const char *curr_path) {
             if ( count ) {
               summons_dataentry_scr( menu_path( curr_path, screen_title ), case_num );
               break;
-
-              SUMMON *summ_set[MAX_SUMM_SET];
-              int scount;
-              if (query_select_all_from_summons_for(case_num, summ_set, &scount)) {
-                clear_line(20, 10);
-                mvprintw( 20, 10, db_get_error_msg() );
-                move(4, 25);
-              } else {
-                set_visible_fields(field, 1, 5);
-                clear_line(6, 10);
-                print_line("(A) = Add | (D) = Delete | (F4) = Exit", 20, 10);
-                for (int i = 0; i < scount && i <= MAX_SUMM_SET; ++i)
-                  free(summ_set[i]);
-              }
             }
           }
         }
@@ -492,6 +482,34 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
           set_current_field( my_form, field[0] );
         }
         break;
+      case KEY_F(5):
+        if ( query_select_all_from_summons_for( case_num ) ) {
+          clear_line(20, 10);
+          mvprintw( 20, 10, db_get_error_msg() );
+          move(4, 25);
+        } else {
+          SUMMON *summ_ptr;
+          SUMMON *summons[MAX_SUMM_SET];
+          size_t count = 0;
+
+          while ( ( summ_ptr = get_summon_from_result() ) != NULL ) {           
+            summons[count] = summ_ptr;
+            count++;
+          }
+          if ( count ) {
+            size_t selection;
+
+            mvprintw( 20, 5, "List:" );
+            summons_list_scr(summons, count, &selection);
+            mvprintw( 19, 5, "Selection: %u", selection );
+          } else {
+            mvprintw( 20, 10, "[!] Case %s has no summons.", case_num );
+            move( 6, 25 );
+            set_current_field( my_form, field[0] );
+          }
+          free_summon_result();
+        }
+        break;
       default:
         form_driver( my_form, ch );
         break;
@@ -501,9 +519,60 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
 
   unpost_form( my_form );
   free_form( my_form );
-  for ( size_t i = 0; i < n_fields -1; ++i )
+  for ( size_t i = 0; i < n_fields - 1; ++i )
     free_field( field[i] );
   return;
+}
+
+int summons_list_scr(SUMMON *summons[], size_t count, size_t *selection) {
+  SUMMON *summon;
+
+  for ( size_t i = 0; i < count; ++i ) {
+    summon = *summons++;
+    mvprintw( 21 + i, 10, "%u. %s", i == 10 ? 0 : i + 1, summon->name );
+  }
+ 
+  *selection = 0;
+  int ch;
+
+  do {
+    ch = getch();
+
+    switch (ch) {
+      case '1': 
+        *selection = 1;
+        break;
+      case '2':
+        *selection = 2;
+        break;
+      case '3':
+        *selection = 3;
+        break;
+      case '4':
+        *selection = 4;
+        break;
+      case '5':
+        *selection = 5;
+        break;
+      case '6':
+        *selection = 6;
+        break;
+      case '7': 
+        *selection = 7;
+        break;
+      case '8': 
+        *selection = 8;
+        break;
+      case '9':
+        *selection = 9;
+        break;
+      case '0':
+        *selection = 10;        
+        break;
+    } 
+  } while ( ch != ESC && *selection == 0 );
+  refresh();
+  return 0;
 }
 
 void actions_menu(const char *curr_path) {

@@ -6,7 +6,7 @@ vlp.o: vlp.c menus.h database.h
 	$(CC) -c vlp.c
 
 database.o: database.c database.h records.h
-	sh -c "$(CC) -c database.c $$(mysql_config --cflags) $$(mysql_config --libs)"
+	sh -c "$(CC) -c database.c -std=c99 $$(mysql_config --cflags) $$(mysql_config --libs)"
 
 menus.o: menus.c menus.h utils.h records.h
 	$(CC) -c menus.c -std=c99 -lform -lncurses
