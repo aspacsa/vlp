@@ -33,7 +33,6 @@ extern size_t query_select_all_from_case_for(const char *case_num, CASE *ptr);
 extern size_t query_select_all_from_summons_for(const char *case_num);
 extern SUMMON* get_summon_from_result(void);
 extern void free_summon_result(void);
-//extern size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count); 
 extern size_t query_update_summon(SUMMON *record);
 extern const char* db_get_error_msg(void);
 extern int write_db_log(char *line);
@@ -56,7 +55,7 @@ void setup_menu(const char *curr_path);
 void dbutils_menu(const char *curr_path);
 
 void summons_dataentry_scr(const char *curr_path, const char *case_num);
-int summons_list_scr(SUMMON **summons, size_t count, size_t *selection);
+void summons_list_scr(SUMMON **summons, size_t count, size_t *selection);
 
 char* menu_path(const char* curr_path, const char* sub_menu) {
   sprintf(new_menu_path, "%s > %s", curr_path, sub_menu);
@@ -470,7 +469,6 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         record.reason = atoi( compress_str( field_buffer(field[2], 0) ) );
         strncpy( record.city_code, compress_str( field_buffer(field[3], 0) ), MAX_SUMM_CITY );
         strncpy( record.summon_date, compress_str( field_buffer(field[4], 0) ), MAX_SUMM_DATE );
-
         if ( query_update_summon( &record ) ) {
           mvprintw( 18, 10, db_get_error_msg() );
           move( 6, 25 );
@@ -480,13 +478,13 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
           mvprintw( 18, 10, "[!] Summon has been updated." );
           move( 6, 25 );
           set_current_field( my_form, field[0] );
+          record.id = 0;
         }
         break;
       case KEY_F(5):
         if ( query_select_all_from_summons_for( case_num ) ) {
           clear_line(20, 10);
           mvprintw( 20, 10, db_get_error_msg() );
-          move(4, 25);
         } else {
           SUMMON *summ_ptr;
           SUMMON *summons[MAX_SUMM_SET];
@@ -498,23 +496,32 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
           }
           if ( count ) {
             size_t selection;
+            char code_buff[4];
 
-            mvprintw( 20, 5, "List:" );
             summons_list_scr(summons, count, &selection);
-            mvprintw( 19, 5, "Selection: %u", selection );
+            if ( selection > 0 ) {
+              summ_ptr = summons[selection - 1];
+              record.id = summ_ptr->id;
+              set_field_buffer( field[0], 0, summ_ptr->name );
+              snprintf( code_buff, 4, "%c", summ_ptr->status );
+              set_field_buffer( field[1], 0, code_buff );
+              snprintf( code_buff, 4, "%c", summ_ptr->reason );
+              set_field_buffer( field[2], 0, code_buff );
+              set_field_buffer( field[3], 0, summ_ptr->city_code );
+              set_field_buffer( field[4], 0, summ_ptr->summon_date );
+            }
+            free_summon_result();
           } else {
             mvprintw( 20, 10, "[!] Case %s has no summons.", case_num );
-            move( 6, 25 );
-            set_current_field( my_form, field[0] );
           }
-          free_summon_result();
         }
+        set_current_field( my_form, field[0] );
+        move( 6, 25 );
         break;
       default:
         form_driver( my_form, ch );
         break;
     }
-
   } while ( ch != ESC );
 
   unpost_form( my_form );
@@ -524,14 +531,14 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
   return;
 }
 
-int summons_list_scr(SUMMON *summons[], size_t count, size_t *selection) {
+void summons_list_scr(SUMMON *summons[], size_t count, size_t *selection) {
   SUMMON *summon;
 
+  mvprintw( 20, 5, "List:" );
   for ( size_t i = 0; i < count; ++i ) {
     summon = *summons++;
     mvprintw( 21 + i, 10, "%u. %s", i == 10 ? 0 : i + 1, summon->name );
   }
- 
   *selection = 0;
   int ch;
 
@@ -539,40 +546,32 @@ int summons_list_scr(SUMMON *summons[], size_t count, size_t *selection) {
     ch = getch();
 
     switch (ch) {
-      case '1': 
-        *selection = 1;
-        break;
-      case '2':
-        *selection = 2;
-        break;
-      case '3':
-        *selection = 3;
-        break;
-      case '4':
-        *selection = 4;
-        break;
-      case '5':
-        *selection = 5;
-        break;
-      case '6':
-        *selection = 6;
-        break;
-      case '7': 
-        *selection = 7;
-        break;
-      case '8': 
-        *selection = 8;
-        break;
-      case '9':
-        *selection = 9;
-        break;
-      case '0':
-        *selection = 10;        
-        break;
+      case '1':  *selection = 1;
+                 break;
+      case '2':  *selection = 2;
+                 break;
+      case '3':  *selection = 3;
+                 break;
+      case '4':  *selection = 4;
+                 break;
+      case '5':  *selection = 5;
+                 break;
+      case '6':  *selection = 6;
+                 break;
+      case '7':  *selection = 7;
+                 break;
+      case '8':  *selection = 8;
+                 break;
+      case '9':  *selection = 9;
+                 break;
+      case '0':  *selection = 10;        
+                 break;
     } 
-  } while ( ch != ESC && *selection == 0 );
-  refresh();
-  return 0;
+  } while ( ch != ESC && ( *selection == 0 || *selection > count ) );
+  clear_line( 20, 5);
+  for ( size_t i = 0; i < count; ++i )
+    clear_line( 21 + i, 10 );
+  return;
 }
 
 void actions_menu(const char *curr_path) {

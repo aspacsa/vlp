@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #define VLP_CNF_FILE "vlp.cnf"
 #define DB_LOG_FILE "db.log"
@@ -32,6 +33,7 @@ char error_message[100];
 
 SUMMON *summ_set[MAX_SUMM_SET];
 SUMMON **summ_ptr = summ_set;   // = &summ_set[0]
+size_t summ_set_count = 0;
 
 
 int read_db_cnf();
@@ -41,9 +43,8 @@ size_t query_create_new_case(CASE*);
 size_t query_update_case(CASE*);
 size_t query_delete_case(const char *case_num);
 size_t query_select_all_from_summons_for(const char *case_num);
-SUMMON* get_summon_from_result(void);
+const SUMMON const * get_summon_from_result(void);
 void free_summon_result(void);
-//size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count); 
 size_t query_update_summon(SUMMON*);
 size_t db_error_number(void);
 const char* db_error_message(void);
@@ -112,11 +113,13 @@ int read_db_cnf() {
 
 int write_db_log(char *line ) {
   FILE *fp;
+  time_t eventtime;
   
+  time(&eventtime);
   fp = fopen( DB_LOG_FILE, "a" );
   if ( fp == NULL )
     return 1;
-  fprintf( fp, "\n\nEntry: {\n %s \n}", line );
+  fprintf( fp, "\n\nEntry: %s{\n %s \n}", ctime(&eventtime), line );
 
   fclose( fp );
   return 0;
@@ -205,13 +208,13 @@ size_t query_select_all_from_case_for(const char *case_num, CASE *ptr) {
   return 0;
 }
 
-//size_t query_select_all_from_summons_for(const char *case_num, SUMMON *summ_set[], int *count) {
 size_t query_select_all_from_summons_for(const char *case_num) {
   char query[BUFSIZ];
   size_t result = 0;
   size_t count = 0;
-  summ_ptr = summ_set;;
-  //*count = 0;
+
+  memset( summ_set, 0, MAX_SUMM_SET );
+  summ_ptr = summ_set;
 
   sprintf( query, "SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate"
                  " FROM summons WHERE CaseNumber = '%s'", case_num );
@@ -223,7 +226,6 @@ size_t query_select_all_from_summons_for(const char *case_num) {
     return error;
   } else {
     res = mysql_use_result(conn);
-    //while( ( ( row = mysql_fetch_row(res) ) != NULL ) && ( *count <= MAX_SUMM_SET ) ) {
     while( ( ( row = mysql_fetch_row(res) ) != NULL ) && ( count <= MAX_SUMM_SET ) ) {
       SUMMON *summPtr = malloc( sizeof(SUMMON) );
       if ( summPtr == NULL ) {
@@ -233,27 +235,35 @@ size_t query_select_all_from_summons_for(const char *case_num) {
         summPtr->id = atoi( row[0] );
         strncpy( summPtr->case_num, row[1], MAX_CANUM );
         strncpy( summPtr->name, row[2], MAX_SUMM_NAME );
-        summPtr->status = atoi( row[3] );
-        summPtr->reason = atoi( row[4] );
+        summPtr->status = (char)*row[3];
+        summPtr->reason = (char)*row[4];
         strncpy( summPtr->city_code, row[5], MAX_SUMM_CITY );
         strncpy( summPtr->summon_date, row[6], MAX_SUMM_DATE );
       }
       summ_set[count++] = summPtr;
-      //summ_set[*count++] = summPtr;
     }
     mysql_free_result( res );
   }
+  summ_set_count = count;
   return result;
 }
 
-SUMMON* get_summon_from_result(void) {
+const SUMMON const * get_summon_from_result(void) {
   return *summ_ptr++; 
 }
 
 void free_summon_result(void) {
+  size_t i = 0;
+
   summ_ptr = summ_set;
-  for ( int i = 0; i <= MAX_SUMM_SET; ++i )
+  for ( i = 0; i <= summ_set_count - 1; ++i )
     free( *summ_ptr++ );
+  if ( dev_mode ) {
+    char msg[40];
+    sprintf( msg, "Elements freed from summ_set: %u", i );
+    write_db_log( msg );
+  }
+  summ_set_count = 0;
   return;
 }
 

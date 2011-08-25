@@ -579,3 +579,713 @@ Entry: {
 Entry: {
  SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
 }
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '666' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '666' 
+}
+
+Entry: {
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('666'), TRIM('9021'),          TRIM('jhjhj dfhsdk fkjsdhfj sdkfhksdjhskfhsdkj X         jhsdk fksd fkjsdhf sdk fsjkhfksjdfhksfh X          o'), TRIM('jhsdk fksd fkjsdhf sdk fsjkhfksjdfhksfh X          o'),           2, TRIM('2011-11-11') ) 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '666' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '888' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '888' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '999' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '999' 
+}
+
+Entry: {
+ UPDATE case_headers SET CivilNumber = TRIM('12345678'),                       PhysicalAdd = TRIM('dsfsdsdfd d sdfsdfsdfdAAAAAAAAAAAAAA X             dsfs fdfdf  fdsdf sdf sdfsdf sf sdf AAAAAB X       o'),                       PostalAdd = TRIM('dsfs fdfdf  fdsdf sdf sdfsdf sf sdf AAAAAB X       o'),                       Status = 9,                       DeliveryDate = TRIM('2011-11-12') WHERE CaseNumber = '999' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '999' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ UPDATE case_headers SET CivilNumber = TRIM('87654'),                       PhysicalAdd = TRIM('gfgdfgdfg                                          dfgdfgdfg XXXXXXXXXXXXXXXXXXXXXXXXXXXXX            o'),                       PostalAdd = TRIM('dfgdfgdfg XXXXXXXXXXXXXXXXXXXXXXXXXXXXX            o'),                       Status = 2,                       DeliveryDate = TRIM('2011-10-11') WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '888' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '999' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '999' 
+}
+
+Entry: {
+ UPDATE case_headers SET CivilNumber = TRIM('12345678'),                       PhysicalAdd = TRIM('dsfsdsdfd d sdfsdfsdfdAAAAAAAAAAAAAA X             dsfs fdfdf  fdsdf sdf sdfsdf sf sdf AAAAAB X       o'),                       PostalAdd = TRIM('dsfs fdfdf  fdsdf sdf sdfsdf sf sdf AAAAAB X       o'),                       Status = 5,                       DeliveryDate = TRIM('2011-11-12') WHERE CaseNumber = '999' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '999' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '555' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '555' 
+}
+
+Entry: {
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('555'), TRIM('2345'),          TRIM('gdfgdf dfg dfgdgd dfdfgdgfdg                       dfgdf gdgd  dfgdgd dfd gd                          o'), TRIM('dfgdf gdgd  dfgdgd dfd gd                          o'),           1, TRIM('2011-11-11') ) 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '555' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '444' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '444' 
+}
+
+Entry: {
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('444'), TRIM('2312'),          TRIM('hfhfghfghfgfhgf                                    fghfghfghfgh                                       ¿ã'), TRIM('fghfghfghfgh                                       ¿ã'),           3, TRIM('2011-11-11') ) 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '22222' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '222' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '222' 
+}
+
+Entry: {
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('222'), TRIM('4455'),          TRIM('gfdfgdf dfg fdgdf g dfg                            dfg dfgfdgdfgdfgdf                                 o'), TRIM('dfg dfgfdgdfgdfgdf                                 o'),           3, TRIM('2011-11-11') ) 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('333'), TRIM('Manuel Perez                                       å¿'), 2, 3, TRIM('CAR2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 10 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 10 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 9 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 9 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 9 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 9 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 9 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ Elements freed from summ_set: 9 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ Elements freed from summ_set: 4 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ freed 
+}
+
+Entry: {
+ Elements freed from summ_set: 1 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 3 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 4 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ Elements freed from summ_set: 1 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ Elements freed from summ_set: 1 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('333'), TRIM('Maria Sanchez Toro                                 ¬¿'), 1, 2, TRIM('CAR2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 4 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ Elements freed from summ_set: 1 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: {
+ Elements freed from summ_set: 1 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 4 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 4 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 4 
+}
+
+Entry: {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: {
+ Elements freed from summ_set: 4 
+}
+
+Entry: (Wed Aug 24 16:06:14 2011
+) {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: (Wed Aug 24 16:06:56 2011
+) {
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: (Wed Aug 24 16:08:11 2011
+) {
+ Elements freed from summ_set: 4 
+}
+
+Entry: ( Wed Aug 24 16:09:10 2011
+ ) {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Wed Aug 24 16:10:03 2011
+ {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Wed Aug 24 16:11:17 2011
+ {
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: Wed Aug 24 16:13:08 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Wed Aug 24 16:13:17 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Wed Aug 24 16:13:42 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Wed Aug 24 16:18:58 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: Wed Aug 24 16:19:00 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: Wed Aug 24 16:19:01 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Wed Aug 24 21:23:55 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: Wed Aug 24 21:23:57 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: Wed Aug 24 21:24:04 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Wed Aug 24 21:24:21 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('333'),     Name = TRIM('Maria Sanchez Toro                                 Â¿'),     Status = 1,     Reason = 2,     CityCode = TRIM('CAR2011-11-09'),     SummonDate = TRIM('2011-11-09') WHERE id = 7 
+}
+
+Entry: Wed Aug 24 21:24:27 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: Wed Aug 24 21:24:32 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Wed Aug 24 21:25:34 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '333' 
+}
+
+Entry: Wed Aug 24 21:26:21 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('333'), TRIM('Javier Vega Solis                                  Â¿'), 2, 2, TRIM('CAR2011-10-10'), TRIM('2011-10-10') ) 
+}
+
+Entry: Wed Aug 24 21:26:23 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '333' 
+}
+
+Entry: Wed Aug 24 21:26:52 2011
+{
+ Elements freed from summ_set: 2 
+}
