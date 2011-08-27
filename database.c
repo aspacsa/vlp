@@ -31,7 +31,7 @@ DBPARAMS param;
 char params_list[PARAMS_SIZE];
 char error_message[100];
 
-SUMMON *summ_set[MAX_SUMM_SET];
+SUMMON *summ_set[MAX_SUMM_SET] = {NULL};
 SUMMON **summ_ptr = summ_set;   // = &summ_set[0]
 size_t summ_set_count = 0;
 
@@ -46,6 +46,7 @@ size_t query_select_all_from_summons_for(const char *case_num);
 const SUMMON const * get_summon_from_result(void);
 void free_summon_result(void);
 size_t query_update_summon(SUMMON*);
+size_t query_delete_summon(size_t summ_id);
 size_t db_error_number(void);
 const char* db_error_message(void);
 size_t query_select_count_from_case_for(const char *case_num, size_t *count);
@@ -213,11 +214,12 @@ size_t query_select_all_from_summons_for(const char *case_num) {
   size_t result = 0;
   size_t count = 0;
 
-  memset( summ_set, 0, MAX_SUMM_SET );
   summ_ptr = summ_set;
+  for ( int i = 0; i <= MAX_SUMM_SET - 1; ++i )
+    summ_set[i] = NULL;
 
   sprintf( query, "SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate"
-                 " FROM summons WHERE CaseNumber = '%s'", case_num );
+                  " FROM summons WHERE CaseNumber = '%s'", case_num );
   if ( dev_mode )
     write_db_log( query );
   db_error_number();
@@ -290,6 +292,17 @@ size_t query_update_summon(SUMMON *record) {
                              record->reason, record->city_code, record->summon_date
            );
   }
+  if ( dev_mode )
+    write_db_log( query );
+  db_error_number();
+  return mysql_query( conn, query );
+}
+
+size_t query_delete_summon(size_t summ_id) {
+  char query[BUFSIZ];
+
+  sprintf( query, "DELETE FROM summons"
+                  " WHERE id = %u", summ_id );
   if ( dev_mode )
     write_db_log( query );
   db_error_number();

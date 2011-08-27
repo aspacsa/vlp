@@ -34,6 +34,7 @@ extern size_t query_select_all_from_summons_for(const char *case_num);
 extern SUMMON* get_summon_from_result(void);
 extern void free_summon_result(void);
 extern size_t query_update_summon(SUMMON *record);
+extern size_t query_delete_summon(size_t summ_id);
 extern const char* db_get_error_msg(void);
 extern int write_db_log(char *line);
 
@@ -481,9 +482,26 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
           record.id = 0;
         }
         break;
-      case KEY_F(5):
+      case KEY_F(3):
+        if ( record.id > 0 ) {
+          mvprintw( 20, 10, "[?] Delete summon '%u' ? [Y/n]", record.id );
+          int ch = toupper( getch() );
+          if ( ch == 'Y' ) {
+            if ( query_delete_summon( record.id ) ) {
+              mvprintw( 20, 10, db_get_error_msg() );
+            } else {
+              clear_fields( field, 0, 4 );    
+              mvprintw( 20, 10, "[!] Summon '%u' has been deleted.", record.id );
+              move( 6, 25 );
+              set_current_field( my_form, field[0] );
+              record.id = 0;
+            }
+          }
+        }
+        break;
+       case KEY_F(5):
         if ( query_select_all_from_summons_for( case_num ) ) {
-          clear_line(20, 10);
+          clear_line( 20, 10 );
           mvprintw( 20, 10, db_get_error_msg() );
         } else {
           SUMMON *summ_ptr;
@@ -498,7 +516,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
             size_t selection;
             char code_buff[4];
 
-            summons_list_scr(summons, count, &selection);
+            summons_list_scr( summons, count, &selection );
             if ( selection > 0 ) {
               summ_ptr = summons[selection - 1];
               record.id = summ_ptr->id;
@@ -512,6 +530,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
             }
             free_summon_result();
           } else {
+            clear_line( 20, 10 );
             mvprintw( 20, 10, "[!] Case %s has no summons.", case_num );
           }
         }

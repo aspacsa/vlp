@@ -1289,3 +1289,383 @@ Entry: Wed Aug 24 21:26:52 2011
 {
  Elements freed from summ_set: 2 
 }
+
+Entry: Fri Aug 26 18:36:37 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Fri Aug 26 18:36:40 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Fri Aug 26 18:36:43 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Fri Aug 26 18:36:52 2011
+{
+ DELETE FROM summons WHERE id = 3 
+}
+
+Entry: Fri Aug 26 18:37:00 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:41:11 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 08:42:08 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:42:10 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:42:13 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 08:42:36 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('777'), TRIM('tets                                               ø¿'), 1, 1, TRIM('BAY2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: Sat Aug 27 08:42:39 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:42:43 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 08:43:04 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:43:06 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:43:11 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 08:43:15 2011
+{
+ DELETE FROM summons WHERE id = 9 
+}
+
+Entry: Sat Aug 27 08:43:24 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:43:44 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 08:43:57 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:44:20 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('777'), TRIM('coco                                               æ¿'), 1, 1, TRIM('BAY2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: Sat Aug 27 08:44:21 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:44:24 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 08:48:56 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:48:58 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:49:01 2011
+{
+ Elements freed from summ_set: 5 
+}
+
+Entry: Sat Aug 27 08:49:05 2011
+{
+ DELETE FROM summons WHERE id = 10 
+}
+
+Entry: Sat Aug 27 08:49:07 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:53:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:53:54 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('777'), TRIM('neron                                              Ü¿'), 1, 1, TRIM('CAN2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: Sat Aug 27 08:53:56 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 08:53:59 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 09:25:49 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:25:50 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:25:56 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 09:26:02 2011
+{
+ DELETE FROM summons WHERE id = 11 
+}
+
+Entry: Sat Aug 27 09:26:10 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:26:53 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 09:35:57 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:36:00 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:36:06 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 09:36:21 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('777'), TRIM('coco                                               ’¿'), 1, 1, TRIM('CAR2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: Sat Aug 27 09:36:24 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:36:27 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 09:46:28 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:46:30 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:46:32 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 09:46:36 2011
+{
+ DELETE FROM summons WHERE id = 12 
+}
+
+Entry: Sat Aug 27 09:46:38 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:46:42 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 09:50:54 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:51:16 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('777'), TRIM('COCO QUI                                            ¿'), 1, 1, TRIM('CAR2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: Sat Aug 27 09:51:17 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:51:20 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 09:51:42 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:51:44 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:51:45 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Sat Aug 27 09:51:48 2011
+{
+ DELETE FROM summons WHERE id = 13 
+}
+
+Entry: Sat Aug 27 09:51:50 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 09:52:02 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 09:53:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '888' 
+}
+
+Entry: Sat Aug 27 09:53:56 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('888'), TRIM('Raul Castro                                        ’¿'), 2, 3, TRIM('BAY2011-12-12'), TRIM('2011-12-12') ) 
+}
+
+Entry: Sat Aug 27 09:54:18 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('888'), TRIM('Hilda Acosta                                       ’¿'), 1, 2, TRIM('CAR2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: Sat Aug 27 09:54:51 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('888'), TRIM('Jacinta Dominguez                                  ’¿'), 1, 1, TRIM('CAR2011-11-11'), TRIM('2011-11-11') ) 
+}
+
+Entry: Sat Aug 27 09:54:56 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '888' 
+}
+
+Entry: Sat Aug 27 09:55:00 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 09:57:05 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '888' 
+}
+
+Entry: Sat Aug 27 09:57:07 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '888' 
+}
+
+Entry: Sat Aug 27 09:57:09 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Aug 27 09:57:13 2011
+{
+ DELETE FROM summons WHERE id = 14 
+}
+
+Entry: Sat Aug 27 09:57:22 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '888' 
+}
+
+Entry: Sat Aug 27 09:57:29 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Aug 27 09:57:31 2011
+{
+ DELETE FROM summons WHERE id = 16 
+}
+
+Entry: Sat Aug 27 09:57:33 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '888' 
+}
+
+Entry: Sat Aug 27 09:57:48 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Sat Aug 27 09:57:51 2011
+{
+ DELETE FROM summons WHERE id = 15 
+}
+
+Entry: Sat Aug 27 09:57:53 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '888' 
+}
