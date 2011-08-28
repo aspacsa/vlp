@@ -1669,3 +1669,173 @@ Entry: Sat Aug 27 09:57:53 2011
 {
  SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '888' 
 }
+
+Entry: Sat Aug 27 13:44:06 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 13:46:15 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 13:48:47 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 14:34:50 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 14:34:50 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 17:13:01 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 17:13:01 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:35:22 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:35:22 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:35:39 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('777', 'This is a test.                                                                                                                                                                                                             ', '2011-11-11', 1, NOW() )  
+}
+
+Entry: Sat Aug 27 22:36:33 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:36:33 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:36:33 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '777' ORDER BY EntryAt DESC 
+}
+
+Entry: Sat Aug 27 22:51:33 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:51:33 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:51:33 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '777' ORDER BY EntryAt DESC 
+}
+
+Entry: Sat Aug 27 22:52:11 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('777', 'This is another action buuuttttttttt issssssss         lonnnnger and longer.                                                                                                                                                ', '2011-12-12', 1, NOW() )  
+}
+
+Entry: Sat Aug 27 22:54:38 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:54:38 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:54:38 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '777' ORDER BY EntryAt DESC 
+}
+
+Entry: Sat Aug 27 22:59:28 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:59:28 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 22:59:28 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '777' ORDER BY EntryAt DESC 
+}
+
+Entry: Sat Aug 27 23:00:07 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('777', 'This is a note to test the fuctionality.                                                                                                                                                                                    ', '2011-03-04', 2, NOW() )  
+}
+
+Entry: Sat Aug 27 23:00:34 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 23:00:34 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 23:00:34 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '777' ORDER BY EntryAt DESC 
+}
+
+Entry: Sat Aug 27 23:05:44 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 23:05:44 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 23:05:44 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '777' ORDER BY EntryAt DESC 
+}
+
+Entry: Sat Aug 27 23:06:26 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('777', 'This', '2011-09-09', 3, NOW() )  
+}
+
+Entry: Sat Aug 27 23:06:55 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 23:06:55 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '777' 
+}
+
+Entry: Sat Aug 27 23:06:55 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '777' ORDER BY EntryAt DESC 
+}

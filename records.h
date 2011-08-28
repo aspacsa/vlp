@@ -12,6 +12,11 @@
 #define MAX_SUMM_DATE 11
 #define MAX_SUMM_SET 10
 
+#define MAX_ACT_NOTE 255
+#define MAX_ACT_TYPE 2
+#define MAX_ACT_DATE 11
+#define MAX_ACT_SET 40
+
 
 typedef struct {
   char number[MAX_CANUM];
@@ -20,7 +25,7 @@ typedef struct {
   char postal_add[MAX_POSADD];
   int status;
   char delivery_date[MAX_DELDATE];
-} CASE;
+} Case_t;
 
 typedef struct {
   int id;
@@ -30,5 +35,13 @@ typedef struct {
   int reason;
   char city_code[MAX_SUMM_CITY];
   char summon_date[MAX_SUMM_DATE];
-} SUMMON;
+} Summon_t;
+
+typedef struct {
+  int id;
+  char case_num[MAX_CANUM];
+  char note[MAX_ACT_NOTE];
+  int type;
+  char entry_date[MAX_ACT_DATE];
+} Action_t;
 

@@ -25,16 +25,20 @@ extern int set_db_cnf(const char *server, const char *user, const char *pass, co
 extern int init_db(void);
 extern int connect_to_db(void);
 extern void close_db(void);
-extern size_t query_create_new_case(CASE*);
-extern size_t query_update_case(CASE*);
+extern size_t query_create_new_case(Case_t *);
+extern size_t query_update_case(Case_t *);
 extern size_t query_delete_case(const char *case_num);
 extern size_t query_select_count_from_case_for(const char *case_num, size_t *count);
-extern size_t query_select_all_from_case_for(const char *case_num, CASE *ptr);
+extern size_t query_select_all_from_case_for(const char *case_num, Case_t *ptr);
 extern size_t query_select_all_from_summons_for(const char *case_num);
-extern SUMMON* get_summon_from_result(void);
+extern Summon_t * get_summon_from_result(void);
 extern void free_summon_result(void);
-extern size_t query_update_summon(SUMMON *record);
+extern size_t query_update_summon(Summon_t *record);
 extern size_t query_delete_summon(size_t summ_id);
+extern size_t query_select_count_from_actions_for(const char *case_num, size_t *count);
+extern size_t query_select_all_from_actions_for(const char *case_num);
+extern Action_t * get_action_from_result(void);
+extern size_t query_add_action(const Action_t const * record);
 extern const char* db_get_error_msg(void);
 extern int write_db_log(char *line);
 
@@ -56,7 +60,11 @@ void setup_menu(const char *curr_path);
 void dbutils_menu(const char *curr_path);
 
 void summons_dataentry_scr(const char *curr_path, const char *case_num);
-void summons_list_scr(SUMMON **summons, size_t count, size_t *selection);
+void summons_list_scr(Summon_t **summons, size_t count, size_t *selection);
+
+void actions_dataentry_scr(const char *curr_path, const char *case_num);
+size_t actions_list(const char *case_num); 
+void print_action(const Action_t * action, size_t idx);
 
 char* menu_path(const char* curr_path, const char* sub_menu) {
   sprintf(new_menu_path, "%s > %s", curr_path, sub_menu);
@@ -213,7 +221,7 @@ void cases_menu(const char *curr_path) {
           } else {
             if (count) {
               //call routine to fill in fields
-              CASE record;
+              Case_t record;
               if ( query_select_all_from_case_for(case_num, &record) ) {
                 mvprintw(20, 10, db_get_error_msg());
                 move(4, 25);
@@ -252,7 +260,7 @@ void cases_menu(const char *curr_path) {
         if ( query_select_count_from_case_for(case_num, &count) ) {
           mvprintw( 20, 10, db_get_error_msg() );
          } else {
-           CASE record;
+           Case_t record;
            strncpy( record.number, compress_str(field_buffer(field[0], 0)), MAX_CANUM );
            strncpy( record.civil, compress_str(field_buffer(field[1], 0)), MAX_CINUM );
            strncpy( record.physical_add, field_buffer(field[2], 0), MAX_PHYADD );
@@ -403,7 +411,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
   const size_t startx = 25;
   FIELD *field[n_fields];
   FORM *my_form;
-  SUMMON record;
+  Summon_t record;
   int width[] = {  MAX_SUMM_NAME, MAX_SUMM_STATUS, MAX_SUMM_REASON,  
                    MAX_SUMM_CITY, MAX_SUMM_DATE
                 };
@@ -504,8 +512,8 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
           clear_line( 20, 10 );
           mvprintw( 20, 10, db_get_error_msg() );
         } else {
-          SUMMON *summ_ptr;
-          SUMMON *summons[MAX_SUMM_SET];
+          Summon_t *summ_ptr;
+          Summon_t *summons[MAX_SUMM_SET];
           size_t count = 0;
 
           while ( ( summ_ptr = get_summon_from_result() ) != NULL ) {           
@@ -550,8 +558,8 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
   return;
 }
 
-void summons_list_scr(SUMMON *summons[], size_t count, size_t *selection) {
-  SUMMON *summon;
+void summons_list_scr(Summon_t *summons[], size_t count, size_t *selection) {
+  Summon_t *summon;
 
   mvprintw( 20, 5, "List:" );
   for ( size_t i = 0; i < count; ++i ) {
@@ -594,6 +602,197 @@ void summons_list_scr(SUMMON *summons[], size_t count, size_t *selection) {
 }
 
 void actions_menu(const char *curr_path) {
+  const char *screen_title = "Actions";
+  FIELD *field[2];
+  FORM *my_form;
+ 
+  initscr();
+  curs_set(1);
+  cbreak();
+  clear();
+  noecho();
+  keypad(stdscr, TRUE);
+
+  field[0] = new_field( 1, MAX_CANUM, 4, 25, 0, 0 );
+  field[1] = NULL;
+  
+  set_field_back(field[0], A_UNDERLINE);
+  field_opts_off(field[0], O_AUTOSKIP);
+  field_opts_on(field[0], O_BLANK);
+
+  my_form = new_form(field);
+  post_form(my_form);
+  refresh();
+
+  int ch;
+  do {
+    mvprintw( 0, 0, menu_path( curr_path, screen_title ) );
+    mvprintw( 2, 10,  "Enter case number then press (Enter) to start. | (F4) = Exit" );
+    mvprintw( 4, 10,   "Case Num:      " );
+    refresh();
+    move( 4, 25 );
+    set_current_field( my_form, field[0] );
+  
+    ch = getch();
+
+    switch ( ch ) {
+      case ENTER: 
+        {
+          size_t count = 0;
+          char case_num[MAX_CANUM];
+
+          form_driver(my_form, REQ_NEXT_FIELD);
+          strcpy(case_num, compress_str(field_buffer(field[0], 0) ));
+          if ( query_select_count_from_case_for(case_num, &count) ) {
+            clear_line(20, 10);
+            mvprintw( 20, 10, db_get_error_msg() );
+            move( 4, 25 );
+          } else {
+            if ( count ) {
+              actions_dataentry_scr( menu_path( curr_path, screen_title ), case_num );
+              break;
+            }
+          }
+        }
+        break;
+      default:
+        form_driver( my_form, ch );
+        break;
+    }
+  } while ( ch != KEY_F(4) );
+
+  unpost_form( my_form );
+  free_form( my_form );
+  free_field( field[0] );
+  endwin();
+  return;
+}
+
+void actions_dataentry_scr(const char *curr_path, const char *case_num) {
+  const size_t n_fields = 4;
+  const size_t starty = 6;
+  const size_t startx = 25;
+  FIELD *field[n_fields];
+  FORM *my_form;
+  Action_t record;
+  int width[] = {  MAX_ACT_DATE, MAX_ACT_TYPE, MAX_ACT_NOTE - 200 };
+  int height[] = { 1, 1, 4 };
+ 
+  for ( size_t i = 0; i < n_fields - 1; ++i )
+    field[i] = new_field(height[i], width[i], starty + i * 2, startx, 0, 0);
+  field[n_fields - 1] = NULL;
+
+  set_field_back( field[0], A_UNDERLINE  );
+  field_opts_off( field[0], O_AUTOSKIP   );
+  set_field_back( field[1], A_UNDERLINE  );
+  field_opts_off( field[1], O_AUTOSKIP   );
+  set_field_back( field[2], A_UNDERLINE  );
+  field_opts_off( field[2], O_AUTOSKIP   );
+  field_opts_off( field[2], O_STATIC     );
+  set_max_field(  field[2], MAX_ACT_NOTE );
+
+  my_form = new_form(field);
+  post_form(my_form);
+  refresh();
+  
+  mvprintw( 0, 0,   curr_path );
+  mvprintw( 4, 10,  "Case Number:   %s", case_num );
+  mvprintw( 6, 10,  "Entry Date:    " );
+  mvprintw( 8, 10,  "Type:          " );
+  mvprintw( 10, 10, "Note:          " );
+  mvprintw( 16, 10, "(F2) = Add | (ESC) = Previous Screen" );
+  set_visible_fields( field, 1, 3 );
+  size_t actions_count = actions_list( case_num );
+  move( 6, 25 );
+  set_current_field( my_form, field[0] );
+
+  record.id = 0;
+  int ch;
+  do {
+    ch = getch();
+   
+    switch ( ch ) {
+      case KEY_UP:
+        form_driver(my_form, REQ_PREV_FIELD);
+        form_driver(my_form, REQ_END_LINE);
+        break;
+      case KEY_LEFT:
+        form_driver(my_form, REQ_LEFT_CHAR);
+        break;
+      case KEY_RIGHT:
+        form_driver(my_form, REQ_RIGHT_CHAR);
+        break;
+      case KEY_BACKSPACE:
+        form_driver(my_form, REQ_PREV_CHAR);
+        form_driver(my_form, REQ_DEL_CHAR);
+        break;
+      case ENTER:
+        form_driver( my_form, REQ_NEXT_FIELD );
+        form_driver( my_form, REQ_END_LINE );
+        break;
+      case KEY_F(2):
+        strncpy( record.case_num, case_num, MAX_CANUM );
+        strncpy( record.entry_date, compress_str( field_buffer(field[0], 0) ), MAX_ACT_DATE );
+        record.type = atoi( compress_str( field_buffer(field[1], 0) ) );
+        strncpy( record.note, field_buffer(field[2], 0), MAX_ACT_NOTE );
+
+        if ( query_add_action( &record ) ) {
+          clear_line(20, 10);
+          mvprintw( 20, 10, db_get_error_msg() );
+        } else {
+          clear_fields( field, 0, 2 );
+          actions_count++;
+          print_action( &record, actions_count );
+        }
+        move( 6, 25 );
+        set_current_field( my_form, field[0] );
+        break;
+      default:
+        form_driver( my_form, ch );
+        break;
+    }
+  } while ( ch != ESC );
+
+  unpost_form( my_form );
+  free_form( my_form );
+  for ( size_t i = 0; i < n_fields - 1; ++i )
+    free_field( field[i] );
+  return;
+}
+
+size_t actions_list(const char *case_num) {
+  size_t count = 0;
+
+  if ( query_select_count_from_actions_for( case_num, &count ) ) {
+    clear_line(20, 10);
+    mvprintw( 20, 10, db_get_error_msg() );
+    move( 6, 25 );
+  } else {
+    if ( count ) {
+      if ( query_select_all_from_actions_for( case_num ) ) {
+        clear_line(20, 10);
+        mvprintw( 20, 10, db_get_error_msg() );
+        move( 6, 25 );
+      } else {
+        Action_t *act_ptr;
+        size_t idx = 0;
+  
+        mvprintw( 20, 10, "Actions:" );
+        while ( ( act_ptr = get_action_from_result() ) != NULL ) {           
+          idx++;
+          print_action( act_ptr, idx );
+        }
+      }
+    } 
+  }
+  return count;
+}
+
+void print_action(const Action_t *action, size_t idx) {
+  char note[51];
+ 
+  strncpy( note, action->note, 51 );
+  mvprintw( 21 + idx, 10, "%u. [%s] %s", idx, action->entry_date, note );
   return;
 }
 

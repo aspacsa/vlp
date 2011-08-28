@@ -31,25 +31,32 @@ DBPARAMS param;
 char params_list[PARAMS_SIZE];
 char error_message[100];
 
-SUMMON *summ_set[MAX_SUMM_SET] = {NULL};
-SUMMON **summ_ptr = summ_set;   // = &summ_set[0]
+Summon_t * summ_set[MAX_SUMM_SET] = {NULL};
+Summon_t ** summ_ptr = summ_set;   // = &summ_set[0]
 size_t summ_set_count = 0;
 
+Action_t * act_set[MAX_ACT_SET] = {NULL};
+Action_t ** act_ptr = act_set;
+size_t act_set_count = 0;
 
 int read_db_cnf();
 int write_db_log(char *line);
 void prepare_line(char*);
-size_t query_create_new_case(CASE*);
-size_t query_update_case(CASE*);
+size_t query_create_new_case(Case_t *);
+size_t query_update_case(Case_t *);
 size_t query_delete_case(const char *case_num);
 size_t query_select_all_from_summons_for(const char *case_num);
-const SUMMON const * get_summon_from_result(void);
+const Summon_t const * get_summon_from_result(void);
 void free_summon_result(void);
-size_t query_update_summon(SUMMON*);
+size_t query_update_summon(Summon_t*);
 size_t query_delete_summon(size_t summ_id);
+size_t query_select_all_from_actions_for(const char *case_num);
+const Action_t const * get_action_from_result(void);
+size_t query_add_action(const Action_t const * record);
 size_t db_error_number(void);
 const char* db_error_message(void);
 size_t query_select_count_from_case_for(const char *case_num, size_t *count);
+size_t query_select_count_from_actions_for(const char *case_num, size_t *count);
 const char* db_get_error_msg(void);
 
 extern size_t dev_mode;
@@ -138,7 +145,7 @@ void prepare_line(char *line) {
   strcpy( line, strtok( line, "\n" ) );
 }
 
-size_t query_create_new_case(CASE *ptr) {
+size_t query_create_new_case(Case_t *ptr) {
   char query[BUFSIZ];
 
   sprintf( query, "INSERT INTO case_headers (CaseNumber, CivilNumber,"
@@ -155,7 +162,7 @@ size_t query_create_new_case(CASE *ptr) {
   return mysql_query( conn, query );
 }
 
-size_t query_update_case(CASE *ptr) {
+size_t query_update_case(Case_t *ptr) {
   char query[BUFSIZ];
 
   sprintf( query, "UPDATE case_headers SET CivilNumber = TRIM('%s'),"
@@ -183,7 +190,7 @@ size_t query_delete_case(const char *case_num) {
   return mysql_query( conn, query );
 }
 
-size_t query_select_all_from_case_for(const char *case_num, CASE *ptr) {
+size_t query_select_all_from_case_for(const char *case_num, Case_t *ptr) {
   char query[BUFSIZ];
 
   sprintf( query, "SELECT CaseNumber, CivilNumber,"
@@ -229,7 +236,7 @@ size_t query_select_all_from_summons_for(const char *case_num) {
   } else {
     res = mysql_use_result(conn);
     while( ( ( row = mysql_fetch_row(res) ) != NULL ) && ( count <= MAX_SUMM_SET ) ) {
-      SUMMON *summPtr = malloc( sizeof(SUMMON) );
+      Summon_t *summPtr = malloc( sizeof(Summon_t) );
       if ( summPtr == NULL ) {
         result = 1;
         break;
@@ -250,7 +257,7 @@ size_t query_select_all_from_summons_for(const char *case_num) {
   return result;
 }
 
-const SUMMON const * get_summon_from_result(void) {
+const Summon_t const * get_summon_from_result(void) {
   return *summ_ptr++; 
 }
 
@@ -269,7 +276,7 @@ void free_summon_result(void) {
   return;
 }
 
-size_t query_update_summon(SUMMON *record) {
+size_t query_update_summon(Summon_t *record) {
   char query[BUFSIZ];
 
   if ( record->id > 0 ) {
@@ -309,10 +316,103 @@ size_t query_delete_summon(size_t summ_id) {
   return mysql_query( conn, query );
 }
 
+size_t query_add_action(const Action_t const * record) {
+  char query[BUFSIZ];
+
+  sprintf( query, "INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt)"
+                  " VALUES ('%s', '%s', '%s', %d, NOW() ) ", 
+                  record->case_num, record->note, record->entry_date, record->type
+         );
+  if ( dev_mode ) 
+    write_db_log( query );
+  db_error_number();
+  return mysql_query( conn, query );
+}
+
+size_t query_select_all_from_actions_for(const char *case_num) {
+  char query[BUFSIZ];
+  size_t result = 0;
+  size_t count = 0;
+
+  act_ptr = act_set;
+  for ( int i = 0; i <= MAX_ACT_SET - 1; ++i )
+    act_set[i] = NULL;
+
+  sprintf( query, "SELECT id, CaseNumber, Note, Type, EntryAt"
+                  " FROM actions WHERE CaseNumber = '%s' ORDER BY EntryAt DESC", case_num );
+  if ( dev_mode )
+    write_db_log( query );
+  db_error_number();
+  size_t error = mysql_query( conn, query );
+  if ( error ) {
+    return error;
+  } else {
+    res = mysql_use_result(conn);
+    while( ( ( row = mysql_fetch_row(res) ) != NULL ) && ( count <= MAX_ACT_SET ) ) {
+      Action_t *actPtr = malloc( sizeof(Action_t) );
+      if ( actPtr == NULL ) {
+        result = 1;
+        break;
+      } else {
+        actPtr->id = atoi( row[0] );
+        strncpy( actPtr->case_num, row[1], MAX_CANUM );
+        strncpy( actPtr->note, row[2], MAX_ACT_NOTE );
+        actPtr->type = (char)*row[3];
+        strncpy( actPtr->entry_date, row[4], MAX_ACT_DATE );
+      }
+      act_set[count++] = actPtr;
+    }
+    mysql_free_result( res );
+  }
+  act_set_count = count;
+  return result;
+}
+
+const Action_t const * get_action_from_result(void) {
+  return *act_ptr++;
+}
+
+void free_action_result(void) {
+  size_t i = 0;
+
+  act_ptr = act_set;
+  for ( i = 0; i <= act_set_count - 1; ++i )
+    free( *act_ptr++ );
+  if ( dev_mode ) {
+    char msg[40];
+    sprintf( msg, "Elements freed from act_set: %u", i );
+    write_db_log( msg );
+  }
+  act_set_count = 0;
+  return;
+
+}
+
 size_t query_select_count_from_case_for(const char *case_num, size_t *count) {
   char query[BUFSIZ];
 
   sprintf( query, "SELECT COUNT(CaseNumber) FROM case_headers"
+                 " WHERE CaseNumber = '%s'", case_num );
+  if ( dev_mode )
+    write_db_log( query );
+  db_error_number();
+  size_t error = mysql_query( conn, query );
+  if ( error ) {
+    return error;
+  } else {
+    res = mysql_use_result( conn );
+    row = mysql_fetch_row( res );
+    size_t c = atoi( row[0] );
+    *count = c;
+    mysql_free_result( res );
+  }
+  return 0;
+}
+
+size_t query_select_count_from_actions_for(const char *case_num, size_t *count) {
+  char query[BUFSIZ];
+
+  sprintf( query, "SELECT COUNT(id) FROM actions"
                  " WHERE CaseNumber = '%s'", case_num );
   if ( dev_mode )
     write_db_log( query );
