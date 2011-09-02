@@ -198,6 +198,8 @@ size_t query_select_all_from_case_for(const char *case_num, Case_t *ptr) {
                  "       Status, DeliveryDate"
                  " FROM case_headers"
                  " WHERE CaseNumber = '%s'", case_num );
+  if ( dev_mode )
+    write_db_log( query );
   db_error_number();
   size_t error = mysql_query( conn, query );
   if ( error ) {
@@ -209,10 +211,18 @@ size_t query_select_all_from_case_for(const char *case_num, Case_t *ptr) {
     strncpy( ptr->civil, row[1], MAX_CINUM );
     strncpy( ptr->physical_add, row[2], MAX_PHYADD );
     strncpy( ptr->postal_add, row[3], MAX_POSADD );
-    ptr->status = (char)*row[4];
+    ptr->status = atoi( row[4] );
     strncpy( ptr->delivery_date, row[5], MAX_DELDATE );
     mysql_free_result( res );
-  }
+    if ( dev_mode ) {
+      char buffer[BUFSIZ];
+      sprintf( buffer, "Result: '%s', '%s', '%s', '%s', %d, '%s'", 
+                       ptr->number, ptr->civil, ptr->physical_add,
+                       ptr->postal_add, ptr->status, ptr->delivery_date, row[4]
+             );
+      write_db_log( buffer );
+    }
+  } 
   return 0;
 }
 
@@ -244,8 +254,8 @@ size_t query_select_all_from_summons_for(const char *case_num) {
         summPtr->id = atoi( row[0] );
         strncpy( summPtr->case_num, row[1], MAX_CANUM );
         strncpy( summPtr->name, row[2], MAX_SUMM_NAME );
-        summPtr->status = (char)*row[3];
-        summPtr->reason = (char)*row[4];
+        summPtr->status = atoi( row[3] );
+        summPtr->reason = atoi( row[4] );
         strncpy( summPtr->city_code, row[5], MAX_SUMM_CITY );
         strncpy( summPtr->summon_date, row[6], MAX_SUMM_DATE );
       }
@@ -357,7 +367,7 @@ size_t query_select_all_from_actions_for(const char *case_num) {
         actPtr->id = atoi( row[0] );
         strncpy( actPtr->case_num, row[1], MAX_CANUM );
         strncpy( actPtr->note, row[2], MAX_ACT_NOTE );
-        actPtr->type = (char)*row[3];
+        actPtr->type =  atoi( row[3] );
         strncpy( actPtr->entry_date, row[4], MAX_ACT_DATE );
       }
       act_set[count++] = actPtr;

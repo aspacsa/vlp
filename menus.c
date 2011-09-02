@@ -231,7 +231,7 @@ void cases_menu(const char *curr_path) {
                 set_field_buffer(field[1], 0, record.civil);
                 set_field_buffer(field[2], 0, record.physical_add);
                 set_field_buffer(field[3], 0, record.postal_add);
-                snprintf(status_buff, 4, "%c", record.status);
+                snprintf( status_buff, 4, "%d", record.status );
                 set_field_buffer(field[4], 0, status_buff);
                 set_field_buffer(field[5], 0, record.delivery_date);
               }
@@ -242,7 +242,6 @@ void cases_menu(const char *curr_path) {
               set_current_field(my_form, field[0]);
             }
           }
-          //mvprintw(20, 10, "Case Number changed.");
           set_field_status(field[0], 0);
         }
         break;
@@ -529,9 +528,9 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
               summ_ptr = summons[selection - 1];
               record.id = summ_ptr->id;
               set_field_buffer( field[0], 0, summ_ptr->name );
-              snprintf( code_buff, 4, "%c", summ_ptr->status );
+              snprintf( code_buff, 4, "%d", summ_ptr->status );
               set_field_buffer( field[1], 0, code_buff );
-              snprintf( code_buff, 4, "%c", summ_ptr->reason );
+              snprintf( code_buff, 4, "%d", summ_ptr->reason );
               set_field_buffer( field[2], 0, code_buff );
               set_field_buffer( field[3], 0, summ_ptr->city_code );
               set_field_buffer( field[4], 0, summ_ptr->summon_date );

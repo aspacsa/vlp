@@ -1839,3 +1839,198 @@ Entry: Sat Aug 27 23:06:55 2011
 {
  SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '777' ORDER BY EntryAt DESC 
 }
+
+Entry: Thu Sep  1 21:58:41 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Thu Sep  1 21:59:01 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Thu Sep  1 21:59:08 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '51651' 
+}
+
+Entry: Thu Sep  1 21:59:10 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Thu Sep  1 21:59:29 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Thu Sep  1 21:59:29 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:27:01 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51561' 
+}
+
+Entry: Fri Sep  2 14:28:14 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51561' 
+}
+
+Entry: Fri Sep  2 14:28:47 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51561' 
+}
+
+Entry: Fri Sep  2 14:29:03 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:29:03 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:29:03 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 49, '2011-09-09' 
+}
+
+Entry: Fri Sep  2 14:40:14 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:40:14 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:40:14 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 49, '2011-09-09' 
+}
+
+Entry: Fri Sep  2 14:41:46 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:41:46 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:41:46 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 168006101, '2011-09-09' 
+}
+
+Entry: Fri Sep  2 14:44:43 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:44:43 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 14:44:43 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 158147029, '2011-09-09' 
+}
+
+Entry: Fri Sep  2 17:32:15 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 17:32:15 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 17:32:15 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 49, '2011-09-09' 
+}
+
+Entry: Fri Sep  2 18:38:51 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:38:51 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:38:51 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 49, '2011-09-09' [10] 
+}
+
+Entry: Fri Sep  2 18:42:26 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:42:26 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:42:26 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 10, '2011-09-09' 
+}
+
+Entry: Fri Sep  2 18:43:40 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:43:40 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:43:40 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 10, '2011-09-09' 
+}
+
+Entry: Fri Sep  2 18:52:03 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:52:03 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:52:03 2011
+{
+ Result: '51651', 'FCD11-1202(406)', 'Apto T-5 Cond. Plaza del Parque Trujillo Alto     ', 'Villa Prades 836 Simon Madera San Juan            ', 10, '2011-09-09' 
+}
+
+Entry: Fri Sep  2 18:52:18 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:52:22 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '51651' 
+}
+
+Entry: Fri Sep  2 18:52:24 2011
+{
+ Elements freed from summ_set: 1 
+}
