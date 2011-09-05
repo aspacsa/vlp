@@ -2034,3 +2034,563 @@ Entry: Fri Sep  2 18:52:24 2011
 {
  Elements freed from summ_set: 1 
 }
+
+Entry: Sun Sep  4 14:28:53 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '777' 
+}
+
+Entry: Mon Sep  5 10:57:29 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 11:06:15 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 11:08:20 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 11:08:20 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 11:17:57 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 11:17:57 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 11:18:42 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 11:18:42 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 11:24:10 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 11:24:10 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:37:09 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:37:09 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:38:13 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:38:13 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:38:39 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:38:39 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:39:08 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:39:08 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:39:33 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:39:33 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:43:18 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:43:18 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:45:44 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:45:44 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:47:24 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:47:24 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:48:54 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:48:54 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:49:02 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:49:02 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:54:27 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 12:54:27 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 12:58:53 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 13:09:17 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 13:09:17 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Mon Sep  5 14:08:41 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 14:08:45 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 14:08:45 2011
+{
+ Elements freed from code_set: 3 
+}
+
+Entry: Mon Sep  5 14:09:00 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 14:09:04 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Mon Sep  5 14:09:04 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 14:36:23 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 14:36:30 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 14:36:30 2011
+{
+ Elements freed from code_set: 3 
+}
+
+Entry: Mon Sep  5 14:36:42 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 14:36:42 2011
+{
+ Elements freed from code_set: 3 
+}
+
+Entry: Mon Sep  5 14:36:45 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Mon Sep  5 14:36:45 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 14:37:14 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 14:37:36 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Mon Sep  5 14:43:27 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 14:43:30 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 14:43:30 2011
+{
+ Elements freed from code_set: 3 
+}
+
+Entry: Mon Sep  5 14:43:35 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Mon Sep  5 14:43:35 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 15:55:46 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 15:55:52 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 15:56:01 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Mon Sep  5 15:56:03 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Mon Sep  5 15:56:03 2011
+{
+ Elements freed from code_set: 3 
+}
+
+Entry: Mon Sep  5 15:56:11 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 15:56:16 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Mon Sep  5 15:56:40 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 15:56:40 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 15:56:40 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 16:46:32 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:46:32 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:46:32 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 16:46:45 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Mon Sep  5 16:46:45 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 16:49:59 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:49:59 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:49:59 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 16:50:03 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Mon Sep  5 16:50:03 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 16:54:45 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:54:45 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:54:45 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 16:54:47 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Mon Sep  5 16:54:47 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 16:55:51 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:55:51 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:55:51 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 16:57:31 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:57:31 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:57:31 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 16:57:34 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Mon Sep  5 16:57:34 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 16:58:54 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:58:54 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:58:54 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 16:58:57 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Mon Sep  5 16:58:57 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 16:59:58 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:59:58 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 16:59:58 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 17:00:00 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Mon Sep  5 17:00:00 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 17:00:58 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 17:00:58 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 17:00:58 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 17:01:02 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Mon Sep  5 17:01:02 2011
+{
+ Elements freed from code_set: 7 
+}
+
+Entry: Mon Sep  5 17:03:22 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 17:03:22 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 17:03:22 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 17:04:32 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 17:04:32 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep  5 17:04:32 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '51651' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Sep  5 17:04:38 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Mon Sep  5 17:04:38 2011
+{
+ Elements freed from code_set: 7 
+}

@@ -17,6 +17,9 @@
 #define MAX_ACT_DATE 11
 #define MAX_ACT_SET 40
 
+#define MAX_CODE_DESC 45
+#define MAX_CODE_SET 40
+
 
 typedef struct {
   char number[MAX_CANUM];
@@ -44,4 +47,10 @@ typedef struct {
   int type;
   char entry_date[MAX_ACT_DATE];
 } Action_t;
+
+typedef struct {
+  int code;
+  char desc[MAX_CODE_DESC];
+} Code_t;
+
 

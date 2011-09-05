@@ -39,6 +39,12 @@ extern size_t query_select_count_from_actions_for(const char *case_num, size_t *
 extern size_t query_select_all_from_actions_for(const char *case_num);
 extern Action_t * get_action_from_result(void);
 extern size_t query_add_action(const Action_t const * record);
+extern size_t query_select_all_codes_from_case_status(void);
+extern size_t query_select_all_codes_from_summon_status(void); 
+extern size_t query_select_all_codes_from_summon_reasons(void); 
+extern size_t query_select_all_codes_from_action_types(void);
+extern const Code_t const * get_code_from_result(void);
+extern void free_code_result(void);
 extern const char* db_get_error_msg(void);
 extern int write_db_log(char *line);
 
@@ -50,7 +56,9 @@ void clear_fields(FIELD *fields[], size_t start, size_t end);
 void set_visible_fields(FIELD *fields[], size_t start, size_t end);
 void set_invisible_fields(FIELD *fields[], size_t start, size_t end);
 void clear_line(size_t row, size_t col);
+void clear_lines(size_t start, size_t end);
 void print_line(char line[], size_t row, size_t col);
+void get_cursor_pos(const FIELD const * field, int* row, int* col);
  
 void cases_menu(const char *curr_path);
 void summons_menu(const char *curr_path);
@@ -184,7 +192,7 @@ void cases_menu(const char *curr_path) {
   mvprintw(10, 10,  "Postal Add:    ");
   mvprintw(12, 10,  "Status:        ");
   mvprintw(14, 10,  "Delivery Date: ");
-  mvprintw(16, 10,  "(F2) = Update | (F3) = Delete | (F4) = Exit");
+  mvprintw(16, 10,  "(F1) = Options | (F2) = Update | (F3) = Delete | (F4) = Exit");
   move(4, 25);
   refresh();
 
@@ -192,10 +200,6 @@ void cases_menu(const char *curr_path) {
   do {
     ch = getch();
     switch(ch) {
-      /*case KEY_DOWN:
-        form_driver(my_form, REQ_NEXT_FIELD);
-        form_driver(my_form, REQ_END_LINE);
-        break;*/
       case KEY_UP:
         form_driver(my_form, REQ_PREV_FIELD);
         form_driver(my_form, REQ_END_LINE);
@@ -207,8 +211,8 @@ void cases_menu(const char *curr_path) {
         form_driver(my_form, REQ_RIGHT_CHAR);
         break;
       case ENTER:
-        form_driver(my_form, REQ_NEXT_FIELD);
-        form_driver(my_form, REQ_END_LINE);
+        form_driver( my_form, REQ_NEXT_FIELD );
+        form_driver( my_form, REQ_END_LINE );
         if (field_status(field[0])) {
           size_t count = 0;
           char case_num[MAX_CANUM];
@@ -248,6 +252,35 @@ void cases_menu(const char *curr_path) {
       case KEY_BACKSPACE:
         form_driver(my_form, REQ_PREV_CHAR);
         form_driver(my_form, REQ_DEL_CHAR);
+        break;
+      case ESC:
+        {
+          FIELD * curr_field = current_field( my_form );
+          int row, col;
+          get_cursor_pos( curr_field, &row, &col );
+          clear_lines( 20, 40 );
+          move( row, col );
+          set_current_field( my_form, curr_field );
+        }
+        break;
+      case KEY_F(1):
+        if ( current_field( my_form ) == field[4] ) {
+          if ( query_select_all_codes_from_case_status() ) {
+            mvprintw( 20, 10, db_get_error_msg() );
+          } else {
+            const Code_t const * code_ptr;
+            size_t count = 0;
+
+            mvprintw( 20, 5, "Status Options:" );
+            while ( ( code_ptr = get_code_from_result() ) != NULL ) {           
+              mvprintw( 21 + count, 10, "[%d] %s", code_ptr->code, code_ptr->desc );
+              count++;
+            }
+            free_code_result();
+            move( 12, 25 );
+            set_current_field( my_form, field[4] );
+          }  
+        } 
         break;
       case KEY_F(2):
       {
@@ -441,7 +474,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
   mvprintw( 10, 10, "Reason:        " );
   mvprintw( 12, 10, "City:          " );
   mvprintw( 14, 10, "Date Summoned: " );
-  mvprintw( 16, 10, "(F2) = Update | (F3) = Delete | (F5) = List | (ESC) = Previous Screen" );
+  mvprintw( 16, 10, "(F1) = Options | (F2) = Update | (F3) = Delete | (F5) = List | (ESC) = Previous Screen" );
   set_visible_fields( field, 1, 5 );
   move( 6, 25 );
   set_current_field( my_form, field[0] );
@@ -470,6 +503,38 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         form_driver( my_form, REQ_NEXT_FIELD );
         form_driver( my_form, REQ_END_LINE );
         break;
+      case KEY_F(1):
+        {
+          FIELD * curr_fld = current_field( my_form );
+          size_t error = 0;
+          size_t in_target_fld = 0;
+          char fld_name[7];     
+
+          if ( curr_fld == field[1] ) {
+            error = query_select_all_codes_from_summon_status();
+            in_target_fld = 1;
+            strncpy( fld_name, "Status", 7 );
+          } else if ( curr_fld == field[2] ) {
+            error = query_select_all_codes_from_summon_reasons();
+            in_target_fld = 1;
+            strncpy( fld_name, "Reason", 7 );
+          }
+          if ( !error && in_target_fld ) {
+            const Code_t const * code_ptr;
+            size_t count = 0;
+
+            mvprintw( 20, 5, "%s Options:", fld_name );
+            while ( ( code_ptr = get_code_from_result() ) != NULL )          
+              mvprintw( 21 + count++, 10, "[%d] %s", code_ptr->code, code_ptr->desc );
+            free_code_result();
+
+            int row, col;
+            get_cursor_pos( curr_fld, &row, &col );
+            move( row, col );
+            set_current_field( my_form, curr_fld );
+          }
+        }
+        break;
       case KEY_F(2):
         strncpy( record.case_num, case_num, MAX_CANUM );
         strncpy( record.name, field_buffer(field[0], 0), MAX_SUMM_NAME );
@@ -483,6 +548,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
           set_current_field( my_form, field[0] );
         } else {
           clear_fields( field, 0, 4 );
+          clear_lines( 20, 40 );
           mvprintw( 18, 10, "[!] Summon has been updated." );
           move( 6, 25 );
           set_current_field( my_form, field[0] );
@@ -498,6 +564,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
               mvprintw( 20, 10, db_get_error_msg() );
             } else {
               clear_fields( field, 0, 4 );    
+              clear_lines( 20, 40 );
               mvprintw( 20, 10, "[!] Summon '%u' has been deleted.", record.id );
               move( 6, 25 );
               set_current_field( my_form, field[0] );
@@ -560,6 +627,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
 void summons_list_scr(Summon_t *summons[], size_t count, size_t *selection) {
   Summon_t *summon;
 
+  clear_lines( 20, 40 );
   mvprintw( 20, 5, "List:" );
   for ( size_t i = 0; i < count; ++i ) {
     summon = *summons++;
@@ -729,6 +797,31 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
         form_driver( my_form, REQ_NEXT_FIELD );
         form_driver( my_form, REQ_END_LINE );
         break;
+      case KEY_F(1):
+        {
+          FIELD * curr_fld = current_field( my_form );
+
+          if ( curr_fld == field[1] ) {
+            if ( query_select_all_codes_from_action_types()  ) {
+              clear_line(20, 10);
+              mvprintw( 20, 10, db_get_error_msg() );
+            } else {
+              const Code_t const * code_ptr;
+              size_t count = 0;
+              
+              mvprintw( 8, 75, "Type Options:" );
+              while ( ( code_ptr = get_code_from_result() ) != NULL )      
+                mvprintw( 9 + count++, 81, "[%d] %s", code_ptr->code, code_ptr->desc );
+              free_code_result();
+
+              int row, col;
+              get_cursor_pos( curr_fld, &row, &col );
+              move( row, col );
+              set_current_field( my_form, curr_fld );
+            }
+          }
+        }
+        break;
       case KEY_F(2):
         strncpy( record.case_num, case_num, MAX_CANUM );
         strncpy( record.entry_date, compress_str( field_buffer(field[0], 0) ), MAX_ACT_DATE );
@@ -777,10 +870,8 @@ size_t actions_list(const char *case_num) {
         size_t idx = 0;
   
         mvprintw( 20, 10, "Actions:" );
-        while ( ( act_ptr = get_action_from_result() ) != NULL ) {           
-          idx++;
-          print_action( act_ptr, idx );
-        }
+        while ( ( act_ptr = get_action_from_result() ) != NULL )           
+          print_action( act_ptr, ++idx );
       }
     } 
   }
@@ -1044,8 +1135,23 @@ void clear_line(size_t row, size_t col) {
   return;
 }
 
+void clear_lines(size_t start, size_t end) {
+  for (size_t i = start; i < end; i++)
+   clear_line( i, 0 );
+  return;
+}
+
 void print_line(char line[], size_t row, size_t col) {
   strncpy( scr_line, line, MAX_SCR_LINE );
   mvprintw( row, col, scr_line );
+  return;
+}
+
+void get_cursor_pos(const FIELD const * field, int* row, int* col) {
+  int rows, cols, nrow, nbuf, trow, tcol;
+  field_info(field, &rows, &cols,
+             &trow, &tcol, &nrow, &nbuf);
+  *row = trow;
+  *col = tcol;
   return;
 }

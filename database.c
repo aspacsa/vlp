@@ -39,6 +39,10 @@ Action_t * act_set[MAX_ACT_SET] = {NULL};
 Action_t ** act_ptr = act_set;
 size_t act_set_count = 0;
 
+Code_t * code_set[MAX_CODE_SET] = {NULL};
+Code_t ** code_ptr = code_set;
+size_t code_set_count = 0;
+
 int read_db_cnf();
 int write_db_log(char *line);
 void prepare_line(char*);
@@ -52,7 +56,15 @@ size_t query_update_summon(Summon_t*);
 size_t query_delete_summon(size_t summ_id);
 size_t query_select_all_from_actions_for(const char *case_num);
 const Action_t const * get_action_from_result(void);
+void free_action_result(void);
 size_t query_add_action(const Action_t const * record);
+size_t query_select_all_codes_from_case_status(void);
+size_t query_select_all_codes_from_summon_status(void); 
+size_t query_select_all_codes_from_summon_reasons(void);
+size_t query_select_all_codes_from_action_types(void); 
+size_t query_select_all_codes_for(char * query);
+const Code_t const * get_code_from_result(void);
+void free_code_result(void);
 size_t db_error_number(void);
 const char* db_error_message(void);
 size_t query_select_count_from_case_for(const char *case_num, size_t *count);
@@ -439,6 +451,83 @@ size_t query_select_count_from_actions_for(const char *case_num, size_t *count) 
   }
   return 0;
 }
+
+size_t query_select_all_codes_from_case_status(void) {
+  return query_select_all_codes_for( "SELECT id, description FROM case_status" 
+                                     " ORDER BY id"
+                                   );
+}
+
+size_t query_select_all_codes_from_summon_status(void) {
+  return query_select_all_codes_for( "SELECT id, description FROM summon_status" 
+                                     " ORDER BY id"
+                                   );
+}
+
+size_t query_select_all_codes_from_summon_reasons(void) {
+  return query_select_all_codes_for( "SELECT id, description FROM summon_reasons" 
+                                     " ORDER BY id"
+                                   );
+}
+
+size_t query_select_all_codes_from_action_types(void) {
+  return query_select_all_codes_for( "SELECT id, Description FROM action_types"
+                                     " ORDER BY id"
+                                   );
+}
+
+
+size_t query_select_all_codes_for(char * query) {
+  size_t result = 0;
+  size_t count = 0;
+
+  code_ptr = code_set;
+  for ( int i = 0; i <= MAX_CODE_SET - 1; ++i )
+    code_set[i] = NULL;
+
+  if ( dev_mode )
+    write_db_log( query );
+  db_error_number();
+  size_t error = mysql_query( conn, query );
+  if ( error ) {
+    return error;
+  } else {
+    res = mysql_use_result( conn );
+    while( ( ( row = mysql_fetch_row( res ) ) != NULL ) && ( count <= MAX_CODE_SET ) ) {
+      Code_t *codePtr = malloc( sizeof(Code_t) );
+      if ( codePtr == NULL ) {
+        result = 1;
+      } else {
+        codePtr->code = atoi( row[0] );
+        strncpy( codePtr->desc, row[1], MAX_CODE_DESC );
+      }
+      code_set[count++] = codePtr;
+    }
+    mysql_free_result( res );
+  }
+  code_set_count = count;
+  return result;
+}
+
+const Code_t const * get_code_from_result(void) {
+  return *code_ptr++; 
+}
+
+void free_code_result(void) {
+  size_t i = 0;
+
+  code_ptr = code_set;
+  for ( i = 0; i <= code_set_count - 1; ++i )
+    free( *code_ptr++ );
+  if ( dev_mode ) {
+    char msg[40];
+    sprintf( msg, "Elements freed from code_set: %u", i );
+    write_db_log( msg );
+  }
+  code_set_count = 0;
+  return;
+}
+
 
 size_t db_error_number(void) { 
   return mysql_errno(conn); 
