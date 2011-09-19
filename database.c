@@ -43,6 +43,10 @@ Code_t * code_set[MAX_CODE_SET] = {NULL};
 Code_t ** code_ptr = code_set;
 size_t code_set_count = 0;
 
+SCode_t * scode_set[MAX_SCODE_SET] = {NULL};
+SCode_t ** scode_ptr = scode_set;
+size_t scode_set_count = 0;
+
 int read_db_cnf();
 int write_db_log(char *line);
 void prepare_line(char*);
@@ -65,6 +69,12 @@ size_t query_select_all_codes_from_action_types(void);
 size_t query_select_all_codes_for(char * query);
 const Code_t const * get_code_from_result(void);
 void free_code_result(void);
+
+size_t query_select_all_codes_from_action_types(void);
+const SCode_t const * get_scode_from_result(void);
+void free_scode_result(void);
+
+
 size_t db_error_number(void);
 const char* db_error_message(void);
 size_t query_select_count_from_case_for(const char *case_num, size_t *count);
@@ -476,6 +486,64 @@ size_t query_select_all_codes_from_action_types(void) {
                                    );
 }
 
+size_t query_select_all_codes_from_city_rates(void) {
+  char *query = "SELECT CityCode, CityName FROM city_rates ORDER BY CityName";
+  size_t result = 0;
+  size_t count = 0;
+
+  scode_ptr = scode_set;
+  for ( int i = 0; i <= MAX_SCODE_SET - 1; ++i )
+    scode_set[i] = NULL;
+
+  if ( dev_mode )
+    write_db_log( query );
+  db_error_number();
+  size_t error = mysql_query( conn, query );
+  if ( error ) {
+    return error;
+  } else {
+    res = mysql_use_result( conn );
+    while( ( ( row = mysql_fetch_row( res ) ) != NULL ) && ( count <= MAX_SCODE_SET ) ) {
+      SCode_t *scodePtr = malloc( sizeof(SCode_t) );
+      if ( scodePtr == NULL ) {
+        result = 1;
+      } else {
+        strncpy( scodePtr->code, row[0], MAX_SCODE_CODE );
+        strncpy( scodePtr->name, row[1], MAX_SCODE_NAME );
+        if ( dev_mode ) {
+          char row_buf[BUFSIZ];
+          sprintf(row_buf, "Result: CityCode{'%s'}, CityName{'%s'}", 
+                                    row[0], row[1]
+                 );
+          write_db_log( row_buf );
+        }
+      }
+      scode_set[count++] = scodePtr;
+    }
+    mysql_free_result( res );
+  }
+  scode_set_count = count;
+  return result;
+}
+
+const SCode_t const * get_scode_from_result(void) {
+  return *scode_ptr++; 
+}
+
+void free_scode_result(void) {
+  size_t i = 0;
+
+  scode_ptr = scode_set;
+  for ( i = 0; i <= scode_set_count - 1; ++i )
+    free( *scode_ptr++ );
+  if ( dev_mode ) {
+    char msg[40];
+    sprintf( msg, "Elements freed from scode_set: %u", i );
+    write_db_log( msg );
+  }
+  scode_set_count = 0;
+  return;
+}
 
 size_t query_select_all_codes_for(char * query) {
   size_t result = 0;

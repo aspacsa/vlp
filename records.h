@@ -17,8 +17,12 @@
 #define MAX_ACT_DATE 11
 #define MAX_ACT_SET 40
 
-#define MAX_CODE_DESC 45
+#define MAX_CODE_DESC 46
 #define MAX_CODE_SET 40
+
+#define MAX_SCODE_NAME 46
+#define MAX_SCODE_CODE 4
+#define MAX_SCODE_SET 80
 
 
 typedef struct {
@@ -52,5 +56,10 @@ typedef struct {
   int code;
   char desc[MAX_CODE_DESC];
 } Code_t;
+
+typedef struct {
+  char code[MAX_SCODE_CODE];
+  char name[MAX_SCODE_NAME];
+} SCode_t;
 
 

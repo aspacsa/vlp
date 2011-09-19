@@ -45,6 +45,9 @@ extern size_t query_select_all_codes_from_summon_reasons(void);
 extern size_t query_select_all_codes_from_action_types(void);
 extern const Code_t const * get_code_from_result(void);
 extern void free_code_result(void);
+extern size_t query_select_all_codes_from_city_rates(void);
+extern const SCode_t const * get_scode_from_result(void);
+extern void free_scode_result(void);
 extern const char* db_get_error_msg(void);
 extern int write_db_log(char *line);
 
@@ -452,16 +455,19 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
     field[i] = new_field(1, width[i], starty + i * 2, startx, 0, 0);
   field[n_fields - 1] = NULL;
   
-  set_field_back(field[0], A_UNDERLINE);
-  field_opts_off(field[0], O_AUTOSKIP);
-  set_field_back(field[1], A_UNDERLINE);
-  field_opts_off(field[1], O_AUTOSKIP);
-  set_field_back(field[2], A_UNDERLINE);
-  field_opts_off(field[2], O_AUTOSKIP);
-  set_field_back(field[3], A_UNDERLINE);
-  field_opts_off(field[3], O_AUTOSKIP);
-  set_field_back(field[4], A_UNDERLINE);
-  field_opts_off(field[4], O_AUTOSKIP);
+  set_field_back( field[0], A_UNDERLINE );
+  field_opts_off( field[0], O_AUTOSKIP  );
+  set_field_back( field[1], A_UNDERLINE );
+  field_opts_on(  field[1], O_BLANK     );
+  field_opts_off( field[1], O_AUTOSKIP  );
+  set_field_back( field[2], A_UNDERLINE );
+  field_opts_off( field[2], O_AUTOSKIP  );
+  field_opts_on(  field[2], O_BLANK     );
+  set_field_back( field[3], A_UNDERLINE );
+  field_opts_off( field[3], O_AUTOSKIP  );
+  field_opts_on(  field[3], O_BLANK     );
+  set_field_back( field[4], A_UNDERLINE );
+  field_opts_off( field[4], O_AUTOSKIP  );
 
   my_form = new_form(field);
   post_form(my_form);
@@ -518,6 +524,28 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
             error = query_select_all_codes_from_summon_reasons();
             in_target_fld = 1;
             strncpy( fld_name, "Reason", 7 );
+          } else if ( curr_fld == field[3] ) {
+            if ( query_select_all_codes_from_city_rates() ) {
+              clear_line(20, 10);
+              mvprintw( 20, 10, db_get_error_msg() );
+              move( 12, 25 );
+              set_current_field( my_form, curr_fld );
+            } else {
+              const SCode_t const * scode_ptr;
+              size_t count = 0;
+              size_t column = 10;
+
+              mvprintw( 20, 5, "Cities:" );
+              while ( ( scode_ptr = get_scode_from_result() ) != NULL ) {
+                mvprintw( 21 + count++, column, "[%s] %s", scode_ptr->code, scode_ptr->name );
+                count++;
+                if ( count == 30 ) {
+                  column += 20;
+                  count = 0;
+                }
+              }
+              free_scode_result();
+            }
           }
           if ( !error && in_target_fld ) {
             const Code_t const * code_ptr;

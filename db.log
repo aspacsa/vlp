@@ -2594,3 +2594,858 @@ Entry: Mon Sep  5 17:04:38 2011
 {
  Elements freed from code_set: 7 
 }
+
+Entry: Tue Sep 13 20:33:25 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:34:37 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:34:37 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Sep 13 20:34:49 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:34:49 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27479'), TRIM('FCD11-1013'),          TRIM('Condesa del Marl Apto 1202 Carolina                Ub. Santa Rita 57 Calle Borinquena San Juan        O¢'), TRIM('Ub. Santa Rita 57 Calle Borinquena San Juan        O¢'),           30, TRIM('') ) 
+}
+
+Entry: Tue Sep 13 20:34:59 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:35:17 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:35:17 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Sep 13 20:35:26 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:35:26 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Sep 13 20:35:49 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27479'), TRIM('Ramon A. Cintron Aponte                            ‚¿'), 30, 50, TRIM('SJU2011-09-13'), TRIM('2011-09-13') ) 
+}
+
+Entry: Tue Sep 13 20:35:52 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:36:00 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Tue Sep 13 20:36:28 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:36:28 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Sep 13 20:36:40 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:36:40 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Sep 13 20:37:00 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27479'), TRIM('Fulano de Tal                                      ‚¿'), 30, 80, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Sep 13 20:37:08 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:37:08 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Sep 13 20:37:14 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:37:14 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Sep 13 20:37:20 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27479'), TRIM('Fulana de Tal                                      ‚¿'), 30, 80, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Sep 13 20:37:24 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:37:28 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Tue Sep 13 20:38:32 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27480' 
+}
+
+Entry: Tue Sep 13 20:38:42 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27480' 
+}
+
+Entry: Tue Sep 13 20:39:26 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:39:26 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Sep 13 20:39:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27480' 
+}
+
+Entry: Tue Sep 13 20:39:30 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27480'), TRIM('FCD11-1182'),          TRIM('Condesa del Mar Apto 1202 Carolina                 Same                                               O¢'), TRIM('Same                                               O¢'),           30, TRIM('') ) 
+}
+
+Entry: Tue Sep 13 20:39:41 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27480' 
+}
+
+Entry: Tue Sep 13 20:40:00 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:40:00 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Sep 13 20:40:03 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:40:03 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Sep 13 20:40:18 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27480'), TRIM('Ramon Cintron Aponte                               ‚¿'), 30, 50, TRIM('SJU2011-09-13'), TRIM('2011-09-13') ) 
+}
+
+Entry: Tue Sep 13 20:40:28 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:40:28 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Sep 13 20:40:32 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:40:32 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Sep 13 20:40:37 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27480'), TRIM('Fulano de Tal                                      ‚¿'), 30, 80, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Sep 13 20:40:47 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:40:47 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Sep 13 20:40:52 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27480'), TRIM('Fulana de Tal                                      ‚¿'), 30, 80, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Sep 13 20:40:53 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27480' 
+}
+
+Entry: Tue Sep 13 20:40:56 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Tue Sep 13 20:41:16 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:41:16 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:41:55 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:41:55 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Sep 13 20:43:38 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27479', '@10:00am visita negativa en Condesa del Mar, Oficial   Santiago dijo que records indican que apto desocupado, rara vez se ve a Ramon en area, saben que Margarita    fallecio, ddo va solo a pagar cuota de mantenimiento.  ', '2011-08-13', 30, NOW() )  
+}
+
+Entry: Tue Sep 13 20:45:52 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27479', '@1:15pm visite 57 de la calle Borinquena, es edificio  de Periodico Claridad, nadie en oficinas.                                                                                                                            ', '2011-08-20', 40, NOW() )  
+}
+
+Entry: Tue Sep 13 20:47:31 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27479', '@10:00am visite Oficinas Claridad, Roberto en          recepcion me dijo que ddo ya no es empleado de ese     lugar desde hace unos dos meses.                                                                              ', '2011-09-09', 40, NOW() )  
+}
+
+Entry: Tue Sep 13 20:48:23 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27479', '@10:15am llame al #728-7201 pero esta fuera de         servicio.                                                                                                                                                            ', '2011-09-09', 50, NOW() )  
+}
+
+Entry: Tue Sep 13 20:50:20 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27479', '@1:12pm llame al #539-4349, pude hablar con Ramon,     dijo estaria en apto a las 3:00pm, sin embargo a las   2:50pm le llame y dijo que aun no habia llegado que me llamaria luego cosa que no hizo.                       ', '2011-09-12', 50, NOW() )  
+}
+
+Entry: Tue Sep 13 20:51:21 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27479', '@9:50am llame ddo, dijo estaria despues de la 6:00pm   en Vidy's de la Ave Universidad.                                                                                                                                     ', '2011-09-13', 50, NOW() )  
+}
+
+Entry: Tue Sep 13 20:52:50 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27480' 
+}
+
+Entry: Tue Sep 13 20:53:20 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27480' 
+}
+
+Entry: Tue Sep 13 20:53:20 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27480' 
+}
+
+Entry: Tue Sep 13 20:54:11 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:54:11 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27479' 
+}
+
+Entry: Tue Sep 13 20:54:11 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27479' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Sep 13 20:54:45 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Sep 13 20:54:45 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Sep 13 20:56:16 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27479', '@9:50am llame al ddo, dijo estraria depues de la       6:00pm en Vidys de la Ave Universidad.                                                                                                                               ', '2011-09-13', 50, NOW() )  
+}
+
+Entry: Tue Sep 13 20:58:10 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27479', '@7:00pm pude emplazar a ddo en Vidys Ave Universidad,  dijo Margarita tiene una hija de un matrimonio         anterior y el tiene un hijo que es tambien de          Margarita, la hija vive en Francia, pero no quizo dar  mas detalles paraderos pues no quieP', '2011-09-13', 80, NOW() )  
+}
+
+Entry: Mon Sep 19 10:24:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:24:08 2011
+{
+ SELECT Code, Name FROM city_rates ORDER BY Name 
+}
+
+Entry: Mon Sep 19 10:24:08 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 10:26:40 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '5651' 
+}
+
+Entry: Mon Sep 19 10:26:48 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '61651' 
+}
+
+Entry: Mon Sep 19 10:26:58 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:27:00 2011
+{
+ SELECT Code, Name FROM city_rates ORDER BY Name 
+}
+
+Entry: Mon Sep 19 10:27:00 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 10:39:09 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:39:13 2011
+{
+ SELECT Code, Name FROM city_rates ORDER BY Name 
+}
+
+Entry: Mon Sep 19 10:39:13 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 10:42:28 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:42:30 2011
+{
+ SELECT Code, Name FROM city_rates ORDER BY Name 
+}
+
+Entry: Mon Sep 19 10:42:30 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 10:44:09 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:44:11 2011
+{
+ SELECT Code, Name FROM city_rates ORDER BY Name 
+}
+
+Entry: Mon Sep 19 10:44:11 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 10:44:47 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:44:50 2011
+{
+ SELECT Code, Name FROM city_rates ORDER BY Name 
+}
+
+Entry: Mon Sep 19 10:44:50 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 10:46:37 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:46:39 2011
+{
+ SELECT Code AS SCode, Name FROM city_rates ORDER BY Name 
+}
+
+Entry: Mon Sep 19 10:46:39 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 10:55:53 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:55:55 2011
+{
+ SELECT SCode, Name FROM city_rates ORDER BY Name 
+}
+
+Entry: Mon Sep 19 10:55:55 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 10:59:13 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 10:59:15 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Mon Sep 19 10:59:15 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 11:10:06 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'BAYBayamon'}, CityName{'Bayamon'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'CAGCaguas'}, CityName{'Caguas'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'CANCanovanas'}, CityName{'Canovanas'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'CARCarolina'}, CityName{'Carolina'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'GBOGuaynabo'}, CityName{'Guaynabo'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'RIORio Grande'}, CityName{'Rio Grande'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'SJUSan Juan'}, CityName{'San Juan'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'TOAToa Alta'}, CityName{'Toa Alta'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'TOBToa Baja'}, CityName{'Toa Baja'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Row: CityCode{'TRUTurjillo Alto'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Mon Sep 19 11:10:09 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 11:11:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Row: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Mon Sep 19 11:11:32 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 11:17:51 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 11:17:54 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Mon Sep 19 11:17:54 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Mon Sep 19 11:18:02 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Mon Sep 19 11:18:02 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Mon Sep 19 11:18:20 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 11:22:24 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Mon Sep 19 11:22:26 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 11:33:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Mon Sep 19 11:33:06 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Mon Sep 19 11:33:16 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 11:33:20 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Mon Sep 19 11:33:20 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Mon Sep 19 11:49:42 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51651' 
+}
+
+Entry: Mon Sep 19 11:49:44 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Mon Sep 19 11:49:44 2011
+{
+ Elements freed from code_set: 4 
+}
