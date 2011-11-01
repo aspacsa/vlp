@@ -7,6 +7,7 @@
 #include "menus.h"
 #include "utils.h"
 #include "records.h"
+#include "reports.h"
 
 #define MENU_ROOT "Main Menu"
 #define SETUP_MENU_WIDTH 30
@@ -69,6 +70,9 @@ void actions_menu(const char *curr_path);
 void reports_menu(const char *curr_path);
 void setup_menu(const char *curr_path);
 void dbutils_menu(const char *curr_path);
+void billing_menu(const char *curr_path);
+void suggestions_menu(const char *curr_path);
+void dummy_menu(const char *curr_path);
 
 void summons_dataentry_scr(const char *curr_path, const char *case_num);
 void summons_list_scr(Summon_t **summons, size_t count, size_t *selection);
@@ -76,6 +80,7 @@ void summons_list_scr(Summon_t **summons, size_t count, size_t *selection);
 void actions_dataentry_scr(const char *curr_path, const char *case_num);
 size_t actions_list(const char *case_num); 
 void print_action(const Action_t * action, size_t idx);
+void from_to_selector(const char *curr_path, char **from, char **to, int *action); 
 
 char* menu_path(const char* curr_path, const char* sub_menu) {
   sprintf(new_menu_path, "%s > %s", curr_path, sub_menu);
@@ -915,6 +920,177 @@ void print_action(const Action_t *action, size_t idx) {
 }
 
 void reports_menu(const char *curr_path) {
+  const char *screen_title = "Reports";
+  int choice;
+  void ( *farray[] )( const char* ) = { dummy_menu,
+                                        dummy_menu,
+                                        dummy_menu,
+                                        dummy_menu,
+                                        dummy_menu,
+                                        dummy_menu,
+                                        dummy_menu,
+                                        dummy_menu,
+                                        dummy_menu,
+                                        dummy_menu,
+                                        billing_menu,
+                                        suggestions_menu
+                                  }; 
+  initscr();
+  raw();
+  do {
+    choice = 0;
+    noecho();
+    curs_set(0);
+    clear();
+    mvprintw( 0, 0, menu_path( curr_path, screen_title ) );
+    mvprintw(4, 10, "a. Billing");
+    mvprintw(6, 10, "b. Suggestions");
+    mvprintw(18, 10, "Select an option from the above menu or press (ESC) for previous screen.");
+    refresh();
+    choice = getch();
+    switch( choice ) {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':  
+        break;
+      case 'a':
+      case 'A':  choice = 10;
+                 break;  
+      case 'b':
+      case 'B':  choice = 11;
+                 break;
+      default:
+        break;
+    }
+    if ( choice >= 0 && choice <= 11 )
+      farray[choice]( curr_path );
+  } while ( choice != ESC );
+  endwin();
+  return; 
+}
+
+void from_to_selector(const char *curr_path, char **from, char **to, int *action) {
+  const size_t n_fields = 3;
+  const size_t starty = 6;
+  const size_t startx = 25;
+  FIELD *field[n_fields];
+  FORM *my_form;
+  int width[] = {  MAX_FROM_DATE, MAX_TO_DATE };
+  int height[] = { 1, 1 };
+
+  initscr();
+  curs_set(1);
+  cbreak();
+  clear();
+  noecho();
+  keypad(stdscr, TRUE);
+ 
+  for ( size_t i = 0; i < n_fields - 1; ++i )
+    field[i] = new_field(height[i], width[i], starty + i * 2, startx, 0, 0);
+  field[n_fields - 1] = NULL;
+
+  set_field_back( field[0], A_UNDERLINE  );
+  field_opts_off( field[0], O_AUTOSKIP   );
+  set_field_back( field[1], A_UNDERLINE  );
+  field_opts_off( field[1], O_AUTOSKIP   );
+
+  my_form = new_form(field);
+  post_form(my_form);
+  refresh();
+  
+  mvprintw( 0, 0,   curr_path );
+  mvprintw( 4, 10,  "Enter period for report:" );
+  mvprintw( 6, 10,  "From:          " );
+  mvprintw( 8, 10,  "To:            " );
+  mvprintw( 10, 10, "(F2) = Execute | (ESC) = Previous Screen" );
+  move( 6, 25 );
+  set_current_field( my_form, field[0] );
+
+  int ch;
+  do {
+    ch = getch();
+   
+    switch ( ch ) {
+      case KEY_UP:
+        form_driver(my_form, REQ_PREV_FIELD);
+        form_driver(my_form, REQ_END_LINE);
+        break;
+      case KEY_LEFT:
+        form_driver(my_form, REQ_LEFT_CHAR);
+        break;
+      case KEY_RIGHT:
+        form_driver(my_form, REQ_RIGHT_CHAR);
+        break;
+      case KEY_BACKSPACE:
+        form_driver(my_form, REQ_PREV_CHAR);
+        form_driver(my_form, REQ_DEL_CHAR);
+        break;
+      case ENTER:
+        form_driver( my_form, REQ_NEXT_FIELD );
+        form_driver( my_form, REQ_END_LINE );
+        break;
+      case KEY_F(2):
+        {
+          char my_from[MAX_FROM_DATE];
+          strncpy( my_from, compress_str(field_buffer( field[0], 0 )), MAX_FROM_DATE ); 
+          *from = malloc( strlen( my_from ) + 1 );
+          strcpy( *from, my_from );
+
+          char my_to[MAX_TO_DATE];
+          strncpy( my_to, compress_str(field_buffer( field[1], 0 )), MAX_TO_DATE ); 
+          *to = malloc( strlen( my_to ) + 1 );
+          strcpy( *to, my_to );
+        }
+        break;
+      case DEL:
+        form_driver(my_form, REQ_DEL_CHAR);
+        break;
+      default:
+        form_driver( my_form, ch );
+        break;
+    }
+  } while ( (ch != ESC) && (ch != KEY_F(2)) );
+  *action = ch;
+  unpost_form( my_form );
+  free_form( my_form );
+  for ( size_t i = 0; i < n_fields - 1; ++i )
+    free_field( field[i] );
+  return;
+}
+
+void billing_menu(const char *curr_path) {
+  int action;
+  char * from_date, * to_date;
+
+  from_to_selector(curr_path, &from_date, &to_date, &action);
+  if ( action == KEY_F(2) ) { 
+    char * msg;
+    size_t result = report_basic_summ_bill( from_date, to_date, &msg );
+    if ( result )
+      mvprintw( 20, 10, "[!] %s", msg );
+    else
+      mvprintw( 20, 10, "Report '%s'has been created. ", msg );
+    mvprintw( 25, 10, "Press any key to continue..." );
+    int ch = getch();
+    free( from_date );
+    free( to_date );
+    free( msg );
+  }
+  return;
+}
+
+void suggestions_menu(const char *curr_path) {
+  return;
+}
+
+void dummy_menu(const char *curr_path) {
   return;
 }
 

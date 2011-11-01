@@ -11,11 +11,17 @@
 #define MAX_SUMM_CITY 3
 #define MAX_SUMM_DATE 11
 #define MAX_SUMM_SET 10
+#define MAX_SUMM_BILL_SET 250
+
+#define MAX_CITY_NAME 45
 
 #define MAX_ACT_NOTE 255
 #define MAX_ACT_TYPE 2
 #define MAX_ACT_DATE 11
 #define MAX_ACT_SET 40
+
+#define MAX_FROM_DATE 11
+#define MAX_TO_DATE 11
 
 #define MAX_CODE_DESC 46
 #define MAX_CODE_SET 40
@@ -24,6 +30,17 @@
 #define MAX_SCODE_CODE 4
 #define MAX_SCODE_SET 80
 
+#define VLP_CNF_FILE "vlp.cnf"
+#define DB_LOG_FILE "db.log"
+#define SERVER_PARAM "server"
+#define USER_PARAM "user"
+#define PASS_PARAM "pass"
+#define DB_PARAM "db"
+#define WRITER_PARAM "writer"
+#define MAX_PARAM_LINE 81
+#define MAX_PARAM 81
+#define PARAMS_SIZE 320
+#define MAX_ERR_MSG 520
 
 typedef struct {
   char number[MAX_CANUM];
@@ -62,4 +79,17 @@ typedef struct {
   char name[MAX_SCODE_NAME];
 } SCode_t;
 
+typedef struct {
+  Summon_t summon_info;
+  char city_name[MAX_CITY_NAME];
+  double amount;
+} SummonBill_t;
+
+typedef struct {
+  char server[MAX_PARAM];
+  char user[MAX_PARAM];
+  char pass[MAX_PARAM];
+  char db[MAX_PARAM];
+  char writer[MAX_PARAM];
+} DBPARAMS;
 

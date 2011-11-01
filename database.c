@@ -6,26 +6,9 @@
 #include <string.h>
 #include <time.h>
 
-#define VLP_CNF_FILE "vlp.cnf"
-#define DB_LOG_FILE "db.log"
-#define SERVER_PARAM "server"
-#define USER_PARAM "user"
-#define PASS_PARAM "pass"
-#define DB_PARAM "db"
-#define MAX_PARAM_LINE 80
-#define MAX_PARAM 21
-#define PARAMS_SIZE 320
-
 MYSQL *conn;
 MYSQL_RES *res;
 MYSQL_ROW row;
-
-typedef struct params {
-  char server[MAX_PARAM];
-  char user[MAX_PARAM];
-  char pass[MAX_PARAM];
-  char db[MAX_PARAM];
-} DBPARAMS;
 
 DBPARAMS param;
 char params_list[PARAMS_SIZE];
@@ -47,8 +30,13 @@ SCode_t * scode_set[MAX_SCODE_SET] = {NULL};
 SCode_t ** scode_ptr = scode_set;
 size_t scode_set_count = 0;
 
+SummonBill_t * summ_bill_set[MAX_SUMM_BILL_SET] = {NULL};
+SummonBill_t ** summ_bill_ptr = summ_bill_set;
+size_t summ_bill_set_count = 0;
+
 int read_db_cnf();
 int write_db_log(char *line);
+DBPARAMS * get_conf(void);
 void prepare_line(char*);
 size_t query_create_new_case(Case_t *);
 size_t query_update_case(Case_t *);
@@ -70,10 +58,13 @@ size_t query_select_all_codes_for(char * query);
 const Code_t const * get_code_from_result(void);
 void free_code_result(void);
 
+size_t query_select_from_summons_bill_for(const char *from_date, const char *to_date);
+const SummonBill_t const * get_summon_bill_from_result(void);
+void free_summon_bill_result(void); 
+
 size_t query_select_all_codes_from_action_types(void);
 const SCode_t const * get_scode_from_result(void);
 void free_scode_result(void);
-
 
 size_t db_error_number(void);
 const char* db_error_message(void);
@@ -135,6 +126,8 @@ int read_db_cnf() {
       strncpy( param.pass, strtok( NULL, delimiter ), MAX_PARAM );
     } else if ( strcmp( token, DB_PARAM ) == 0 ) {
       strncpy( param.db, strtok( NULL, delimiter ), MAX_PARAM );
+    } else if ( strcmp( token, WRITER_PARAM ) == 0 ) {
+      strncpy( param.writer, strtok( NULL, delimiter ), MAX_PARAM );
     }
   }
   fclose( fp );
@@ -161,6 +154,10 @@ int set_db_cnf(const char *server, const char *user, const char *pass, const cha
   strncpy( param.pass, pass, MAX_PARAM );
   strncpy( param.db, db, MAX_PARAM );
   return 0;
+}
+
+DBPARAMS * get_conf(void) {
+  return &param;
 }
 
 void prepare_line(char *line) {
@@ -347,6 +344,78 @@ size_t query_delete_summon(size_t summ_id) {
   db_error_number();
   return mysql_query( conn, query );
 }
+
+size_t query_select_from_summons_bill_for(const char *from_date, const char *to_date) {
+  char query[BUFSIZ];
+  size_t result = 0;
+  size_t count = 0;
+
+  summ_bill_ptr = summ_bill_set;
+  for ( int i = 0; i <= MAX_SUMM_BILL_SET - 1; ++i )
+    summ_bill_set[i] = NULL;
+
+  sprintf( query, 
+           "SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount"
+           " FROM summons s LEFT OUTER JOIN city_rates c"
+           " ON s.CityCode = c.CityCode"
+           " WHERE s.Status = 30 AND s.Reason = 50"
+           " AND s.SummonDate BETWEEN '%s' AND '%s'"
+           " AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode)"
+           " UNION"
+           " SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount"
+           " FROM summons s LEFT OUTER JOIN city_rates c"
+           " ON s.CityCode = c.CityCode"
+           " WHERE s.Status = 30 AND s.Reason = 50 "
+           " AND s.SummonDate BETWEEN '%s' AND '%s'"
+           " AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode)"
+           " ORDER BY CaseNumber", from_date, to_date, from_date, to_date );
+  if ( dev_mode )
+    write_db_log( query );
+  db_error_number();
+  size_t error = mysql_query( conn, query );
+  if ( error ) {
+    return error;
+  } else {
+    res = mysql_use_result(conn);
+    while( ( ( row = mysql_fetch_row(res) ) != NULL ) && ( count <= MAX_SUMM_BILL_SET ) ) {
+      SummonBill_t *summBill_Ptr = malloc( sizeof(SummonBill_t) );
+      if ( summBill_Ptr == NULL ) {
+        result = 1;
+        break;
+      } else {
+        strncpy( summBill_Ptr->summon_info.case_num, row[0], MAX_CANUM );
+        strncpy( summBill_Ptr->summon_info.name, row[1], MAX_SUMM_NAME );
+        strncpy( summBill_Ptr->summon_info.summon_date, row[2], MAX_SUMM_DATE );
+        strncpy( summBill_Ptr->city_name, row[3], MAX_CITY_NAME );
+        summBill_Ptr->amount = atoi( row[4] );
+      }
+      summ_bill_set[count++] = summBill_Ptr;
+    }
+    mysql_free_result( res );
+  }
+  summ_bill_set_count = count;
+  return result;
+}
+
+const SummonBill_t const * get_summon_bill_from_result(void) {
+  return *summ_bill_ptr++; 
+}
+
+void free_summon_bill_result(void) {
+  size_t i = 0;
+
+  summ_bill_ptr = summ_bill_set;
+  for ( i = 0; i <= summ_bill_set_count - 1; ++i )
+    free( *summ_bill_ptr++ );
+  if ( dev_mode ) {
+    char msg[40];
+    sprintf( msg, "Elements freed from summ_bill_set: %u", i );
+    write_db_log( msg );
+  }
+  summ_bill_set_count = 0;
+  return;
+}
+
 
 size_t query_add_action(const Action_t const * record) {
   char query[BUFSIZ];

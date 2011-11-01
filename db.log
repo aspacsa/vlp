@@ -3449,3 +3449,3415 @@ Entry: Mon Sep 19 11:49:44 2011
 {
  Elements freed from code_set: 4 
 }
+
+Entry: Fri Oct  7 08:22:37 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '25034' 
+}
+
+Entry: Fri Oct  7 08:23:47 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Fri Oct  7 08:23:47 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Fri Oct  7 08:24:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '25034' 
+}
+
+Entry: Fri Oct  7 08:24:02 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('25034'), TRIM('FCD11-1330'),          TRIM('Cond. Costa del Sol Apto I-4 Carolina              PMB 627 497 Ave. Emiliano Pol San Juan             èﬁ'), TRIM('PMB 627 497 Ave. Emiliano Pol San Juan             èﬁ'),           30, TRIM('') ) 
+}
+
+Entry: Fri Oct  7 08:25:55 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '28034' 
+}
+
+Entry: Fri Oct  7 08:26:10 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Fri Oct  7 08:26:10 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Fri Oct  7 08:26:16 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Fri Oct  7 08:26:16 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Fri Oct  7 08:26:25 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Fri Oct  7 08:28:17 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '28034' 
+}
+
+Entry: Fri Oct  7 08:28:30 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Fri Oct  7 08:28:30 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Fri Oct  7 08:28:34 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Fri Oct  7 08:28:34 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Fri Oct  7 08:28:58 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('28034'), TRIM('Carlos Edwin Beltran Lopez                         ÷ø'), 30, 50, TRIM('CAR2011-10-06'), TRIM('2011-10-06') ) 
+}
+
+Entry: Fri Oct  7 08:29:08 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '28034' 
+}
+
+Entry: Fri Oct  7 08:29:14 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Fri Oct  7 08:30:27 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '28034' 
+}
+
+Entry: Fri Oct  7 08:30:27 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '28034' 
+}
+
+Entry: Tue Oct 11 09:59:29 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:01:01 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:01:01 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 10:01:20 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:01:20 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27970'), TRIM('FCD11-1378'),          TRIM('Country Club LA 8 Calle 220 Carolina               Ext Country Club JA 8 Calle 220                    œ;'), TRIM('Ext Country Club JA 8 Calle 220                    œ;'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 10:03:38 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '2790' 
+}
+
+Entry: Tue Oct 11 10:04:07 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27927727' 
+}
+
+Entry: Tue Oct 11 10:04:15 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:05:24 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:05:24 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:05:34 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:05:34 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Tue Oct 11 10:05:41 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Tue Oct 11 10:07:14 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27970'), TRIM('Maria Antonia Velez Hernandez                      €ø'), 30, 50, TRIM('CAR2011-09-30'), TRIM('2011-09-30') ) 
+}
+
+Entry: Tue Oct 11 10:08:31 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:08:31 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:08:53 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27970'), TRIM('Jose Escobar Velez                                 €ø'), 30, 50, TRIM('CAR2011-09-30'), TRIM('2011-09-30') ) 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Tue Oct 11 10:10:11 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Tue Oct 11 10:10:31 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Tue Oct 11 10:13:22 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27970'), TRIM('Juan Luis Escobar Velez                            €ø'), 30, 50, TRIM('RIO2011-10-02'), TRIM('2011-10-02') ) 
+}
+
+Entry: Tue Oct 11 10:16:00 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:16:00 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:16:21 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:16:21 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 10:19:07 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27970', '@4:00pm Pude emplazar a Maria y a su hijo Jose, otro   hijo se llama Luis Escobar Velez y Jesus Manuel        Escobar Velez que vive en New Jersey, no dieron        detalles de direccion o telefonos de este ultimo.      ', '2011-09-30', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 10:20:14 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27970', '@10:00am pude emplazar a Juan Luis Escobar Velez en    Rio Grande Estates 5 Calle 10 I-13, Rio Grande.                                                                                                                      ', '2011-10-02', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 10:20:51 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:20:51 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:20:51 2011
+{
+ Result: '27970', 'FCD11-1378', 'Country Club LA 8 Calle 220 Carolina              ', 'Ext Country Club JA 8 Calle 220                   ', 20, '0000-00-00' 
+}
+
+Entry: Tue Oct 11 10:21:01 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:21:01 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 10:21:38 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:21:45 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:21:56 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Tue Oct 11 10:22:09 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:22:09 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:22:28 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:22:28 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:23:53 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:23:53 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:24:11 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:24:15 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:24:15 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:26:10 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:26:10 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:26:51 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:26:51 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:26:57 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:26:57 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:27:05 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:27:05 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:27:24 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27970'), TRIM('Jesus Manuel Escobar Velez                         €ø'), 30, 80, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 10:27:29 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:28:13 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Tue Oct 11 10:28:21 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27970' 
+}
+
+Entry: Tue Oct 11 10:28:24 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Tue Oct 11 10:30:16 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:30:16 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:30:16 2011
+{
+ Result: '51630', 'FCD11-1186(403)', '60-15 46th Street Villa Carolina, Dev. Carolina   ', 'Villa Carolina 60-15 Calle 45 Carolina            ', 10, '2011-09-09' 
+}
+
+Entry: Tue Oct 11 10:30:23 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:30:23 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 10:30:35 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:30:40 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:30:41 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Tue Oct 11 10:30:44 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:30:44 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:30:50 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:30:50 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:31:15 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:31:15 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:31:15 2011
+{
+ Result: '51630', 'FCD11-1186(403)', '60-15 46th Street Villa Carolina, Dev. Carolina   ', 'Villa Carolina 60-15 Calle 45 Carolina            ', 10, '2011-09-09' 
+}
+
+Entry: Tue Oct 11 10:31:19 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:31:19 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 10:31:48 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:31:48 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1186(403)'),                       PhysicalAdd = TRIM('60-15 46th Street Villa Carolina, Dev. Carolina    Villa Carolina 60-15 Calle 45 Carolina             øÈ'),                       PostalAdd = TRIM('Villa Carolina 60-15 Calle 45 Carolina             øÈ'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:32:27 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:32:27 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:32:27 2011
+{
+ Result: '27595', 'FDC11-1131(404)', 'Jardin Sereno, 2840, Carolina PR 00983            ', 'Loiza Valley, 227 Calle Girasol Canovanas,PR 00729', 10, '2011-09-06' 
+}
+
+Entry: Tue Oct 11 10:32:40 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:32:48 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:32:59 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 10:33:03 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:33:03 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:34:15 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:34:15 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:34:57 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('27595'),     Name = TRIM('Eric I. Estrada Pabon                              ﬁø'),     Status = 30,     Reason = 50,     CityCode = TRIM('CAR2011-09-23'),     SummonDate = TRIM('2011-09-23') WHERE id = 17 
+}
+
+Entry: Tue Oct 11 10:34:59 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:35:01 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 10:35:09 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:35:09 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:35:31 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('27595'),     Name = TRIM('Betzaida Ramirez Alers                             ﬁø'),     Status = 30,     Reason = 50,     CityCode = TRIM('CAR2011-09-23'),     SummonDate = TRIM('2011-09-23') WHERE id = 18 
+}
+
+Entry: Tue Oct 11 10:35:37 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:35:38 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 10:35:50 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:35:50 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '51630' 
+}
+
+Entry: Tue Oct 11 10:35:50 2011
+{
+ Result: '51630', 'FCD11-1186(403)', '60-15 46th Street Villa Carolina, Dev. Carolina   ', 'Villa Carolina 60-15 Calle 45 Carolina            ', 30, '2011-09-09' 
+}
+
+Entry: Tue Oct 11 10:36:21 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:36:21 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:36:21 2011
+{
+ Result: '27595', 'FDC11-1131(404)', 'Jardin Sereno, 2840, Carolina PR 00983            ', 'Loiza Valley, 227 Calle Girasol Canovanas,PR 00729', 30, '2011-09-06' 
+}
+
+Entry: Tue Oct 11 10:36:28 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:36:28 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 10:37:52 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:37:52 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27595' 
+}
+
+Entry: Tue Oct 11 10:37:52 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27595' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Oct 11 10:38:15 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:38:15 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 10:38:39 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@10:25am nadie en residencia.                                                                                                                                                                                               ', '2011-09-03', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 10:40:25 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@7:45pm llame en varias ocasiones a la puerta pero     nadie contesto.                                                                                                                                                      ', '2011-09-06', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 10:41:01 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@8:30pm nadie contesto.                                                                                                                                                                                                     ', '2011-09-08', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 10:41:32 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@8:00am nadie en la casa.                                                                                                                                                                                                   ', '2011-09-09', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 10:44:13 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@9:00am visite Loiza Valley, 227 Calle Girasol en      Canovanas, Luz Pabon madre de Eric dijo este vive      junto a Betzaida en Jardin Sereno, dijo que Eric       trabaja de madrugada, deje mensaje con madre.          ', '2011-09-09', 60, NOW() )  
+}
+
+Entry: Tue Oct 11 10:46:19 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@7:40pm vi la silueta de una persona en area cocina de apto pero a pesar de llamar nadie contesto.                                                                                                                          ', '2011-09-10', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 10:47:13 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@8:00pm llame al #939-642-7004 pero nadie contesto.                                                                                                                                                                         ', '2011-09-10', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 10:48:05 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@3:00pm visita negativa, deje nota en puerta.                                                                                                                                                                               ', '2011-09-11', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 10:49:20 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@3:43pm visite casa de los padres en Loiza Valley,     padre de Eric dijo no sabia donde estaba su hijo a esa hora, deje mensaje con este.                                                                                  ', '2011-09-11', 60, NOW() )  
+}
+
+Entry: Tue Oct 11 10:50:54 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@5:00pm llame a Eric, dijo que pasara despues de las   8:30 por el apartamento.                                                                                                                                             ', '2011-09-23', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 10:51:24 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27595', '@9:00pm pude emplazar a los ddos en apto.                                                                                                                                                                                   ', '2011-09-23', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 10:52:07 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '6854' 
+}
+
+Entry: Tue Oct 11 10:52:12 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:52:12 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:52:12 2011
+{
+ Result: '06854', 'FCD-11-0964', 'Cond Park Plaza Apto 501, Carolina                ', 'Same                                              ', 20, '0000-00-00' 
+}
+
+Entry: Tue Oct 11 10:53:01 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:53:03 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:53:15 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Tue Oct 11 10:53:18 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:53:18 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:53:28 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:53:31 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Tue Oct 11 10:53:35 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:53:35 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:53:42 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:53:42 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Tue Oct 11 10:54:03 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Tue Oct 11 10:54:12 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Tue Oct 11 10:54:38 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:54:41 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:54:43 2011
+{
+ Elements freed from summ_set: 4 
+}
+
+Entry: Tue Oct 11 10:54:49 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:54:49 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:54:54 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:54:54 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Tue Oct 11 10:55:12 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Tue Oct 11 10:55:47 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('06854'),     Name = TRIM('Estados Unidos de America                          ﬁø'),     Status = 30,     Reason = 50,     CityCode = TRIM('SJU2011-09-30'),     SummonDate = TRIM('2011-09-30') WHERE id = 49 
+}
+
+Entry: Tue Oct 11 10:55:57 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:55:57 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:55:57 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '06854' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Oct 11 10:56:16 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:56:16 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 10:57:15 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('06854', '@11:00am Emplace a Fiscal Federal por conducto de      Nancy Castro Secretaria encargada Division Legal.                                                                                                                    ', '2011-09-30', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 10:57:47 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:57:47 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '06854' 
+}
+
+Entry: Tue Oct 11 10:57:47 2011
+{
+ Result: '06854', 'FCD-11-0964', 'Cond Park Plaza Apto 501, Carolina                ', 'Same                                              ', 30, '0000-00-00' 
+}
+
+Entry: Tue Oct 11 10:57:53 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:57:53 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 10:58:15 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51700' 
+}
+
+Entry: Tue Oct 11 10:59:03 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:59:03 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 10:59:16 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51700' 
+}
+
+Entry: Tue Oct 11 10:59:16 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('51700'), TRIM('FCD11-1391'),          TRIM('111 Jimenez Landrau Carolina (por Catanito)        Same                                               øÈ'), TRIM('Same                                               øÈ'),           30, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 10:59:26 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51700' 
+}
+
+Entry: Tue Oct 11 10:59:28 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '51700' 
+}
+
+Entry: Tue Oct 11 10:59:56 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:59:56 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 10:59:59 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 10:59:59 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:00:43 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('51700'), TRIM('Angel Gonzalez Morales                             ﬁø'), 30, 50, TRIM('CAR2011-09-30'), TRIM('2011-09-30') ) 
+}
+
+Entry: Tue Oct 11 11:01:13 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:01:13 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:01:20 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:01:20 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:01:33 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:01:33 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:01:44 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('51700'), TRIM('Petra M. Jimenez Fargas                            ﬁø'), 30, 80, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 11:02:11 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51700' 
+}
+
+Entry: Tue Oct 11 11:02:11 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51700' 
+}
+
+Entry: Tue Oct 11 11:03:30 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:03:30 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 11:06:29 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('51700', '@3:00pm pude emplazar a Angel, dijo que su esposa      Petra fallecio el 4 de abril de 2009 en PR, sobreviven Nelida, Elba, Rafael, Carlos Enrique, Jose Angel,      Pedro Luis Monje Jimenez y Carmen, Luis Angel, Angel   Luis, Ramona Angeliza, Juan Angel GP', '2011-09-30', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 11:10:13 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07451' 
+}
+
+Entry: Tue Oct 11 11:11:34 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:11:34 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 11:11:44 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07451' 
+}
+
+Entry: Tue Oct 11 11:11:44 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('07451'), TRIM('FDC11-1348'),          TRIM('Urb Bosque del Lago BF 33 Trujillo Alto            Urb Bosque del Lago BF-33 Plaza 15 Trujillo Alto   øÈ'), TRIM('Urb Bosque del Lago BF-33 Plaza 15 Trujillo Alto   øÈ'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 11:11:58 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07451' 
+}
+
+Entry: Tue Oct 11 11:12:17 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:12:17 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:12:23 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:12:23 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Tue Oct 11 11:12:35 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Tue Oct 11 11:14:07 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07451' 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Tue Oct 11 11:14:12 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Tue Oct 11 11:16:00 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:16:00 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:16:33 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('07451'), TRIM('Christopher Alers Lora                             ﬁø'), 30, 50, TRIM('TRU2011-10-08'), TRIM('2011-10-08') ) 
+}
+
+Entry: Tue Oct 11 11:16:46 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:16:46 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:16:55 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:16:55 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:17:08 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('07451'), TRIM('Estados Unidos de America                          ﬁø'), 20, 99, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 11:17:11 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '07451' 
+}
+
+Entry: Tue Oct 11 11:17:15 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 11:17:43 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07451' 
+}
+
+Entry: Tue Oct 11 11:17:43 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '07451' 
+}
+
+Entry: Tue Oct 11 11:22:18 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:22:18 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 11:22:42 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('07451', '@1:51pm visita negativa.                                                                                                                                                                                                    ', '2011-10-04', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 11:23:44 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('07451', '@8:00pm visita negativa, pide hablar con esposa de     ddo, dijo el llega mas tarde, deje # de cel.                                                                                                                         ', '2011-10-06', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 11:24:38 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('07451', '@9:30am pude emplazar a ddo en residencia.                                                                                                                                                                                  ', '2011-10-08', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 11:25:33 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '25955' 
+}
+
+Entry: Tue Oct 11 11:26:49 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:26:49 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 11:26:59 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '25955' 
+}
+
+Entry: Tue Oct 11 11:26:59 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('25955'), TRIM('FCD11-1334'),          TRIM('Alturas Interamericana 14 Blq T16 Trujillo Alto    Cond Interamericana Edf B20 apto 3B Trujillo Alto  øÈ'), TRIM('Cond Interamericana Edf B20 apto 3B Trujillo Alto  øÈ'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 11:27:11 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '25955' 
+}
+
+Entry: Tue Oct 11 11:27:31 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:27:31 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:27:37 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:27:37 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:27:58 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('25955'), TRIM('Jaime Cruz Monroig                                 ﬁø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 11:28:11 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:28:11 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:28:15 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:28:15 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:28:47 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('25955'), TRIM('Lizaida Mejia Cotto                                ﬁø'), 30, 50, TRIM('TRU2011-10-08'), TRIM('2011-10-08') ) 
+}
+
+Entry: Tue Oct 11 11:28:49 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '25955' 
+}
+
+Entry: Tue Oct 11 11:28:52 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 11:29:19 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '25955' 
+}
+
+Entry: Tue Oct 11 11:29:19 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '25955' 
+}
+
+Entry: Tue Oct 11 11:29:31 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:29:31 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 11:30:32 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('25955', '@10:0am pude emplazar a Lizaida en apto, dijo que su   esposo no estaba en ese momento, deje # de cel para    que me llame.                                                                                                 ', '2011-10-08', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 11:31:06 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 11:32:21 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:32:21 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 11:32:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 11:32:30 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27259'), TRIM('FBCI2011001051'),          TRIM('River Garden Aliso E-5 Canovanas                   Urb Metropolis 2T-19 Calle 46 Carolina             øÈ'), TRIM('Urb Metropolis 2T-19 Calle 46 Carolina             øÈ'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 11:32:44 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 11:32:58 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:32:58 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:33:09 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:33:09 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:33:39 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27259'), TRIM('Omar Ruiz Hernandez                                ﬁø'), 30, 50, TRIM('CAR2011-10-07'), TRIM('2011-10-07') ) 
+}
+
+Entry: Tue Oct 11 11:34:18 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:34:18 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:34:23 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:34:23 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:34:30 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27259'), TRIM('Leslie Ann Frank Ayala                             ﬁø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 11:35:43 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 11:35:43 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 11:35:59 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:35:59 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 11:36:46 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@12:00pm visita negativa, guardia dijo que nadie       contestaba.                                                                                                                                                          ', '2011-09-17', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 11:38:21 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@1:30pm visite direccion postal Metropolis, mama de    ddo le llamo, pude hablar con el, me pidio mi # de cel para llamarme luego.                                                                                          ', '2011-09-17', 60, NOW() )  
+}
+
+Entry: Tue Oct 11 11:39:41 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@1:34pm ddo me llamo del #466-9418, dijo no aceptaria  emplazameinto, que llamaria a Loss Mitigation de BPPR.                                                                                                               ', '2011-09-17', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 11:40:33 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@10:40am Visita negativa guardia dijo residentes le    dijeron que no estaban en apto.                                                                                                                                      ', '2011-10-02', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 11:42:18 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@10:00am visite lugar de trabajo de Omar en Auto       Centro 65, Julie de recursos humanos me informo que    ddo no trabaja con ellos.                                                                                     ', '2011-10-07', 40, NOW() )  
+}
+
+Entry: Tue Oct 11 11:43:34 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@10:30am llame al #776-2277 Hyundai Caribe, Julio      Cintron dijo ddo no trabaja alli.                                                                                                                                    ', '2011-10-07', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 11:44:51 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@10:37am visite lugar de trabajo de Leslie en First    Bank 65 Inf, Odalys Rosado dijo ddo no trabaja alli.                                                                                                                 ', '2011-10-07', 40, NOW() )  
+}
+
+Entry: Tue Oct 11 11:46:10 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@3:00pm pude emplazar a Omar en Escorial Shopping      Village de Plaza Escorial en Carolina, dijo habalria   con Leslie para coordinar emplazamiento, dijo me       llamaria.                                              ', '2011-10-07', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 11:49:27 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27259', '@11:49am llame a Omar, dijo que me llamaria hoy a eso d                                                                                                                                                                     ', '2011-10-11', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 11:49:42 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 11:49:45 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 11:49:47 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 11:50:24 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '28034' 
+}
+
+Entry: Tue Oct 11 11:50:24 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '28034' 
+}
+
+Entry: Tue Oct 11 11:50:24 2011
+{
+ Result: '28034', 'FCD11-1330', 'Cond. Costa del Sol Apto I-4 Carolina             ', 'PMB 627 497 Ave. Emiliano Pol San Juan            ', 30, '0000-00-00' 
+}
+
+Entry: Tue Oct 11 11:50:37 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '28034' 
+}
+
+Entry: Tue Oct 11 11:50:40 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '28034' 
+}
+
+Entry: Tue Oct 11 11:50:41 2011
+{
+ Elements freed from summ_set: 1 
+}
+
+Entry: Tue Oct 11 11:51:25 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:51:25 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:51:25 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina            ', 'PO Box 1016 San Lorenzo                           ', 10, '2011-09-09' 
+}
+
+Entry: Tue Oct 11 11:51:32 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:51:32 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 11:51:42 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:51:42 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina             PO Box 1016 San Lorenzo                            øÈ'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                            øÈ'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:51:58 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:52:00 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:52:03 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 11:52:07 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:52:07 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:52:12 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:52:12 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:52:41 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('27921'),     Name = TRIM('Ana S. Alonso de Santiago                          ﬁø'),     Status = 30,     Reason = 50,     CityCode = TRIM('TRU2011-10-07'),     SummonDate = TRIM('2011-10-07') WHERE id = 24 
+}
+
+Entry: Tue Oct 11 11:52:45 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:52:46 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 11:52:49 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:52:49 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 11:52:57 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:52:57 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 11:53:08 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('27921'),     Name = TRIM('Ubaldo Santiago Alabarse                           ﬁø'),     Status = 30,     Reason = 80,     CityCode = TRIM(''),     SummonDate = TRIM('0000-00-00') WHERE id = 23 
+}
+
+Entry: Tue Oct 11 11:53:34 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27291' 
+}
+
+Entry: Tue Oct 11 11:53:43 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:53:43 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Oct 11 11:53:43 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Oct 11 11:56:04 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 11:56:04 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 11:56:38 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', '@11:30am visita negativa.                                                                                                                                                                                                   ', '2011-09-17', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 11:57:16 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', '@9:10am vista negativa                                                                                                                                                                                                      ', '2011-10-02', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 12:00:28 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', '@8:00pm pude conversar con Gerardo quien es nieto de   los ddos, dijo que Ubaldo habia fallecido y que Ana    estaba en Hogar de Envejecientes en Trujillo Alto,     numero de Gerardo es el #554-6827, nietos Ubaldo,      Sofia y Gerardo Santiago Rivera, pa', '2011-10-04', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 12:03:15 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', '@1:30pm emplace a Ana en Hogar Vista Serena, Camino    Pedro Angulo en Trujillo Alto, dijo que esposo         fallecio el 1ro de nov de 2009 y su hijo el 18 de      junio de 2008. ambos en PR.                                                               P', '2011-10-07', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 12:04:55 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27820' 
+}
+
+Entry: Tue Oct 11 12:06:08 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27820' 
+}
+
+Entry: Tue Oct 11 12:06:08 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27820'), TRIM('FCD11-1276'),          TRIM('Bo. Dos Bocas Carr 852 km 1.1 Trujillo Alto                                                           øÈ'), TRIM('                                                   øÈ'),           0, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 12:06:11 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 12:06:11 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 12:06:16 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27820' 
+}
+
+Entry: Tue Oct 11 12:06:16 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1276'),                       PhysicalAdd = TRIM('Bo. Dos Bocas Carr 852 km 1.1 Trujillo Alto                                                           øÈ'),                       PostalAdd = TRIM('                                                   øÈ'),                       Status = 30,                       DeliveryDate = TRIM('') WHERE CaseNumber = '27820' 
+}
+
+Entry: Tue Oct 11 12:06:29 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27820' 
+}
+
+Entry: Tue Oct 11 12:07:34 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27820'), TRIM('Carlos J. Rivera Rivera                            ﬁø'), 30, 50, TRIM('CAR2011-10-04'), TRIM('2011-10-04') ) 
+}
+
+Entry: Tue Oct 11 12:08:13 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27820'), TRIM('Ana D. Martinez Soto                               ﬁø'), 30, 50, TRIM('SJU2011-10-04'), TRIM('2011-10-04') ) 
+}
+
+Entry: Tue Oct 11 12:08:18 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27820' 
+}
+
+Entry: Tue Oct 11 12:08:20 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 12:08:29 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27820' 
+}
+
+Entry: Tue Oct 11 12:08:29 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27820' 
+}
+
+Entry: Tue Oct 11 12:08:44 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 12:08:44 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 12:11:16 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27820', '@10:50am visite RRR Ice Plant Carr 848 Saint Just,     pude emplazar a Carlos, llamo a ex-esposa y esta dijo  que estaria a las 12:00pm en Pizza Hut de Parad 18,    trabaja en Esc Francisco Hernandez del mismo lugar,    propiedad es por Camino Los Morales(', '2011-10-04', 40, NOW() )  
+}
+
+Entry: Tue Oct 11 12:12:09 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27820', '@11:30am pude emplazar a Ana en Pizza Hust parada 18   en Santurce.                                                                                                                                                                                            P', '2011-10-04', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 16:28:25 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06952' 
+}
+
+Entry: Tue Oct 11 16:28:32 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '6952' 
+}
+
+Entry: Tue Oct 11 16:28:35 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06952' 
+}
+
+Entry: Tue Oct 11 16:29:41 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:29:41 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 16:29:51 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06952' 
+}
+
+Entry: Tue Oct 11 16:29:51 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('06952'), TRIM('N3C12011-00441'),          TRIM('Km 7.5 Carr 958 Barrio Malpica Rio Grande                                                             èa'), TRIM('                                                   èa'),           30, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 16:30:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06952' 
+}
+
+Entry: Tue Oct 11 16:30:18 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:30:18 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 16:30:25 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:30:25 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 16:30:33 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('06952'), TRIM('Jose Antonio Monzon Diaz                           õø'), 30, 80, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 16:34:23 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:34:23 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 16:34:41 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:34:41 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 16:36:04 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('06952'), TRIM('Nilsa Luz Becerril Lassen                          õø'), 30, 50, TRIM('CAR2011-10-11'), TRIM('2011-10-11') ) 
+}
+
+Entry: Tue Oct 11 16:36:07 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '06952' 
+}
+
+Entry: Tue Oct 11 16:36:09 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 16:36:32 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '06952' 
+}
+
+Entry: Tue Oct 11 16:36:32 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '06952' 
+}
+
+Entry: Tue Oct 11 16:36:57 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:36:57 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 16:38:04 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('06952', '@9:40am viste car 958 km 7.5, pero no pude localizar   propiedad, tampoco los vecinos del area conocen a los  ddos.                                                                                                         ', '2011-08-06', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 16:39:43 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('06952', '@12:00pm llame al #603-5305, dda dijo traba en         Hospital Federico Trilla en Carolina, 2do piso,        pediatria, coordinams para reunirnos alla a la 1:00pm                                                         ', '2011-10-11', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 16:42:10 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('06952', '@1:00pm pude emplazar a Nilsa en lobby Hospital        Federico Trilla, dijo Jose murio en accidente          automovil el 17 de octubre de 2005, tuvieron tres      hijos, Luz, Angel Davisd, Jose Antonio Monzon          Becerril, los dos ultimos fallecierP', '2011-10-11', 80, NOW() )  
+}
+
+Entry: Tue Oct 11 16:44:31 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('06952', 'Dda dijo que se llega a propiedad por carr 958, pasa   el faro, luego encontrar piedra que dice 5.5 y tomar   el camino que lleva a la casa color azul.                                                                                                        
+', '2011-10-11', 10, NOW() )  
+}
+
+Entry: Tue Oct 11 16:50:20 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 16:50:20 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27259' 
+}
+
+Entry: Tue Oct 11 16:50:20 2011
+{
+ Result: '27259', 'FBCI2011001051', 'River Garden Aliso E-5 Canovanas                  ', 'Urb Metropolis 2T-19 Calle 46 Carolina            ', 20, '0000-00-00' 
+}
+
+Entry: Tue Oct 11 16:51:14 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27531' 
+}
+
+Entry: Tue Oct 11 16:52:27 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:52:27 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 16:52:35 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27531' 
+}
+
+Entry: Tue Oct 11 16:52:35 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27531'), TRIM('FCD11-1332'),          TRIM('F-10 Hacienda Real Dev Carolina Calle Cundeamor    265 Hacienda Real Carolina                         ﬂ’'), TRIM('265 Hacienda Real Carolina                         ﬂ’'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 16:52:59 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27531' 
+}
+
+Entry: Tue Oct 11 16:53:21 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:53:21 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 16:53:29 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:53:29 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 16:53:55 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27531'), TRIM('Carlos Antonio Rodriguez Pla                       Òø'), 20, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 16:54:08 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:54:08 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 16:54:12 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:54:12 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 16:54:20 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27531'), TRIM('Melissa Serrano Pena                               Òø'), 20, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 16:54:34 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27531' 
+}
+
+Entry: Tue Oct 11 16:54:34 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27531' 
+}
+
+Entry: Tue Oct 11 16:54:48 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:54:48 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 16:55:57 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27531', '@11:20am visita negativa, deje nota en puerta con info contacto.                                                                                                                                                            ', '2011-10-08', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 16:58:08 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27531', 'Carlos #776-1053, es gerente de Banca Comercial Scotia Bank 273 Ponce de Leon, San Juan #776-7909, Melissa    Ama de Casa, Dirr Adicional Urb Los Arboles 601 Vereda del Bosque, Carolina.                                  ', '2011-10-11', 10, NOW() )  
+}
+
+Entry: Tue Oct 11 16:58:46 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27958' 
+}
+
+Entry: Tue Oct 11 16:59:34 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 16:59:34 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 16:59:39 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27958' 
+}
+
+Entry: Tue Oct 11 16:59:39 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27958'), TRIM('FCD11-1307'),          TRIM('Cond Isla Verde Estates Apto 209, Carolina         Same                                               ﬂ’'), TRIM('Same                                               ﬂ’'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 16:59:59 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27958' 
+}
+
+Entry: Tue Oct 11 17:00:19 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:00:19 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:00:24 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:00:24 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 17:00:34 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27958'), TRIM('Raul Blanco Almeron                                Òø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:00:50 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:00:50 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:00:57 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27958'), TRIM('Liduzka Galindo Milian                             Òø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:01:13 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27958' 
+}
+
+Entry: Tue Oct 11 17:01:13 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27958' 
+}
+
+Entry: Tue Oct 11 17:02:09 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:02:09 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 17:02:51 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27958', '@11:34am visita negativa, no habia guardia en caseta   seguridad, sistema de Intercom no funciona.                                                                                                                          ', '2011-10-02', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:04:10 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27958', '@11:40am llame #774-8865 Technology Partners, nadie    contesto, llame a #791-3817 esta fuera de servicio.                                                                                                                  ', '2011-10-02', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 17:04:56 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27958', '@9:30am visita negativa, no habia guardia.                                                                                                                                                                                  ', '2011-10-06', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:06:53 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27958', '@11:47am llame #249-6665 nadie contesto. 411 dice que  no hay compania Technology Partners en todo PR.                                                                                                                      ', '2011-10-07', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 17:17:46 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27958', '@5:00pm llame #774-8865, Joan Melendez dijo que Raul no                                                                                                                                                                     ', '2011-10-11', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 17:18:36 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27958', 'Busque en Internet, hay site tppr.com, aparece mismo   numeros de telefonos pero no hay direccion fisica.                                                                                                                   ', '2011-10-11', 70, NOW() )  
+}
+
+Entry: Tue Oct 11 17:19:14 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '24921' 
+}
+
+Entry: Tue Oct 11 17:19:58 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:19:58 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 17:20:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '24921' 
+}
+
+Entry: Tue Oct 11 17:20:02 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('24921'), TRIM('FCD11-1337'),          TRIM('Cond. Jardin Sereno Apto 1603, Carolina                                                               ﬂ’'), TRIM('                                                   ﬂ’'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:20:47 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '24921' 
+}
+
+Entry: Tue Oct 11 17:21:02 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:21:02 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:21:07 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:21:07 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 17:21:14 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('24921'), TRIM('Miguel Rodriguez Fernandez                         Òø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:21:32 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('24921'), TRIM('Yelitza Ferrer Colon                               Òø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:21:44 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '24921' 
+}
+
+Entry: Tue Oct 11 17:21:44 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '24921' 
+}
+
+Entry: Tue Oct 11 17:21:58 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:21:58 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 17:22:53 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('24921', '@12:17pm visita negativa, no pude entrar a condominio  ya que no hay guardia ni sistema de intercom.                                                                                                                        ', '2011-10-02', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:24:01 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('24921', 'Miguel es policia, no dice en donde, Yeliza es         asistente en MCS, tel 793-1234, 233-3961                                                                                                                             ', '2011-10-11', 10, NOW() )  
+}
+
+Entry: Tue Oct 11 17:24:43 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27745' 
+}
+
+Entry: Tue Oct 11 17:25:29 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:25:29 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 17:25:34 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27745' 
+}
+
+Entry: Tue Oct 11 17:25:34 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27745'), TRIM('FCD11-1350'),          TRIM('Club Costamarina Torre II Apto 4-H                                                                    ﬂ’'), TRIM('                                                   ﬂ’'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:25:43 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27745' 
+}
+
+Entry: Tue Oct 11 17:26:07 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:26:07 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:26:11 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:26:11 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 17:26:26 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27745'), TRIM('Elizabeth Vizcarrondo Magriz                       Òø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:26:39 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27745' 
+}
+
+Entry: Tue Oct 11 17:26:39 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27745' 
+}
+
+Entry: Tue Oct 11 17:26:54 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:26:54 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 17:27:34 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27745', '@12:35pm guardia dijo que nadie contestaba en apto     4-H.                                                                                                                                                                 ', '2011-10-02', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:30:03 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27745', '@2:00pm llame al #439-1726, pero nadie contesto.                                                                                                                                                                            ', '2011-10-04', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 17:31:46 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '26101' 
+}
+
+Entry: Tue Oct 11 17:32:50 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:32:50 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 17:32:54 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '26101' 
+}
+
+Entry: Tue Oct 11 17:32:54 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('26101'), TRIM('FCD11-1333'),          TRIM('Urb Antillana 73 Via Antillana, Trujillo Alto      Same                                               ﬂ’'), TRIM('Same                                               ﬂ’'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:33:41 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '26101' 
+}
+
+Entry: Tue Oct 11 17:34:01 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:34:01 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:34:08 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:34:08 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 17:34:14 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('26101'), TRIM('Luis S Burgos De Los Santos                        Òø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:34:28 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('26101'), TRIM('Jenny Benzan Sanchez                               Òø'), 0, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:34:34 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '26101' 
+}
+
+Entry: Tue Oct 11 17:34:35 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 17:34:41 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:34:41 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:34:47 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:34:47 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 17:34:53 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('26101'),     Name = TRIM('Jenny Benzan Sanchez                               Òø'),     Status = 20,     Reason = 70,     CityCode = TRIM(''),     SummonDate = TRIM('0000-00-00') WHERE id = 81 
+}
+
+Entry: Tue Oct 11 17:35:11 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:35:11 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:35:17 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('26101'), TRIM('Estados Unidos de America                          Òø'), 20, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:35:32 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '26101' 
+}
+
+Entry: Tue Oct 11 17:35:32 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '26101' 
+}
+
+Entry: Tue Oct 11 17:35:42 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:35:42 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 17:36:18 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('26101', '@2:20pm visita negativa, guardia dijo residentes le    dijeron que no estaban en propiedad.                                                                                                                                 ', '2011-10-04', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:37:08 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('26101', '@8:20pm visita negativa, guardia dijo que al llamar a  residencia lo que sale es una grabadora.                                                                                                                             ', '2011-10-06', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:38:12 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('26101', '@9:50am visita negativa en la propiedad, guardia dijo  nadie contesto.                                                                                                                                                      ', '2011-10-08', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:39:18 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('26101', '@10:00am llame al #633-5032, nadie contesto, llame     #761-8306, esta fuera de servicio.                                                                                                                                   ', '2011-10-108ø', 50, NOW() )  
+}
+
+Entry: Tue Oct 11 17:40:15 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '26092' 
+}
+
+Entry: Tue Oct 11 17:40:57 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:40:57 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 17:41:03 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '26092' 
+}
+
+Entry: Tue Oct 11 17:41:03 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('26092'), TRIM('FCD11-1306'),          TRIM('Cond. Cima de Villa Apto 68, Trujillo Alto         Same                                               ﬂ’'), TRIM('Same                                               ﬂ’'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:41:12 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '26092' 
+}
+
+Entry: Tue Oct 11 17:41:25 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:41:25 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:41:30 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('26092'), TRIM('Willy Nieves Nieves                                Òø'), 20, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:41:51 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:41:51 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:42:00 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:42:00 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 17:42:04 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('26092'), TRIM('Aracelis Lizardi Sierra                            Òø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:42:07 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '26092' 
+}
+
+Entry: Tue Oct 11 17:42:08 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 17:42:14 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('26092'),     Name = TRIM('Willy Nieves Nieves                                Òø'),     Status = 20,     Reason = 70,     CityCode = TRIM(''),     SummonDate = TRIM('0000-00-00') WHERE id = 83 
+}
+
+Entry: Tue Oct 11 17:42:46 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '26092' 
+}
+
+Entry: Tue Oct 11 17:42:46 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '26092' 
+}
+
+Entry: Tue Oct 11 17:42:56 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:42:56 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 17:43:49 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('26092', '@1:40pm visita negativa, llame por intercom, nadie     contesto.                                                                                                                                                            ', '2011-10-07', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:46:05 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('26092', 'Willy 630-3545, Vendedor Holsum Toa Baja 798-8282,     Aracelis 646-3417 es Secretaria Clinical Research PR   359 Ave de Diego Suite 501 San Juan 723-5945.          Direccion adicional 1205 Apto Caribbean Sea View, San J                                   
+', '2011-10-07', 10, NOW() )  
+}
+
+Entry: Tue Oct 11 17:53:13 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51601' 
+}
+
+Entry: Tue Oct 11 17:54:03 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:54:03 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 17:54:09 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51601' 
+}
+
+Entry: Tue Oct 11 17:54:09 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('51601'), TRIM('FCD11-1225'),          TRIM('IB 5 Apt Montecillo, Trujillo Alto                                                                    ﬂ’'), TRIM('                                                   ﬂ’'),           20, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:54:17 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51601' 
+}
+
+Entry: Tue Oct 11 17:54:31 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:54:31 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 17:54:38 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:54:38 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Tue Oct 11 17:54:44 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('51601'), TRIM('Ranier Luis Agresar Valle                          Òø'), 20, 70, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 17:54:55 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51601' 
+}
+
+Entry: Tue Oct 11 17:54:55 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '51601' 
+}
+
+Entry: Tue Oct 11 17:55:07 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 17:55:07 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 17:56:23 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('51601', '@2:08pm visita negativa Edificio 22, gran cantidad de  correspondencia en acumulada frente a puerta, nadie    contesto en apartamento del lado IB-6.                                                                        ', '2011-09-06', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 17:58:51 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('51601', '@8:36pm visita negativa, visite dirr adicional en apt  6JB del mismo Condominio, hay gran cantidad de         correspondencia frente a puerta, vecino IB-1 dijo que  apto esta desocupado desde hace tiempo, hombre blanco  de cabeza afeitada.                ', '2011-10-06', 30, NOW() )  
+}
+
+Entry: Tue Oct 11 18:00:14 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('51601', 'Gerente de Ventas Latin America Holding 1519 Ave Ponce de Leon 723-5858.                                                                                                                                                                                       
+', '2011-10-11', 10, NOW() )  
+}
+
+Entry: Tue Oct 11 18:01:21 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27863' 
+}
+
+Entry: Tue Oct 11 18:02:29 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 18:02:29 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 18:02:40 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27863' 
+}
+
+Entry: Tue Oct 11 18:02:40 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('27863'), TRIM('FCD11-1281'),          TRIM('Bo. Quebrada Negrito, Parcela Ramon, Trujillo Alto                                                    ﬂ’'), TRIM('                                                   ﬂ’'),           10, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 18:02:50 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27863' 
+}
+
+Entry: Tue Oct 11 18:03:10 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 18:03:10 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 18:03:23 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27863'), TRIM('Letty Zayas Matta                                  Òø
+'), 10, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 18:03:40 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27863'), TRIM('Jose L. Escobar Rodriguez                          Òø
+'), 10, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 18:03:42 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27863' 
+}
+
+Entry: Tue Oct 11 18:03:45 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Tue Oct 11 18:04:37 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27863' 
+}
+
+Entry: Tue Oct 11 18:04:37 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27863' 
+}
+
+Entry: Tue Oct 11 18:04:45 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 18:04:45 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 18:05:41 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27863', '253-8083, 607-9904                                                                                                                                                                                                          ', '2011-10-11', 10, NOW() )  
+}
+
+Entry: Tue Oct 11 18:06:09 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07476' 
+}
+
+Entry: Tue Oct 11 18:06:50 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07476' 
+}
+
+Entry: Tue Oct 11 18:06:50 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('07476'), TRIM('FCD11-1349'),          TRIM('Carr 181 Km 11.2 Kennedy Hills, Trujillo Alto                                                         ﬂ’'), TRIM('                                                   ﬂ’'),           0, TRIM('') ) 
+}
+
+Entry: Tue Oct 11 18:06:56 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 18:06:56 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Tue Oct 11 18:07:01 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07476' 
+}
+
+Entry: Tue Oct 11 18:07:01 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1349'),                       PhysicalAdd = TRIM('Carr 181 Km 11.2 Kennedy Hills, Trujillo Alto                                                         ﬂ’'),                       PostalAdd = TRIM('                                                   ﬂ’'),                       Status = 10,                       DeliveryDate = TRIM('') WHERE CaseNumber = '07476' 
+}
+
+Entry: Tue Oct 11 18:07:45 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07476' 
+}
+
+Entry: Tue Oct 11 18:07:59 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Tue Oct 11 18:07:59 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Tue Oct 11 18:08:03 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('07476'), TRIM('Jorge Martinez Garcia                              Òø
+'), 10, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 18:08:16 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('07476'), TRIM('Damian Martinez Garcia                             Òø
+'), 10, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Tue Oct 11 18:08:28 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07476' 
+}
+
+Entry: Tue Oct 11 18:08:28 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '07476' 
+}
+
+Entry: Tue Oct 11 18:11:02 2011
+{
+ SELECT id, Description FROM action_types ORDER BY id 
+}
+
+Entry: Tue Oct 11 18:11:02 2011
+{
+ Elements freed from code_set: 8 
+}
+
+Entry: Tue Oct 11 18:13:01 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('07476', '760-3919, 750-6000, Jorge es supervisor Almacen Royal  Motors Ave 65 Inf 750-6000, Damian es tablajero en     Centro Max Carr 181 km 9.1 Bo. Dos Bocas Trujillo Alto 750-5100.                                              ', '2011-10-11', 10, NOW() )  
+}
+
+Entry: Sun Oct 23 15:14:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '07476' 
+}
+
+Entry: Sun Oct 23 15:14:02 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '07476' 
+}
+
+Entry: Sun Oct 23 15:14:02 2011
+{
+ Result: '07476', 'FCD11-1349', 'Carr 181 Km 11.2 Kennedy Hills, Trujillo Alto     ', 'ﬂ’', 20, '0000-00-00' 
+}
+
+Entry: Sun Oct 23 15:16:50 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 12:16:05 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 12:18:10 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 12:30:54 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 13:05:39 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 14:08:06 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 14:11:16 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-30 2011-10-01 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 14:32:45 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-10 2011-10-01 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01 ' AND '2011-10-10 2011-10-01 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 15:00:33 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-09-10 ' AND '2011-09-20 2011-09-10 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-09-10 ' AND '2011-09-20 2011-09-10 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 16:38:39 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-08-01 fo' AND '2011-08-15 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-08-01 fo' AND '2011-08-15 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 17:06:25 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01' AND '2011-10-30 ' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01' AND '2011-10-30 ' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 17:18:26 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01' AND '2011-10-30' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01' AND '2011-10-30' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 17:20:57 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate,XXXXXXXXXX c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01' AND '2011-11-30' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01' AND '2011-11-30' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 17:23:28 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate,XXXXXXXXXX c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-09-01' AND '2011-09-30' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-09-01' AND '2011-09-30' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 17:28:06 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate,XXXXXXXXXX c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-01-22' AND '2011-12-31' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-01-22' AND '2011-12-31' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 17:33:56 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate,XXXXXXXXXX c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-15' AND '2011-11-30' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-15' AND '2011-11-30' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 17:35:13 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate,XXXXXXXXXX c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01' AND '2011-12-31' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01' AND '2011-12-31' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 17:39:53 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate,XXXXXXXXXX c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01' AND '2011-11-30' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01' AND '2011-11-30' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 19:38:35 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01' AND '2011-10-31' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01' AND '2011-10-31' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 19:38:35 2011
+{
+ Elements freed from summ_bill_set: 31 
+}
+
+Entry: Tue Nov  1 19:43:35 2011
+{
+ SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.First, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50 AND s.SummonDate BETWEEN '2011-10-01' AND '2011-10-31' AND s.id = (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) UNION SELECT s.CaseNumber, s.Name, s.SummonDate, c.CityName, IFNULL(c.Second, 0.00) AS Amount FROM summons s LEFT OUTER JOIN city_rates c ON s.CityCode = c.CityCode WHERE s.Status = 30 AND s.Reason = 50  AND s.SummonDate BETWEEN '2011-10-01' AND '2011-10-31' AND s.id <> (SELECT MIN(id) FROM summons WHERE  CaseNumber = s.CaseNumber AND CityCode = s.CityCode) ORDER BY CaseNumber 
+}
+
+Entry: Tue Nov  1 19:43:35 2011
+{
+ Elements freed from summ_bill_set: 31 
+}
