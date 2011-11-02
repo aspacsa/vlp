@@ -543,7 +543,6 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
               mvprintw( 20, 5, "Cities:" );
               while ( ( scode_ptr = get_scode_from_result() ) != NULL ) {
                 mvprintw( 21 + count++, column, "[%s] %s", scode_ptr->code, scode_ptr->name );
-                count++;
                 if ( count == 30 ) {
                   column += 20;
                   count = 0;
@@ -560,12 +559,11 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
             while ( ( code_ptr = get_code_from_result() ) != NULL )          
               mvprintw( 21 + count++, 10, "[%d] %s", code_ptr->code, code_ptr->desc );
             free_code_result();
-
-            int row, col;
-            get_cursor_pos( curr_fld, &row, &col );
-            move( row, col );
-            set_current_field( my_form, curr_fld );
           }
+          int row, col;
+          get_cursor_pos( curr_fld, &row, &col );
+          move( row, col );
+          set_current_field( my_form, curr_fld );
         }
         break;
       case KEY_F(2):

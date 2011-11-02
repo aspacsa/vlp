@@ -6861,3 +6861,423 @@ Entry: Tue Nov  1 19:43:35 2011
 {
  Elements freed from summ_bill_set: 31 
 }
+
+Entry: Wed Nov  2 05:41:45 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '51603' 
+}
+
+Entry: Wed Nov  2 05:43:45 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Wed Nov  2 05:43:48 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Wed Nov  2 05:44:57 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Wed Nov  2 05:45:00 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Wed Nov  2 05:52:53 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 05:52:57 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Wed Nov  2 05:52:57 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Wed Nov  2 05:53:11 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Wed Nov  2 05:53:11 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Wed Nov  2 05:53:45 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Wed Nov  2 05:54:11 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Wed Nov  2 05:54:11 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Wed Nov  2 05:57:50 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 05:57:54 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Wed Nov  2 05:57:54 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Wed Nov  2 05:58:01 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Wed Nov  2 05:58:01 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Wed Nov  2 05:58:03 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Wed Nov  2 05:58:23 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 05:58:36 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Wed Nov  2 05:58:54 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Wed Nov  2 05:58:54 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Wed Nov  2 05:59:00 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Wed Nov  2 05:59:00 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ SELECT CityCode, CityName FROM city_rates ORDER BY CityName 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'BAY'}, CityName{'Bayamon'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'CAG'}, CityName{'Caguas'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'CAN'}, CityName{'Canovanas'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'CAR'}, CityName{'Carolina'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'GBO'}, CityName{'Guaynabo'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'RIO'}, CityName{'Rio Grande'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'SJU'}, CityName{'San Juan'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'TOA'}, CityName{'Toa Alta'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'TOB'}, CityName{'Toa Baja'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Result: CityCode{'TRU'}, CityName{'Turjillo Alto'} 
+}
+
+Entry: Wed Nov  2 05:59:04 2011
+{
+ Elements freed from scode_set: 10 
+}
+
+Entry: Wed Nov  2 05:59:21 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('27921'),     Name = TRIM('Ana S. Alonso de Santiago                          å¿'),     Status = 30,     Reason = 50,     CityCode = TRIM('TRU2011-10-07'),     SummonDate = TRIM('2011-10-07') WHERE id = 24 
+}
+
+Entry: Wed Nov  2 05:59:24 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 05:59:26 2011
+{
+ Elements freed from summ_set: 2 
+}
