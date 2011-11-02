@@ -7281,3 +7281,168 @@ Entry: Wed Nov  2 05:59:26 2011
 {
  Elements freed from summ_set: 2 
 }
+
+Entry: Wed Nov  2 06:20:25 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:20:25 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:20:25 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina            ', 'PO Box 1016 San Lorenzo                           ', 30, '2011-09-09' 
+}
+
+Entry: Wed Nov  2 06:20:34 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Wed Nov  2 06:20:34 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Wed Nov  2 06:20:48 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:20:48 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina             PO Box 1016 San Lorenzo                            ¯5'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                            ¯5'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:26:04 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:26:04 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:26:04 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina            ', 'PO Box 1016 San Lorenzo                           ', 30, '2011-09-09' 
+}
+
+Entry: Wed Nov  2 06:26:10 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Wed Nov  2 06:26:10 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Wed Nov  2 06:26:14 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:26:14 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina             PO Box 1016 San Lorenzo                            Oz'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                            Oz'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:27:15 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:27:15 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:27:15 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina            ', 'PO Box 1016 San Lorenzo                           ', 30, '2011-09-09' 
+}
+
+Entry: Wed Nov  2 06:27:18 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Wed Nov  2 06:27:18 2011
+{
+ Elements freed from code_set: 5 
+}
+
+Entry: Wed Nov  2 06:27:20 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:27:20 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina             PO Box 1016 San Lorenzo                            _È'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                            _È'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:27:41 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:27:41 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina             PO Box 1016 San Lorenzo                            _È'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                            _È'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:28:19 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:28:19 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:28:19 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina            ', 'PO Box 1016 San Lorenzo                           ', 30, '2011-09-09' 
+}
+
+Entry: Wed Nov  2 06:33:13 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:33:13 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:33:13 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina            ', 'PO Box 1016 San Lorenzo                           ', 30, '2011-09-09' 
+}
+
+Entry: Wed Nov  2 06:33:22 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:33:22 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina             PO Box 1016 San Lorenzo                            ¿·'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                            ¿·'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Wed Nov  2 06:33:26 2011
+{
+ SELECT id, description FROM case_status ORDER BY id 
+}
+
+Entry: Wed Nov  2 06:33:26 2011
+{
+ Elements freed from code_set: 5 
+}

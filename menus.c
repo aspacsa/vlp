@@ -273,6 +273,7 @@ void cases_menu(const char *curr_path) {
         break;
       case KEY_F(1):
         if ( current_field( my_form ) == field[4] ) {
+          clear_lines( 20, 30 );
           if ( query_select_all_codes_from_case_status() ) {
             mvprintw( 20, 10, db_get_error_msg() );
           } else {
@@ -295,44 +296,44 @@ void cases_menu(const char *curr_path) {
         size_t count = 0;
         char case_num[MAX_CANUM];
         
-        clear_line(20, 10);
+        clear_lines( 20, 30 );
         strncpy(case_num, compress_str(field_buffer(field[0], 0) ), MAX_CANUM);
         if ( query_select_count_from_case_for(case_num, &count) ) {
           mvprintw( 20, 10, db_get_error_msg() );
-         } else {
-           Case_t record;
-           strncpy( record.number, compress_str(field_buffer(field[0], 0)), MAX_CANUM );
-           strncpy( record.civil, compress_str(field_buffer(field[1], 0)), MAX_CINUM );
-           strncpy( record.physical_add, field_buffer(field[2], 0), MAX_PHYADD );
-           strncpy( record.postal_add, field_buffer(field[3], 0), MAX_POSADD );
-           record.status = atoi( compress_str(field_buffer(field[4], 0)) );
-           strncpy( record.delivery_date, compress_str(field_buffer(field[5], 0)), MAX_DELDATE );
-           if (count) {
-             // update existing record
-             if ( query_update_case(&record) == 0 ) {
-               mvprintw(20, 10, "[!] Case has been updated.");
-             } else {
-               mvprintw( 20, 10, db_get_error_msg() );
-             }
-           } else {
-             // create new record
-             if ( query_create_new_case(&record) == 0 ) {
-               mvprintw(20, 10, "[!] Case has been created successfully.");
-             } else {
-               mvprintw( 20, 10, db_get_error_msg() );
-              }
-           }
+        } else {
+          Case_t record;
+          strncpy( record.number, compress_str(field_buffer(field[0], 0)), MAX_CANUM );
+          strncpy( record.civil, compress_str(field_buffer(field[1], 0)), MAX_CINUM );
+          strncpy( record.physical_add, field_buffer(field[2], 0), MAX_PHYADD );
+          strncpy( record.postal_add, field_buffer(field[3], 0), MAX_POSADD );
+          record.status = atoi( compress_str(field_buffer(field[4], 0)) );
+          strncpy( record.delivery_date, compress_str(field_buffer(field[5], 0)), MAX_DELDATE );
+          if (count) {
+            // update existing record
+            if ( query_update_case(&record) == 0 ) {
+              mvprintw(20, 10, "[!] Case has been updated.");
+            } else {
+              mvprintw( 20, 10, db_get_error_msg() );
+            }
+          } else {
+            // create new record
+            if ( query_create_new_case(&record) == 0 ) {
+              mvprintw(20, 10, "[!] Case has been created successfully.");
+            } else {
+              mvprintw( 20, 10, db_get_error_msg() );
+            }
+          }
         }
         move(4, 25);
         set_current_field(my_form, field[0]);
        }
-        break;
+       break;
       case KEY_F(3):
         {
           size_t count = 0;
           char case_num[MAX_CANUM];
 
-          clear_line(20, 10);
+          clear_lines(20, 30);
           strncpy(case_num, compress_str(field_buffer(field[0], 0) ), MAX_CANUM);
           if ( strlen(case_num) ) {
             if ( query_select_count_from_case_for(case_num, &count) ) {
