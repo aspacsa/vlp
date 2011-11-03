@@ -394,26 +394,40 @@ void summons_menu(const char *curr_path) {
   field[0] = new_field( 1, MAX_CANUM, 4, 25, 0, 0 );
   field[1] = NULL;
   
-  set_field_back(field[0], A_UNDERLINE);
-  field_opts_off(field[0], O_AUTOSKIP);
-  field_opts_on(field[0], O_BLANK);
+  set_field_back( field[0], A_UNDERLINE );
+  field_opts_off( field[0], O_AUTOSKIP );
+  field_opts_on( field[0], O_BLANK );
 
-  my_form = new_form(field);
-  post_form(my_form);
+  my_form = new_form( field );
+  post_form( my_form );
   refresh();
 
+  mvprintw( 0, 0, menu_path( curr_path, screen_title ) );
+  mvprintw( 2, 10,  "Enter case number then press (Enter) to start. | (F4) = Exit" );
+  mvprintw( 4, 10,   "Case Num:      " );
+  refresh();
+  move( 4, 25 );
+  set_current_field( my_form, field[0] );
+
+  int done = 0;
   int ch;
   do {
-    mvprintw( 0, 0, menu_path( curr_path, screen_title ) );
-    mvprintw( 2, 10,  "Enter case number then press (Enter) to start. | (F4) = Exit" );
-    mvprintw( 4, 10,   "Case Num:      " );
-    refresh();
-    move( 4, 25 );
-    set_current_field( my_form, field[0] );
-  
     ch = getch();
 
     switch ( ch ) {
+      case KEY_LEFT:
+        form_driver( my_form, REQ_LEFT_CHAR );
+        break;
+      case KEY_RIGHT:
+        form_driver( my_form, REQ_RIGHT_CHAR );
+        break;
+      case KEY_BACKSPACE:
+        form_driver( my_form, REQ_PREV_CHAR );
+        form_driver( my_form, REQ_DEL_CHAR );
+        break;
+      case DEL:
+        form_driver( my_form, REQ_DEL_CHAR );
+        break;
       case ENTER: 
         {
           size_t count = 0;
@@ -428,6 +442,7 @@ void summons_menu(const char *curr_path) {
           } else {
             if ( count ) {
               summons_dataentry_scr( menu_path( curr_path, screen_title ), case_num );
+              done = 1;
               break;
             }
           }
@@ -437,7 +452,7 @@ void summons_menu(const char *curr_path) {
         form_driver( my_form, ch );
         break;
     }
-  } while ( ch != KEY_F(4) );
+  } while ( ( ch != KEY_F(4) ) && ( done != 1 ) );
 
   unpost_form( my_form );
   free_form( my_form );
@@ -486,7 +501,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
   mvprintw( 10, 10, "Reason:        " );
   mvprintw( 12, 10, "City:          " );
   mvprintw( 14, 10, "Date Summoned: " );
-  mvprintw( 16, 10, "(F1) = Options | (F2) = Update | (F3) = Delete | (F5) = List | (ESC) = Previous Screen" );
+  mvprintw( 16, 10, "(F1) = Options | (F2) = Update | (F3) = Delete | (F5) = List | (ESC) = Main Menu" );
   set_visible_fields( field, 1, 5 );
   move( 6, 25 );
   set_current_field( my_form, field[0] );

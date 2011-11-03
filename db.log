@@ -7446,3 +7446,58 @@ Entry: Wed Nov  2 06:33:26 2011
 {
  Elements freed from code_set: 5 
 }
+
+Entry: Thu Nov  3 11:44:35 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 11:44:37 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 11:44:39 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 11:51:31 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 11:51:45 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 11:51:49 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 11:51:50 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 11:51:56 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('27921'),     Name = TRIM('Ubaldo Santiago Alabarse                           ޿'),     Status = 30,     Reason = 80,     CityCode = TRIM('CAR2011-10-25'),     SummonDate = TRIM('2011-10-25') WHERE id = 23 
+}
+
+Entry: Thu Nov  3 11:53:56 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 11:54:25 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27922' 
+}
+
+Entry: Thu Nov  3 11:55:03 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
