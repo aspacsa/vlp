@@ -528,7 +528,8 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         break;
       case ENTER:
         form_driver( my_form, REQ_NEXT_FIELD );
-        form_driver( my_form, REQ_END_LINE );
+        if ( current_field( my_form ) == field[0] )
+          form_driver( my_form, REQ_END_LINE );
         break;
       case KEY_F(1):
         clear_lines( 20, 40 );
@@ -659,8 +660,21 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         move( 6, 25 );
         break;
       default:
-        form_driver( my_form, ch );
-        break;
+        {
+          FIELD * curr_fld = current_field( my_form );
+
+          if ( curr_fld == field[1] || curr_fld == field[2] ) {
+            if ( !isdigit( ch ) )
+              break;
+          } else if ( curr_fld == field[3] ) {
+            if ( !isalpha( ch ) )
+              break;
+            else
+              ch = toupper( ch );
+          }
+          form_driver( my_form, ch );
+          break;
+        } 
     }
   } while ( ch != ESC );
 

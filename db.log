@@ -7821,3 +7821,138 @@ Entry: Thu Nov  3 12:17:32 2011
 {
  Elements freed from summ_set: 2 
 }
+
+Entry: Thu Nov  3 12:40:04 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 12:40:09 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 12:40:11 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 12:43:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 12:43:07 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 12:43:08 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 12:47:00 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 12:47:02 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 12:47:04 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 12:48:13 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 12:48:16 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Thu Nov  3 12:48:16 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Thu Nov  3 12:48:18 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Thu Nov  3 12:48:18 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Thu Nov  3 12:48:21 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 12:48:22 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 12:48:25 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Thu Nov  3 12:48:25 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Thu Nov  3 12:48:29 2011
+{
+ SELECT id, description FROM summon_reasons ORDER BY id 
+}
+
+Entry: Thu Nov  3 12:48:29 2011
+{
+ Elements freed from code_set: 9 
+}
+
+Entry: Thu Nov  3 13:15:22 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 13:15:49 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 13:15:50 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 13:30:43 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 13:31:42 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 13:31:43 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 13:32:45 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
