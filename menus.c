@@ -531,6 +531,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         form_driver( my_form, REQ_END_LINE );
         break;
       case KEY_F(1):
+        clear_lines( 20, 40 );
         {
           FIELD * curr_fld = current_field( my_form );
           size_t error = 0;
@@ -583,6 +584,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         }
         break;
       case KEY_F(2):
+        clear_lines( 20, 40 );
         strncpy( record.case_num, case_num, MAX_CANUM );
         strncpy( record.name, field_buffer(field[0], 0), MAX_SUMM_NAME );
         record.status = atoi( compress_str( field_buffer(field[1], 0) ) );
@@ -595,7 +597,6 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
           set_current_field( my_form, field[0] );
         } else {
           clear_fields( field, 0, 4 );
-          clear_lines( 20, 40 );
           mvprintw( 18, 10, "[!] Summon has been updated." );
           move( 6, 25 );
           set_current_field( my_form, field[0] );
@@ -603,6 +604,7 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         }
         break;
       case KEY_F(3):
+        clear_lines( 20, 40 );
         if ( record.id > 0 ) {
           mvprintw( 20, 10, "[?] Delete summon '%u' ? [Y/n]", record.id );
           int ch = toupper( getch() );
@@ -611,7 +613,6 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
               mvprintw( 20, 10, db_get_error_msg() );
             } else {
               clear_fields( field, 0, 4 );    
-              clear_lines( 20, 40 );
               mvprintw( 20, 10, "[!] Summon '%u' has been deleted.", record.id );
               move( 6, 25 );
               set_current_field( my_form, field[0] );
@@ -620,9 +621,9 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
           }
         }
         break;
-       case KEY_F(5):
+      case KEY_F(5):
+        clear_lines( 20, 40 );
         if ( query_select_all_from_summons_for( case_num ) ) {
-          clear_line( 20, 10 );
           mvprintw( 20, 10, db_get_error_msg() );
         } else {
           Summon_t *summ_ptr;
@@ -647,11 +648,10 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
               snprintf( code_buff, 4, "%d", summ_ptr->reason );
               set_field_buffer( field[2], 0, code_buff );
               set_field_buffer( field[3], 0, summ_ptr->city_code );
-              set_field_buffer( field[4], 0, summ_ptr->summon_date );
+               set_field_buffer( field[4], 0, summ_ptr->summon_date );
             }
             free_summon_result();
           } else {
-            clear_line( 20, 10 );
             mvprintw( 20, 10, "[!] Case %s has no summons.", case_num );
           }
         }
