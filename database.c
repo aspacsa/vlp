@@ -254,7 +254,8 @@ size_t query_select_all_from_summons_for(const char *case_num) {
   for ( int i = 0; i <= MAX_SUMM_SET - 1; ++i )
     summ_set[i] = NULL;
 
-  sprintf( query, "SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate"
+  sprintf( query, "SELECT id, TRIM(CaseNumber), TRIM(Name)," 
+                  " Status, Reason, TRIM(CityCode), SummonDate"
                   " FROM summons WHERE CaseNumber = '%s'", case_num );
   if ( dev_mode )
     write_db_log( query );

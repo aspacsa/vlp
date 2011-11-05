@@ -7956,3 +7956,1543 @@ Entry: Thu Nov  3 13:32:45 2011
 {
  SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
 }
+
+Entry: Thu Nov  3 14:02:47 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 14:02:55 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27921'), TRIM('                                                   ì¿'), 0, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Thu Nov  3 14:03:07 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 14:05:10 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Thu Nov  3 14:05:12 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 14:06:34 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Thu Nov  3 14:06:48 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 14:06:53 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27921'), TRIM('                                                   Œ¿'), 0, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Thu Nov  3 14:07:20 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27921'), TRIM('                                                   Œ¿'), 0, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Thu Nov  3 14:10:44 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 14:10:46 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27921'), TRIM('                                                   –¿'), 0, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Thu Nov  3 14:14:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Thu Nov  3 14:14:33 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27921'), TRIM('                                                   Ñ¿'), 0, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Fri Nov  4 22:31:22 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Fri Nov  4 22:34:03 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Fri Nov  4 22:37:59 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Fri Nov  4 22:38:01 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Fri Nov  4 22:38:13 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Fri Nov  4 22:38:20 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Fri Nov  4 22:40:59 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Fri Nov  4 22:41:05 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Fri Nov  4 22:41:07 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Fri Nov  4 22:41:40 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Fri Nov  4 22:41:42 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 01:33:35 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:33:38 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27921'), TRIM('                                                   s'), 0, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Sat Nov  5 01:40:37 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:40:56 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:41:13 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 01:41:30 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:42:03 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 01:42:14 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:45:25 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:45:32 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:46:04 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 01:48:05 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:48:11 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:48:12 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 01:53:51 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                               
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                              
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                             
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                            
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                           
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                          
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                         
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                        
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                       
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                      
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                     
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                    
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                   
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                  
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                 
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                                
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                               
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                              
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                             
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                            
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                           
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                          
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                         
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                        
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                       
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                      
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                     
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                    
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                   
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                  
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                 
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+                
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+               
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+              
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+             
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+            
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+           
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+          
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+         
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+        
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+       
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+      
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+     
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+    
+}
+
+Entry: Sat Nov  5 01:53:55 2011
+{
+   
+}
+
+Entry: Sat Nov  5 01:54:26 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 01:54:27 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 01:54:31 2011
+{
+ Ubaldo Santiago Alabarse                      
+}
+
+Entry: Sat Nov  5 02:05:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                               
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                              
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                             
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                            
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                           
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                          
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                         
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                        
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                       
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                      
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                     
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                    
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                   
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                  
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                 
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                                
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                               
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                              
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                             
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                            
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                           
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                          
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                         
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                        
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                       
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                      
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                     
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                    
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                   
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                  
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                 
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+                
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+               
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+              
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+             
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+            
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+           
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+          
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+         
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+        
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+       
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+      
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+     
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+    
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+   
+}
+
+Entry: Sat Nov  5 02:05:32 2011
+{
+ return 0 
+}
+
+Entry: Sat Nov  5 02:05:54 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 02:05:56 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 02:05:59 2011
+{
+ Ana S. Alonso de Santiago                     
+}
+
+Entry: Sat Nov  5 02:05:59 2011
+{
+ return 0 
+}
+
+Entry: Sat Nov  5 02:09:03 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                               
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                              
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                             
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                            
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                           
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                          
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                         
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                        
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                       
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                      
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                     
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                    
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                   
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                  
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                 
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                                
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                               
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                              
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                             
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                            
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                           
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                          
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                         
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                        
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                       
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                      
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                     
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                    
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                   
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                  
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                 
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+                
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+               
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+              
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+             
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+            
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+           
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+          
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+         
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+        
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+       
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+      
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+     
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+    
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+   
+}
+
+Entry: Sat Nov  5 02:09:05 2011
+{
+ i = 46, size = 45 
+}
+
+Entry: Sat Nov  5 02:09:42 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 02:09:44 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 02:09:45 2011
+{
+ Ana S. Alonso de Santiago                     
+}
+
+Entry: Sat Nov  5 02:09:45 2011
+{
+ i = 1, size = 45 
+}
+
+Entry: Sat Nov  5 02:15:12 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                               
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                              
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                             
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                            
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                           
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                          
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                         
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                        
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                       
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                      
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                     
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                    
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                   
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                  
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                 
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                                
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                               
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                              
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                             
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                            
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                           
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                          
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                         
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                        
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                       
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                      
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                     
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                    
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                   
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                  
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                 
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+                
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+               
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+              
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+             
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+            
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+           
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+          
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+         
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+        
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+       
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+      
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+     
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+    
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+   
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+  
+}
+
+Entry: Sat Nov  5 02:15:13 2011
+{
+ i = 46, size = 45 
+}
+
+Entry: Sat Nov  5 02:15:39 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 02:15:40 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 02:15:42 2011
+{
+ Ana S. Alonso de Santiago                     
+}
+
+Entry: Sat Nov  5 02:15:42 2011
+{
+ i = 0, size = 45 
+}
+
+Entry: Sat Nov  5 08:04:57 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                               
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                              
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                             
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                            
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                           
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                          
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                         
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                        
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                       
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                      
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                     
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                    
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                   
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                  
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                 
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                                
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                               
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                              
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                             
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                            
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                           
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                          
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                         
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                        
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                       
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                      
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                     
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                    
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                   
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                  
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                 
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+                
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+               
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+              
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+             
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+            
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+           
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+          
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+         
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+        
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+       
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+      
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+     
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+    
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+   
+}
+
+Entry: Sat Nov  5 08:05:00 2011
+{
+ i = 46, size = 45 
+}
+
+Entry: Sat Nov  5 08:05:16 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 08:05:18 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 08:05:21 2011
+{
+ Ana S. Alonso de Santiago                     
+}
+
+Entry: Sat Nov  5 08:05:21 2011
+{
+ i = 1, size = 45 
+}
+
+Entry: Sat Nov  5 08:10:08 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 08:10:28 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 08:11:58 2011
+{
+ SELECT id, CaseNumber, Name, Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 08:12:00 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 08:15:47 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 08:15:50 2011
+{
+ SELECT id, CaseNumber, TRIM(Name), Status, Reason, CityCode, SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 08:16:05 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Sat Nov  5 08:21:58 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 08:22:09 2011
+{
+ SELECT id, description FROM summon_status ORDER BY id 
+}
+
+Entry: Sat Nov  5 08:22:09 2011
+{
+ Elements freed from code_set: 4 
+}
+
+Entry: Sat Nov  5 19:45:48 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 19:46:28 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27921'), TRIM('This is a test                               '), 0, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Sat Nov  5 19:46:33 2011
+{
+ SELECT id, TRIM(CaseNumber), TRIM(Name), Status, Reason, TRIM(CityCode), SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 19:46:37 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Sat Nov  5 19:46:40 2011
+{
+ SELECT id, TRIM(CaseNumber), TRIM(Name), Status, Reason, TRIM(CityCode), SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Sat Nov  5 19:46:42 2011
+{
+ Elements freed from summ_set: 3 
+}

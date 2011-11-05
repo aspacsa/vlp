@@ -586,6 +586,16 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         break;
       case KEY_F(2):
         clear_lines( 20, 40 );
+
+        char person_name[MAX_SUMM_NAME];
+        strncpy( person_name, field_buffer(field[0], 0), MAX_SUMM_NAME );
+         
+        if ( is_empty_str( person_name, MAX_SUMM_NAME ) ) {
+          mvprintw( 20, 10, "[!] Summon must at least have the person's name." ); 
+          move( 6, 25 );
+          set_current_field( my_form, field[0] );
+          break;
+        }
         strncpy( record.case_num, case_num, MAX_CANUM );
         strncpy( record.name, field_buffer(field[0], 0), MAX_SUMM_NAME );
         record.status = atoi( compress_str( field_buffer(field[1], 0) ) );
@@ -593,12 +603,12 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
         strncpy( record.city_code, compress_str( field_buffer(field[3], 0) ), MAX_SUMM_CITY );
         strncpy( record.summon_date, compress_str( field_buffer(field[4], 0) ), MAX_SUMM_DATE );
         if ( query_update_summon( &record ) ) {
-          mvprintw( 18, 10, db_get_error_msg() );
+          mvprintw( 20, 10, db_get_error_msg() );
           move( 6, 25 );
           set_current_field( my_form, field[0] );
         } else {
           clear_fields( field, 0, 4 );
-          mvprintw( 18, 10, "[!] Summon has been updated." );
+          mvprintw( 20, 10, "[!] Summon has been updated." );
           move( 6, 25 );
           set_current_field( my_form, field[0] );
           record.id = 0;

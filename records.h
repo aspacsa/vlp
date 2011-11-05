@@ -5,7 +5,7 @@
 #define MAX_STATUS 2
 #define MAX_DELDATE 11
 
-#define MAX_SUMM_NAME 51
+#define MAX_SUMM_NAME 45
 #define MAX_SUMM_STATUS 2
 #define MAX_SUMM_REASON 2
 #define MAX_SUMM_CITY 3
