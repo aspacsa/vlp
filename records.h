@@ -1,7 +1,7 @@
 #define MAX_CANUM 11
 #define MAX_CINUM 16
-#define MAX_PHYADD 51
-#define MAX_POSADD 51
+#define MAX_PHYADD 45
+#define MAX_POSADD 45
 #define MAX_STATUS 2
 #define MAX_DELDATE 11
 

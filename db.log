@@ -9496,3 +9496,284 @@ Entry: Sat Nov  5 19:46:42 2011
 {
  Elements freed from summ_set: 3 
 }
+
+Entry: Mon Nov  7 10:46:17 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 10:46:17 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 10:46:17 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina            ', 'PO Box 1016 San Lorenzo                           ', 30, '2011-09-09' 
+}
+
+Entry: Mon Nov  7 10:47:06 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 10:47:06 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina             PO Box 1016 San Lorenzo                            ˇ+'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                            ˇ+'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 10:49:48 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 10:49:48 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina             PO Box 1016 San Lorenzo                            ˇ+'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                            ˇ+'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:14:38 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:14:38 2011
+{
+ SELECT CaseNumber, CivilNumber,       PhysicalAdd, PostalAdd,       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:14:38 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      ﬂY', 'PO Box 1016 San Lorenzo                      ﬂY', 30, '2011-09-09' 
+}
+
+Entry: Mon Nov  7 11:19:17 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:19:17 2011
+{
+ SELECT CaseNumber, CivilNumber,       TRIM(PhysicalAdd), TRIM(PostalAdd),       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:19:17 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina', 'PO Box 1016 San Lorenzo', 30, '2011-09-09' 
+}
+
+Entry: Mon Nov  7 11:20:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:20:30 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      _e'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                      _e'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:29:17 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:29:17 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      _e'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                      _e'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:32:16 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:32:16 2011
+{
+ SELECT CaseNumber, CivilNumber,       TRIM(PhysicalAdd), TRIM(PostalAdd),       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:32:16 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      ˇŸ', 'PO Box 1016 San Lorenzo                      ˇŸ', 30, '2011-09-09' 
+}
+
+Entry: Mon Nov  7 11:32:23 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 11:32:23 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM('Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      ˇŸ'),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                      ˇŸ'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:16:15 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:16:15 2011
+{
+ SELECT CaseNumber, CivilNumber,       TRIM(PhysicalAdd), TRIM(PostalAdd),       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:16:15 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      ∂', 'PO Box 1016 San Lorenzo                      ∂', 30, '2011-09-09' 
+}
+
+Entry: Mon Nov  7 12:16:24 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:16:24 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM(SUBSTRING('Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      ∂' FROM 1 FOR 45)),                       PostalAdd = TRIM('PO Box 1016 San Lorenzo                      ∂'),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:20:37 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:20:37 2011
+{
+ SELECT CaseNumber, CivilNumber,       TRIM(SUBSTRING(PhysicalAdd FROM 1 FOR 45)),       TRIM(SUBSTRING(PostalAdd FROM 1 FOR 45)),       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:20:37 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina', 'PO Box 1016 San Lorenzo', 30, '2011-09-09' 
+}
+
+Entry: Mon Nov  7 12:20:57 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:20:57 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM('FCD11-1183(408)'),                       PhysicalAdd = TRIM(SUBSTRING('Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      è' FROM 1 FOR 45)),                       PostalAdd = TRIM(SUBSTRING('PO Box 1016 San Lorenzo                      è' FROM 1 FOR 45)),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:26:01 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '9999' 
+}
+
+Entry: Mon Nov  7 12:26:34 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '9999' 
+}
+
+Entry: Mon Nov  7 12:26:34 2011
+{
+ INSERT INTO case_headers (CaseNumber, CivilNumber, PhysicalAdd, PostalAdd, Status, DeliveryDate) VALUES ( TRIM('9999'), TRIM('12112'),          TRIM(SUBSTRING('bao el lechon esq el papito                  lecho de papito loko                         è+' FROM 1 FOR 45)),          TRIM(SUBSTRING('lecho de papito loko                         è+' FROM 1 FOR 45)),          10, TRIM('') ) 
+}
+
+Entry: Mon Nov  7 12:27:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '9999' 
+}
+
+Entry: Mon Nov  7 12:27:33 2011
+{
+ DELETE FROM case_headers WHERE CaseNumber = '9999' 
+}
+
+Entry: Mon Nov  7 12:33:21 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:33:21 2011
+{
+ SELECT CaseNumber, CivilNumber,       TRIM(SUBSTRING(PhysicalAdd FROM 1 FOR 45)),       TRIM(SUBSTRING(PostalAdd FROM 1 FOR 45)),       Status, DeliveryDate FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:33:21 2011
+{
+ Result: '27921', 'FCD11-1183(408)', 'Bo Cedros km 13 hm 4 Carr 853 Carolina', 'PO Box 1016 San Lorenzo', 30, '2011-09-09' 
+}
+
+Entry: Mon Nov  7 12:33:31 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:33:31 2011
+{
+ UPDATE case_headers SET CivilNumber = TRIM(SUBSTRING('FCD11-1183 (408)Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      ?' FROM 1 FOR 16)),                       PhysicalAdd = TRIM(SUBSTRING('Bo Cedros km 13 hm 4 Carr 853 Carolina       PO Box 1016 San Lorenzo                      ?' FROM 1 FOR 45)),                       PostalAdd = TRIM(SUBSTRING('PO Box 1016 San Lorenzo                      ?' FROM 1 FOR 45)),                       Status = 30,                       DeliveryDate = TRIM('2011-09-09') WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:55:56 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:56:00 2011
+{
+ SELECT id, TRIM(CaseNumber), TRIM(Name), Status, Reason, TRIM(CityCode), SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 12:56:07 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Mon Nov  7 12:56:17 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('27921'),     Name = TRIM('Ubaldo Santiago Alabarse                     '),     Status = 30,     Reason = 80,     CityCode = TRIM('CAR2011-10-25'),     SummonDate = TRIM('2011-10-25') WHERE id = 23 
+}
+
+Entry: Mon Nov  7 13:02:54 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 13:02:59 2011
+{
+ SELECT id, TRIM(CaseNumber), TRIM(Name), Status, Reason, TRIM(CityCode), SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 13:03:01 2011
+{
+ Elements freed from summ_set: 2 
+}
+
+Entry: Mon Nov  7 13:03:06 2011
+{
+ UPDATE summons SET CaseNumber = TRIM('27921'),     Name = TRIM(SUBSTRING('Ubaldo Santiago Alabarse                     ' FROM 1 FOR 45)),     Status = 30,     Reason = 80,     CityCode = TRIM('CAR2011-10-25'),     SummonDate = TRIM('2011-10-25') WHERE id = 23 
+}
+
+Entry: Mon Nov  7 13:03:52 2011
+{
+ INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate) VALUES ( TRIM('27921'), TRIM(SUBSTRING('test the test                                
+' FROM 1 FOR 45)), 10, 0, TRIM(''), TRIM('') ) 
+}
+
+Entry: Mon Nov  7 13:03:58 2011
+{
+ SELECT id, TRIM(CaseNumber), TRIM(Name), Status, Reason, TRIM(CityCode), SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 13:04:12 2011
+{
+ Elements freed from summ_set: 3 
+}
+
+Entry: Mon Nov  7 13:04:19 2011
+{
+ DELETE FROM summons WHERE id = 137 
+}
+
+Entry: Mon Nov  7 13:05:02 2011
+{
+ SELECT id, TRIM(CaseNumber), TRIM(Name), Status, Reason, TRIM(CityCode), SummonDate FROM summons WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 13:05:05 2011
+{
+ Elements freed from summ_set: 2 
+}

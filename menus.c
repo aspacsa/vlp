@@ -225,36 +225,36 @@ void cases_menu(const char *curr_path) {
           size_t count = 0;
           char case_num[MAX_CANUM];
 
-          clear_line(20, 10);
-          strcpy(case_num, compress_str(field_buffer(field[0], 0) ));
+          clear_line( 20, 10 );
+          strcpy( case_num, compress_str(field_buffer(field[0], 0) ) );
           if ( query_select_count_from_case_for(case_num, &count) ) {
             mvprintw( 20, 10, db_get_error_msg() );
-            move(4, 25);
+            move( 4, 25 );
           } else {
-            if (count) {
+            if ( count ) {
               //call routine to fill in fields
               Case_t record;
               if ( query_select_all_from_case_for(case_num, &record) ) {
-                mvprintw(20, 10, db_get_error_msg());
-                move(4, 25);
+                mvprintw( 20, 10, db_get_error_msg() );
+                move( 4, 25 );
               } else {
                 char status_buff[4];
 
-                set_field_buffer(field[1], 0, record.civil);
-                set_field_buffer(field[2], 0, record.physical_add);
-                set_field_buffer(field[3], 0, record.postal_add);
+                set_field_buffer( field[1], 0, record.civil );
+                set_field_buffer( field[2], 0, record.physical_add );
+                set_field_buffer( field[3], 0, record.postal_add );
                 snprintf( status_buff, 4, "%d", record.status );
-                set_field_buffer(field[4], 0, status_buff);
-                set_field_buffer(field[5], 0, record.delivery_date);
+                set_field_buffer( field[4], 0, status_buff );
+                set_field_buffer( field[5], 0, record.delivery_date );
               }
             } else {            
-              clear_fields(field, 1, 5);    
-              mvprintw(20, 10, "[!] Case %s does not exist.", case_num);
-              move(6, 25);
-              set_current_field(my_form, field[0]);
+              clear_fields( field, 1, 5 );    
+              mvprintw( 20, 10, "[!] Case %s does not exist.", case_num );
+              move( 6, 25 );
+              set_current_field( my_form, field[0] );
             }
           }
-          set_field_status(field[0], 0);
+          set_field_status( field[0], 0 );
         }
         break;
       case KEY_BACKSPACE:
@@ -297,8 +297,8 @@ void cases_menu(const char *curr_path) {
         char case_num[MAX_CANUM];
         
         clear_lines( 20, 30 );
-        strncpy(case_num, compress_str(field_buffer(field[0], 0) ), MAX_CANUM);
-        if ( query_select_count_from_case_for(case_num, &count) ) {
+        strncpy( case_num, compress_str(field_buffer(field[0], 0) ), MAX_CANUM );
+        if ( query_select_count_from_case_for( case_num, &count ) ) {
           mvprintw( 20, 10, db_get_error_msg() );
         } else {
           Case_t record;
@@ -308,24 +308,24 @@ void cases_menu(const char *curr_path) {
           strncpy( record.postal_add, field_buffer(field[3], 0), MAX_POSADD );
           record.status = atoi( compress_str(field_buffer(field[4], 0)) );
           strncpy( record.delivery_date, compress_str(field_buffer(field[5], 0)), MAX_DELDATE );
-          if (count) {
+          if ( count ) {
             // update existing record
-            if ( query_update_case(&record) == 0 ) {
-              mvprintw(20, 10, "[!] Case has been updated.");
+            if ( query_update_case( &record ) == 0 ) {
+              mvprintw( 20, 10, "[!] Case has been updated." );
             } else {
               mvprintw( 20, 10, db_get_error_msg() );
             }
           } else {
             // create new record
-            if ( query_create_new_case(&record) == 0 ) {
-              mvprintw(20, 10, "[!] Case has been created successfully.");
+            if ( query_create_new_case( &record ) == 0 ) {
+              mvprintw (20, 10, "[!] Case has been created successfully." );
             } else {
               mvprintw( 20, 10, db_get_error_msg() );
             }
           }
         }
         move(4, 25);
-        set_current_field(my_form, field[0]);
+        set_current_field( my_form, field[0] );
        }
        break;
       case KEY_F(3):

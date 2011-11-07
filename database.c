@@ -171,7 +171,8 @@ size_t query_create_new_case(Case_t *ptr) {
                                   " PhysicalAdd, PostalAdd,"
                                   " Status, DeliveryDate)"
                                   " VALUES ( TRIM('%s'), TRIM('%s'),"
-                                  "          TRIM('%s'), TRIM('%s'), "
+                                  "          TRIM(SUBSTRING('%s' FROM 1 FOR 45)),"
+                                  "          TRIM(SUBSTRING('%s' FROM 1 FOR 45)),"
                                   "          %d, TRIM('%s') )", 
                                   ptr->number, ptr->civil, ptr->physical_add,
                                   ptr->postal_add, ptr->status, ptr->delivery_date );
@@ -185,8 +186,8 @@ size_t query_update_case(Case_t *ptr) {
   char query[BUFSIZ];
 
   sprintf( query, "UPDATE case_headers SET CivilNumber = TRIM('%s'),"
-                  "                       PhysicalAdd = TRIM('%s'),"
-                  "                       PostalAdd = TRIM('%s'),"
+                  "                       PhysicalAdd = TRIM(SUBSTRING('%s' FROM 1 FOR 45)),"
+                  "                       PostalAdd = TRIM(SUBSTRING('%s' FROM 1 FOR 45)),"
                   "                       Status = %d,"
                   "                       DeliveryDate = TRIM('%s')"
                   " WHERE CaseNumber = '%s'", ptr->civil, ptr->physical_add,
@@ -213,7 +214,8 @@ size_t query_select_all_from_case_for(const char *case_num, Case_t *ptr) {
   char query[BUFSIZ];
 
   sprintf( query, "SELECT CaseNumber, CivilNumber,"
-                 "       PhysicalAdd, PostalAdd,"
+                 "       TRIM(SUBSTRING(PhysicalAdd FROM 1 FOR 45)),"
+                 "       TRIM(SUBSTRING(PostalAdd FROM 1 FOR 45)),"
                  "       Status, DeliveryDate"
                  " FROM case_headers"
                  " WHERE CaseNumber = '%s'", case_num );
@@ -312,7 +314,7 @@ size_t query_update_summon(Summon_t *record) {
   if ( record->id > 0 ) {
     sprintf( query, "UPDATE summons" 
                     " SET CaseNumber = TRIM('%s'),"
-                    "     Name = TRIM('%s'),"
+                    "     Name = TRIM(SUBSTRING('%s' FROM 1 FOR 45)),"
                     "     Status = %d,"
                     "     Reason = %d,"
                     "     CityCode = TRIM('%s'),"
@@ -324,7 +326,7 @@ size_t query_update_summon(Summon_t *record) {
            );
   } else {
     sprintf( query, "INSERT INTO summons (CaseNumber, Name, Status, Reason, CityCode, SummonDate)"
-                    " VALUES ( TRIM('%s'), TRIM('%s'), %d, %d, TRIM('%s'), TRIM('%s') )", 
+                    " VALUES ( TRIM('%s'), TRIM(SUBSTRING('%s' FROM 1 FOR 45)), %d, %d, TRIM('%s'), TRIM('%s') )", 
                              record->case_num, record->name, record->status, 
                              record->reason, record->city_code, record->summon_date
            );
