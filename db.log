@@ -9777,3 +9777,103 @@ Entry: Mon Nov  7 13:05:05 2011
 {
  Elements freed from summ_set: 2 
 }
+
+Entry: Mon Nov  7 19:01:52 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '927921' 
+}
+
+Entry: Mon Nov  7 19:07:30 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:07:30 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:07:30 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Nov  7 19:10:20 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:10:20 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:10:20 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Nov  7 19:11:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:11:02 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:11:02 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Nov  7 19:14:21 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:14:21 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:14:21 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Nov  7 19:15:50 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '' 
+}
+
+Entry: Mon Nov  7 19:20:41 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:20:41 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:20:41 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Nov  7 19:20:53 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:20:53 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 19:20:53 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}

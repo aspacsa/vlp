@@ -762,18 +762,33 @@ void actions_menu(const char *curr_path) {
   post_form(my_form);
   refresh();
 
+  mvprintw( 0, 0, menu_path( curr_path, screen_title ) );
+  mvprintw( 2, 10,  "Enter case number then press (Enter) to start. | (F4) = Exit" );
+  mvprintw( 4, 10,   "Case Num:      " );
+  refresh();
+  move( 4, 25 );
+  set_current_field( my_form, field[0] );
+
+  int done = 0;
   int ch;
   do {
-    mvprintw( 0, 0, menu_path( curr_path, screen_title ) );
-    mvprintw( 2, 10,  "Enter case number then press (Enter) to start. | (F4) = Exit" );
-    mvprintw( 4, 10,   "Case Num:      " );
-    refresh();
-    move( 4, 25 );
-    set_current_field( my_form, field[0] );
-  
+    
     ch = getch();
 
     switch ( ch ) {
+      case KEY_LEFT:
+        form_driver(my_form, REQ_LEFT_CHAR);
+        break;
+      case KEY_RIGHT:
+        form_driver(my_form, REQ_RIGHT_CHAR);
+        break;
+      case KEY_BACKSPACE:
+        form_driver(my_form, REQ_PREV_CHAR);
+        form_driver(my_form, REQ_DEL_CHAR);
+        break;
+     case DEL:
+        form_driver( my_form, REQ_DEL_CHAR );
+        break;
       case ENTER: 
         {
           size_t count = 0;
@@ -788,6 +803,7 @@ void actions_menu(const char *curr_path) {
           } else {
             if ( count ) {
               actions_dataentry_scr( menu_path( curr_path, screen_title ), case_num );
+              done = 1;
               break;
             }
           }
@@ -797,7 +813,7 @@ void actions_menu(const char *curr_path) {
         form_driver( my_form, ch );
         break;
     }
-  } while ( ch != KEY_F(4) );
+  } while ( ( ch != KEY_F(4) ) && ( done != 1 ) );
 
   unpost_form( my_form );
   free_form( my_form );
