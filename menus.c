@@ -890,8 +890,8 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
 
           if ( curr_fld == field[1] ) {
             if ( query_select_all_codes_from_action_types()  ) {
-              clear_line(20, 10);
-              mvprintw( 20, 10, db_get_error_msg() );
+              clear_line(18, 10);
+              mvprintw( 18, 10, db_get_error_msg() );
             } else {
               const Code_t const * code_ptr;
               size_t count = 0;
@@ -910,21 +910,30 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
         }
         break;
       case KEY_F(2):
-        strncpy( record.case_num, case_num, MAX_CANUM );
-        strncpy( record.entry_date, compress_str( field_buffer(field[0], 0) ), MAX_ACT_DATE );
-        record.type = atoi( compress_str( field_buffer(field[1], 0) ) );
-        strncpy( record.note, field_buffer(field[2], 0), MAX_ACT_NOTE );
+        {
+          clear_line( 18, 10 );
+          strncpy( record.case_num, case_num, MAX_CANUM );
+          strncpy( record.entry_date, compress_str( field_buffer(field[0], 0) ), MAX_ACT_DATE );
+          record.type = atoi( compress_str( field_buffer(field[1], 0) ) );
+          strncpy( record.note, field_buffer(field[2], 0), MAX_ACT_NOTE );
+          
+          if ( is_empty_str( record.note, MAX_ACT_NOTE ) ) {
+            mvprintw( 18, 10, "[!] Action must at least have a note." ); 
+            move( 10, 25 );
+            set_current_field( my_form, field[2] );
+            break;
+          }
 
-        if ( query_add_action( &record ) ) {
-          clear_line(20, 10);
-          mvprintw( 20, 10, db_get_error_msg() );
-        } else {
-          clear_fields( field, 0, 2 );
-          actions_count++;
-          print_action( &record, actions_count );
+          if ( query_add_action( &record ) ) {
+            mvprintw( 18, 10, db_get_error_msg() );
+          } else {
+            clear_fields( field, 0, 2 );
+            actions_count++;
+            print_action( &record, actions_count );
+          }
+          move( 6, 25 );
+          set_current_field( my_form, field[0] );
         }
-        move( 6, 25 );
-        set_current_field( my_form, field[0] );
         break;
       default:
         form_driver( my_form, ch );
