@@ -10022,3 +10022,148 @@ Entry: Mon Nov  7 21:10:02 2011
 {
  INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', 'cvxcvjlf ljhlkjdljlasdj asldk alsdkjalskd alskdj                                                                                                                                                                            ', '2011-11-11', 10, NOW() )  
 }
+
+Entry: Mon Nov  7 21:25:33 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 21:25:33 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Mon Nov  7 21:25:33 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Mon Nov  7 21:25:57 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', 'this is a test for don't yes                                                                                                                                                                                                ', '2011-11-11', 10, NOW() )  
+}
+
+Entry: Tue Nov  8 01:14:46 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:14:46 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:14:46 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Nov  8 01:15:19 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', 'jhj dsf d f this is a don\'t                                                                                                                                                                                                ', '2011-11-11', 10, NOW() )  
+}
+
+Entry: Tue Nov  8 01:43:02 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:43:02 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:43:02 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Nov  8 01:43:22 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', 'ffggffghf "dsdasdas" jdlajsdasjdlka                                                                                                                                                                                         ', '2011-11-11', 10, NOW() )  
+}
+
+Entry: Tue Nov  8 01:43:59 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:43:59 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:43:59 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Nov  8 01:44:24 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', 'jdlskjflsd sdlfjlsdjf 'jjksjdf' kjkj                                                                                                                                                                                        ', '2011-11-11', 10, NOW() )  
+}
+
+Entry: Tue Nov  8 01:45:28 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', 'jdlskjflsd sdlfjlsdjf ^jjksjdfkjkj                                                                                                                                                                                          ', '2011-11-11', 10, NOW() )  
+}
+
+Entry: Tue Nov  8 01:46:05 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:46:05 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:46:05 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Nov  8 01:46:25 2011
+{
+ INSERT INTO actions (CaseNumber, Note, EntryAt, Type, CreatedAt) VALUES ('27921', 'fsjdhfkjsdf ^klsldfjlsdk                                                                                                                                                                                                    ', '2011-11-11', 10, NOW() )  
+}
+
+Entry: Tue Nov  8 01:52:49 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:52:49 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 01:52:49 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Nov  8 01:56:40 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:02:51 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:20:48 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:20:48 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:20:48 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}

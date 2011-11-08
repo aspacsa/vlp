@@ -365,6 +365,16 @@ void cases_menu(const char *curr_path) {
         form_driver(my_form, REQ_DEL_CHAR);
         break;
       default:
+        {
+          FIELD * curr_fld = current_field( my_form );
+
+          if ( ch == '\'' )
+            break;
+          if ( curr_fld == field[4] ) {
+            if ( !isdigit( ch ) )
+              break;
+          }
+        }
         form_driver(my_form, ch);
         break;
     } 
@@ -449,6 +459,8 @@ void summons_menu(const char *curr_path) {
         }
         break;
       default:
+        if ( ch == '\'' )
+          break;
         form_driver( my_form, ch );
         break;
     }
@@ -672,6 +684,8 @@ void summons_dataentry_scr(const char *curr_path, const char *case_num) {
       default:
         {
           FIELD * curr_fld = current_field( my_form );
+          if ( ch == '\'' )
+            break;
 
           if ( curr_fld == field[1] || curr_fld == field[2] ) {
             if ( !isdigit( ch ) )
@@ -810,6 +824,8 @@ void actions_menu(const char *curr_path) {
         }
         break;
       default:
+        if ( ch == '\'' )
+          break;
         form_driver( my_form, ch );
         break;
     }
@@ -880,6 +896,9 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
         form_driver(my_form, REQ_PREV_CHAR);
         form_driver(my_form, REQ_DEL_CHAR);
         break;
+     case DEL:
+        form_driver( my_form, REQ_DEL_CHAR );
+        break;
       case ENTER:
         form_driver( my_form, REQ_NEXT_FIELD );
         form_driver( my_form, REQ_END_LINE );
@@ -936,6 +955,16 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
         }
         break;
       default:
+        {
+          FIELD * curr_fld = current_field( my_form );
+
+          if ( ch == '\'' )
+            break;
+          if ( curr_fld == field[1] ) {
+            if ( !isdigit( ch ) )
+              break;
+          }
+        }
         form_driver( my_form, ch );
         break;
     }
@@ -1116,6 +1145,8 @@ void from_to_selector(const char *curr_path, char **from, char **to, int *action
         form_driver(my_form, REQ_DEL_CHAR);
         break;
       default:
+        if ( ch == '\'' )
+          break;
         form_driver( my_form, ch );
         break;
     }
