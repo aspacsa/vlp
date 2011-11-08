@@ -63,6 +63,7 @@ void clear_line(size_t row, size_t col);
 void clear_lines(size_t start, size_t end);
 void print_line(char line[], size_t row, size_t col);
 void get_cursor_pos(const FIELD const * field, int* row, int* col);
+void display_msg(size_t row, size_t col, FORM * my_form, FIELD * curr_field, char * message);
  
 void cases_menu(const char *curr_path);
 void summons_menu(const char *curr_path);
@@ -864,12 +865,15 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
   my_form = new_form(field);
   post_form(my_form);
   refresh();
-  
+
+  int note_count = MAX_ACT_NOTE;
+  char note_msg[4];
   mvprintw( 0, 0,   curr_path );
   mvprintw( 4, 10,  "Case Number:   %s", case_num );
   mvprintw( 6, 10,  "Entry Date:    " );
   mvprintw( 8, 10,  "Type:          " );
   mvprintw( 10, 10, "Note:          " );
+  mvprintw( 15, 77, "%d", note_count );
   mvprintw( 16, 10, "(F2) = Add | (ESC) = Previous Screen" );
   set_visible_fields( field, 1, 3 );
   size_t actions_count = actions_list( case_num );
@@ -878,9 +882,11 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
 
   record.id = 0;
   int ch;
+
   do {
+ 
     ch = getch();
-   
+
     switch ( ch ) {
       case KEY_UP:
         form_driver(my_form, REQ_PREV_FIELD);
@@ -893,10 +899,26 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
         form_driver(my_form, REQ_RIGHT_CHAR);
         break;
       case KEY_BACKSPACE:
+        {
+          FIELD * curr_fld = current_field( my_form );
+
+          if ( curr_fld == field[2] ) {
+            snprintf( note_msg, 4, "%d", ++note_count );
+            display_msg( 15, 77, my_form, curr_fld, note_msg );
+          }
+        }
         form_driver(my_form, REQ_PREV_CHAR);
         form_driver(my_form, REQ_DEL_CHAR);
         break;
      case DEL:
+        {
+          FIELD * curr_fld = current_field( my_form );
+
+          if ( curr_fld == field[2] ) {
+            snprintf( note_msg, 4, "%d", ++note_count );
+            display_msg( 15, 77, my_form, curr_fld, note_msg );
+          }
+        }
         form_driver( my_form, REQ_DEL_CHAR );
         break;
       case ENTER:
@@ -949,6 +971,8 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
             clear_fields( field, 0, 2 );
             actions_count++;
             print_action( &record, actions_count );
+            note_count = MAX_ACT_NOTE;
+            mvprintw( 15, 77, "%d", note_count );
           }
           move( 6, 25 );
           set_current_field( my_form, field[0] );
@@ -963,6 +987,9 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
           if ( curr_fld == field[1] ) {
             if ( !isdigit( ch ) )
               break;
+          } else if ( curr_fld == field[2] ) {
+            snprintf( note_msg, 4, "%d", --note_count );
+            display_msg( 15, 77, my_form, curr_fld, note_msg );
           }
         }
         form_driver( my_form, ch );
@@ -1451,5 +1478,18 @@ void get_cursor_pos(const FIELD const * field, int* row, int* col) {
              &trow, &tcol, &nrow, &nbuf);
   *row = trow;
   *col = tcol;
+  return;
+}
+
+void display_msg(size_t row, size_t col, 
+                 FORM * my_form, 
+                 FIELD * curr_field,
+                 char * message) {
+
+  mvprintw( row, col, message );
+  size_t cur_row, cur_col;
+  get_cursor_pos( curr_field, &cur_row, &cur_col );
+  move( cur_row, cur_col );
+  set_current_field( my_form, curr_field );
   return;
 }

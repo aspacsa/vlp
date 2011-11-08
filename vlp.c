@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     puts("Unable to connect to the database.");
   } else {
     puts("VLP Started.");
-    main_menu("VLP 1.0");
+    main_menu("VLP 1.0.5");
   }
   printf("\n Bye! \n\n");
   terminate();
