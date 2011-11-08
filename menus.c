@@ -846,7 +846,7 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
   FIELD *field[n_fields];
   FORM *my_form;
   Action_t record;
-  int width[] = {  MAX_ACT_DATE, MAX_ACT_TYPE, MAX_ACT_NOTE - 200 };
+  int width[] = {  MAX_ACT_DATE - 1, MAX_ACT_TYPE, MAX_ACT_NOTE - 200 };
   int height[] = { 1, 1, 4 };
  
   for ( size_t i = 0; i < n_fields - 1; ++i )
@@ -868,6 +868,8 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
 
   int note_count = MAX_ACT_NOTE;
   char note_msg[4];
+  char date_str[MAX_ACT_DATE];
+  get_curr_date( date_str );
   mvprintw( 0, 0,   curr_path );
   mvprintw( 4, 10,  "Case Number:   %s", case_num );
   mvprintw( 6, 10,  "Entry Date:    " );
@@ -878,6 +880,7 @@ void actions_dataentry_scr(const char *curr_path, const char *case_num) {
   set_visible_fields( field, 1, 3 );
   size_t actions_count = actions_list( case_num );
   move( 6, 25 );
+  set_field_buffer( field[0], 0, date_str );
   set_current_field( my_form, field[0] );
 
   record.id = 0;

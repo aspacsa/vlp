@@ -1,5 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
+#include <time.h>
+#include <string.h>
 #include "utils.h"
 
 char str_buffer[BUFSIZ];
@@ -53,4 +55,17 @@ int is_empty_str(char * str, int size) {
   if ( i - 1 == size )
     return 1;
   return 0;
+}
+
+void get_curr_date(char * date_str) {
+  time_t now;
+  struct tm *localnow;
+  char date_buffer[11] = "";
+
+  time( &now );
+  localnow = localtime( &now );
+
+  strftime( date_buffer, 11, "%Y-%m-%d", localnow );
+  strncpy( date_str, date_buffer, 11 );
+  return;
 }
