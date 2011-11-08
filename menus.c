@@ -1004,9 +1004,9 @@ size_t actions_list(const char *case_num) {
 }
 
 void print_action(const Action_t *action, size_t idx) {
-  char note[51];
+  char note[80];
  
-  strncpy( note, action->note, 51 );
+  strncpy( note, action->note, 80 );
   mvprintw( 21 + idx, 10, "%u. [%s] %s", idx, action->entry_date, note );
   return;
 }

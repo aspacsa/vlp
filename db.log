@@ -10167,3 +10167,48 @@ Entry: Tue Nov  8 02:20:48 2011
 {
  SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
 }
+
+Entry: Tue Nov  8 02:29:43 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:29:43 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:29:43 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Nov  8 02:51:52 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:51:52 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:51:52 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
+
+Entry: Tue Nov  8 02:55:56 2011
+{
+ SELECT COUNT(CaseNumber) FROM case_headers WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:55:56 2011
+{
+ SELECT COUNT(id) FROM actions WHERE CaseNumber = '27921' 
+}
+
+Entry: Tue Nov  8 02:55:56 2011
+{
+ SELECT id, CaseNumber, Note, Type, EntryAt FROM actions WHERE CaseNumber = '27921' ORDER BY EntryAt DESC 
+}
